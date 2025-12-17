@@ -1,3 +1,5 @@
+branch
+	-M <name>					- Forcefully rename the current branch to that name.
 
 commit
 	--amend						- Amends previous commit message.
