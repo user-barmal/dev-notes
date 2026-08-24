@@ -12,23 +12,34 @@ about how bash *executes* code.
 
 ## Globbing
 
-```bash
-# Examples based on ls command.
-# This happens at the shell parsing stage, not inside the command.
-# When `echo *.md` is written, bash finds what matches it and rewrites the command.
+Examples based on ls command.  
+This happens at the shell parsing stage, not inside the command.  
+When `echo *.md` is written, bash finds what matches it and rewrites the command.
 
-# Matches any number of characters
+
+Matches any number of characters
+
+```bash
 ls *
 ls *.md
+```
 
-# Matches one character
+Matches one character
+
+```bash
 ls file?.txt
 cat ./fan-temp-no-??/temp.log
+```
 
-# Matches any character from set
+Matches any character from set
+
+```bash
 ls file[123].txt
+```
 
-# Matches any character not from set
+Matches any character not from set
+
+```bash
 ls file[!123].txt
 ls file[^123].txt
 ```
@@ -38,23 +49,33 @@ ls file[^123].txt
 
 ## Quoting, word-splitting
 
-```
-# Unquoted - full expansion + word-splitting + globbing
-echo a b c  # 3 separate characters.
+Unquoted - full expansion + word-splitting + globbing
 
-# Single quotes - no expansion at all. Preserving literal value of each character.
-# $VAR stays as text. Can't put (') inside also with esc character \.
+```bash
+echo a b c  # 3 separate characters.
+```
+
+Single quotes - no expansion at all. Preserving literal value of each character.  
+$VAR stays as text. Can't put (') inside also with esc character \.
+
+```bash
 echo '$VAR'
 echo 'echo $(cat a_file.txt) >> b_file.txt' >> some_script.sh  # Puts cmd in script
 echo 'a b c'  # One string. No word splitting
+```
 
-# Double quotes - variables and commands expand. Globbing, word splitting suppressed.
+Double quotes - variables and commands expand. Globbing, word splitting suppressed.
+
+```bash
 echo "$VAR"  # Prints value
 echo "\""  # Escape characters work - output (")
 echo "$(cmd)"  # Expands command
 echo "a b c"  # One string. No word splitting
+```
 
-# Word-splitting
+Word-splitting
+
+```bash
 ./print_first_arg.sh a b c  # 'a'
 ./print_first_arg.sh 'a b' c  # 'a b'
 ./print_first_arg.sh "a b" c  # 'a b'
