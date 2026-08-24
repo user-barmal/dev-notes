@@ -9,6 +9,7 @@ Commands:
 	ffmpeg
 	less
 	more
+	printenv
 	qpdf
 
 ## echo
@@ -58,7 +59,7 @@ Older version of 'less'. No option for going back. Use 'less' instead.
 
 ## qpdf
 
-Requires installation.
+PDF file manipulation. Requires installation.
 
 ```text
 # Page count
@@ -87,4 +88,18 @@ qpdf --object-streams=generate --compress-streams=y input.pdf output.pdf
 
 # Page manipulation
 qpdf input.pdf --rotate=+90:2-5 -- output.pdf
+```
+
+## printenv
+
+Print all Linux variables used in the OS.
+
+```text
+Example output:
+
+USER=user
+COLORFGBG=10;0
+SHLVL=2
+XDG_SESSION_ID=3
+...
 ```

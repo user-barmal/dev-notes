@@ -10,6 +10,15 @@ about how bash *executes* code.
 **Does NOT belong here:** standalone programs/builtins you'd type to do something  
 (`grep`, `find`, `cd`, `ls`) - those go into `TERMINAL_COMMANDS.md`.
 
+## Comments
+
+Everything after # is ignored. It can be added at the end of a running command.
+
+Prints 1 2 3:
+```
+echo 1 2 3 # 4 5 6
+```
+
 ## Globbing
 
 Examples based on ls command.  

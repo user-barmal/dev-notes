@@ -1,3 +1,10 @@
+## ssh
+
+```
+ssh -q				- Runs ssh in quite mode without any warning or welcomming
+				  messages. Used especially for scripting.
+```
+
 ## ssh-keygen
 
 ```text
