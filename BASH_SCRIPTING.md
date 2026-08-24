@@ -11,6 +11,7 @@ about how bash *executes* code.
 (`grep`, `find`, `cd`, `ls`) - those go into `TERMINAL_COMMANDS.md`.
 
 ## Check number of arguments
+
 Example for 3 args.
 
 ```bash
@@ -44,4 +45,20 @@ Using quotes may give different results:
 ./script.sh $(cat a_file)  # 14 args
 ./script.sh "$(cat a_file)"  # 5 args
 ./script.sh '$(cat a file)'  # 1 arg (not expanded)
+```
+
+## Expand range
+
+Expand a range of values with default 1 step, or with every n-th value:
+
+```bash
+# echo {n..k} includes both <n:k> with step 1
+echo {1..10}
+
+# echo {n..k..s} includes both <n:k> with step s
+echo {1..10..2}
+
+# special usage examples (w/out space)
+mkdir dir{1..10}
+echo dir{1..10}
 ```
