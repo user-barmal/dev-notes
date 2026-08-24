@@ -3,7 +3,9 @@
 	-M <name>					- Forcefully rename the current branch to that name.
 
 ## config
-
+	--local/--global
+		user.name "Your name here"		- Change name at the specified level.
+		user.email "your@email.example"		- Change mail at the specified level.
 	list/--list					- List config. Can mix with '--local'.
 		--local					- Show local configuration.
 
