@@ -11,6 +11,9 @@ Commands:
 	more
 	printenv
 	qpdf
+	rsync
+	tee
+	tree
 
 ## echo
 
@@ -57,6 +60,20 @@ ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 ## more
 Older version of 'less'. No option for going back. Use 'less' instead.
 
+## printenv
+
+Print all Linux variables used in the OS.
+
+```text
+Example output:
+
+USER=user
+COLORFGBG=10;0
+SHLVL=2
+XDG_SESSION_ID=3
+...
+```
+
 ## qpdf
 
 PDF file manipulation. Requires installation.
@@ -90,16 +107,34 @@ qpdf --object-streams=generate --compress-streams=y input.pdf output.pdf
 qpdf input.pdf --rotate=+90:2-5 -- output.pdf
 ```
 
-## printenv
+## rsync
 
-Print all Linux variables used in the OS.
+Synchronize an external directory to a specified target one. Good for backup.  
+Faster than scp because it can ommit files that are already there.
 
 ```text
-Example output:
+# Flags
+() --delete	- this flag ensures that it is the exact copy. Removes things also from backup.
+() -a		- preserve permissions, timestamps, etc.
+() -v		- verbose
+() -P		- progress + resume support
 
-USER=user
-COLORFGBG=10;0
-SHLVL=2
-XDG_SESSION_ID=3
-...
+# Example execution:
+rsync -avP --dry-run --exclude=".ssh" user@192.168.10.10:~/ /home/local-user/backup/
+```
+
+## tee
+
+Redirect the output to both stdout and a log file.
+
+```bash
+./setup-configuration.sh | tee configuration.log
+```
+
+## tree
+
+```
+()			- Show the directory tree starting from the current one.
+() -L <n>		- Specify how deep should the tree go.
+() ./start/dir		- Show the directory tree starting from the specified one.
 ```
