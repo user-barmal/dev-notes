@@ -8,6 +8,7 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [echo](#echo)
 	* ffmpeg
 	* less
+	* mktemp
 	* more
 	* printenv
 	* qpdf
@@ -58,6 +59,16 @@ ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 
 ```text
 () -R	- Print text with ASCII control characters interpreted (e.g. color).
+```
+
+### mktemp
+
+```bash
+# Create a temporary file in /tmp/
+mktemp
+
+# Create a temporary directory in /tmp/
+mktemp -d
 ```
 
 ### more
@@ -147,7 +158,7 @@ Redirect the output to both stdout and a log file.
 |---|---|---|
 | Navigation and inspection | Where am I, what's here, where is X | `cd`, `ls`, `tree`, `pwd`, `find`, `which` |
 | Viewing file contents | Reading text-based contenet without editing | `cat`, `less`, `more`, `head`, `tail` |
-| Creating /modifying / removing | Changing what exists on disk | `touch`, `mkdir`, `cp`, `mv`, `rm`, `ln` |
+| Creating /modifying / removing | Changing what exists on disk | `touch`, `mkdir`, `cp`, `mv`, `rm`, `ln`, `mktemp` |
 | Searching and text processing | Finding or transforming text content | `grep`, `sed`, `awk`, `sort`, `cut` |
 | Permissions and ownership | Who can access/change what | `chmod`, `chown` |
 | Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
