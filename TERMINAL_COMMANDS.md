@@ -2,30 +2,33 @@
 E.g.: cmd -> arg -> subarg -> () --flag - Here () means 'cmd arg subarg'  
 and the whole command is: 'cmd arg subarg --flag'
 
-## Contents <placehodler>
-Commands:
+## Table of Contents
 
-	echo
-	ffmpeg
-	less
-	more
-	printenv
-	qpdf
-	rsync
-	tee
-	tree
+* [Commands](#Commands)
+	* [echo](#echo)
+	* ffmpeg
+	* less
+	* more
+	* printenv
+	* qpdf
+	* rsync
+	* tee
+	* tree
+* Commands categorization table
 
-## echo
+## Commands
 
-```
+### echo
+
+```text
 echo <text>			- simly print the text
 	() -n <text>		- don't add newline at the end
 ```
 
 
-## ffmpeg
+### ffmpeg
 
-```text
+```bash
 # Basic compression of mp4 file to make it smaller (crf 18 Very-HQ, 23 default, 28 smaller file)
 ffmpeg -i input.mp4 -vcodec libx264 -crf 28 output.mp4
 
@@ -51,16 +54,16 @@ ffmpeg -ss 10 -i input.mp4 -vcoded libx264 -crf 28 output.mp4
 ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 ```
 
-## less
+### less
 
 ```text
 () -R	- Print text with ASCII control characters interpreted (e.g. color).
 ```
 
-## more
+### more
 Older version of 'less'. No option for going back. Use 'less' instead.
 
-## printenv
+### printenv
 
 Print all Linux variables used in the OS.
 
@@ -74,7 +77,7 @@ XDG_SESSION_ID=3
 ...
 ```
 
-## qpdf
+### qpdf
 
 PDF file manipulation. Requires installation.
 
@@ -107,7 +110,7 @@ qpdf --object-streams=generate --compress-streams=y input.pdf output.pdf
 qpdf input.pdf --rotate=+90:2-5 -- output.pdf
 ```
 
-## rsync
+### rsync
 
 Synchronize an external directory to a specified target one. Good for backup.  
 Faster than scp because it can ommit files that are already there.
@@ -123,7 +126,7 @@ Faster than scp because it can ommit files that are already there.
 rsync -avP --dry-run --exclude=".ssh" user@192.168.10.10:~/ /home/local-user/backup/
 ```
 
-## tee
+### tee
 
 Redirect the output to both stdout and a log file.
 
@@ -131,10 +134,22 @@ Redirect the output to both stdout and a log file.
 ./setup-configuration.sh | tee configuration.log
 ```
 
-## tree
+### tree
 
 ```
 ()			- Show the directory tree starting from the current one.
 () -L <n>		- Specify how deep should the tree go.
 () ./start/dir		- Show the directory tree starting from the specified one.
 ```
+
+## Commands grouped by functions
+| Category | Description | Example commands |
+|---|---|---|
+| Navigation and inspection | Where am I, what's here, where is X | `cd`, `ls`, `tree`, `pwd`, `find`, `which` |
+| Viewing file contents | Reading text-based contenet without editing | `cat`, `less`, `more`, `head`, `tail` |
+| Creating /modifying / removing | Changing what exists on disk | `touch`, `mkdir`, `cp`, `mv`, `rm`, `ln` |
+| Searching and text processing | Finding or transforming text content | `grep`, `sed`, `awk`, `sort`, `cut` |
+| Permissions and ownership | Who can access/change what | `chmod`, `chown` |
+| Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
+| Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
+| Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
