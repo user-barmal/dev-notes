@@ -62,3 +62,11 @@ echo {1..10..2}
 mkdir dir{1..10}
 echo dir{1..10}
 ```
+
+## Subshells
+
+```bash
+# Print output from a command/pipe/etc.
+echo $(ls *.txt | grep Sample_*)
+SOME_VAR=$(python3 -c "print('ABCD1234')")
+```

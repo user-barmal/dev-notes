@@ -3,10 +3,21 @@ E.g.: cmd -> arg -> subarg -> () --flag - Here () means 'cmd arg subarg'
 and the whole command is: 'cmd arg subarg --flag'
 
 ## Contents <placehodler>
-ffmpeg
-less
-more
-qpdf
+Commands:
+
+	echo
+	ffmpeg
+	less
+	more
+	qpdf
+
+## echo
+
+```
+echo <text>			- simly print the text
+	() -n <text>		- don't add newline at the end
+```
+
 
 ## ffmpeg
 
