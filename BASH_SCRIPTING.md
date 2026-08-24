@@ -1,3 +1,15 @@
+# Bash scripting
+
+Contains notes on bash: syntax, constructs, behaviors. Not standalone commands  
+you'd run interactively.
+
+**Belongs here**: variables & parameter expansion (`$1`, `$@`, `$#`, `$?`),  
+conditionals (`[[ ]]`, `[ ]`), arithmetic, loops, functions, arrays, anything  
+about how bash *executes* code.
+
+**Does NOT belong here:** standalone programs/builtins you'd type to do something  
+(`grep`, `find`, `cd`, `ls`) - those go into `TERMINAL_COMMANDS.md`.
+
 ## Check number of arguments
 Example for 3 args.
 
