@@ -251,6 +251,20 @@ do
 done
 ```
 
+## Get an argument
+
+These are special variables used to retrieve arguments passed to the  
+script in which they are called.
+
+```bash
+echo "Number of arguments: $#"
+echo "All arguments listed: $@"
+echo "Script name: $0"
+echo "First arg: $1"
+echo "Second arg: $2"
+echo "Third arg: $3"
+```
+
 ## Check number of arguments
 
 Example for 3 args.
@@ -270,20 +284,6 @@ if [ "$#" -ne 3 ]; then
 	# Script can be stopped with:
 	exit 1
 fi
-```
-
-## Get an argument
-
-These are special variables used to retrieve arguments passed to the  
-script in which they are called.
-
-```bash
-echo "Number of arguments: $#"
-echo "All arguments listed: $@"
-echo "Script name: $0"
-echo "First arg: $1"
-echo "Second arg: $2"
-echo "Third arg: $3"
 ```
 
 ## Brace expansion
