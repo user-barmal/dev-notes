@@ -20,7 +20,7 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [rsync](#rsync)
 	* [tee](#tee)
 	* [tree](#tree)
-* Commands categorization table
+* [Commands grouped by functions](#commands-grouped-by-functions)
 
 ## Commands
 
