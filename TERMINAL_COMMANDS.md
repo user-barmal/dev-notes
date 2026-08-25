@@ -10,19 +10,51 @@ and the whole command is: 'cmd arg subarg --flag'
 ## Table of Contents
 
 * [Commands](#Commands)
+	* [cd](#cd)
+	* [date](#date)
 	* [echo](#echo)
 	* [ffmpeg](#ffmpeg)
 	* [less](#less)
+	* [mkdir](#mkdir)
 	* [mktemp](#mktemp)
 	* [more](#more)
 	* [printenv](#printenv)
 	* [qpdf](#qpdf)
 	* [rsync](#rsync)
+	* [set](#set)
 	* [tee](#tee)
 	* [tree](#tree)
 * [Commands grouped by functions](#commands-grouped-by-functions)
 
 ## Commands
+
+### cd
+
+```bash
+# Go to a directory
+cd /some/directory/path
+
+# Go one directory above
+cd ..
+
+# Go to home directory
+cd
+cd ~
+
+# Go to root directory
+
+cd /
+
+# Go back to the previous directory, e.g. after you did `cd ~`.
+cd -
+```
+
+### date
+
+```bash
+# Date in a format useful for appending to a log name
+NOW_DATE=$(date '+%Y%m%d-%H%M%S')
+```
 
 ### echo
 
@@ -63,6 +95,13 @@ ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 
 ```text
 less -R	- Print text with ASCII control characters interpreted (e.g. color).
+```
+
+### mkdir
+
+```
+mkdir
+mkdir -p
 ```
 
 ### mktemp
@@ -140,6 +179,13 @@ Faster than scp because it can ommit files that are already there.
 # Example execution:
 rsync -avP --dry-run --exclude=".ssh" user@192.168.10.10:~/ /home/local-user/backup/
 ```
+
+### set
+
+```
+set -euo pipefail
+```
+
 
 ### tee
 

@@ -2,7 +2,17 @@
 
 	-M <name>					- Forcefully rename the current branch to that name.
 
+## clean
+
+	-f						- Remove the files listed with '-n'. By default git won't remove files
+							  without this flag.
+
+	-n						- Dry-run what would be removed with git clean on a repository.
+							  Remove unwanted files from repo, e.g. if scripts create a lot of stuff
+							  that is not gitignored and populates the project directory.
+
 ## config
+
 	--local/--global
 		user.name "Your name here"		- Change name at the specified level.
 		user.email "your@email.example"		- Change mail at the specified level.
