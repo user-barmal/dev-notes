@@ -211,8 +211,8 @@ The syntax rules are the same as in the basic test. Everything should be separat
 SOME_NAME="First Second"
 [ "$SOME_NAME" == "First Second" ]; echo $?   # Quoted variable not splitted - ok
 [ $SOME_NAME == "First Second" ]; echo $?     # Unquoted variable splitted - fail
-[[ "$SOME_NAME" == "First Second" ]; echo $?  # Quoted variable not splitted - ok
-[[ $SOME_NAME == "First Second" ]; echo $?    # Unquoted variable NOT splitted - ok
+[[ "$SOME_NAME" == "First Second" ]]; echo $?  # Quoted variable not splitted - ok
+[[ $SOME_NAME == "First Second" ]]; echo $?    # Unquoted variable NOT splitted - ok
 ```
 
 ```bash
