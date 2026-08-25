@@ -1,3 +1,8 @@
+# Terminal commands
+
+This document lists self-sufficient commands.
+Some of them may require additional instalation. This information is noted in their description.
+
 () - means the command with args from a tree. Used to minimize repetitions.  
 E.g.: cmd -> arg -> subarg -> () --flag - Here () means 'cmd arg subarg'  
 and the whole command is: 'cmd arg subarg --flag'
@@ -6,15 +11,15 @@ and the whole command is: 'cmd arg subarg --flag'
 
 * [Commands](#Commands)
 	* [echo](#echo)
-	* ffmpeg
-	* less
-	* mktemp
-	* more
-	* printenv
-	* qpdf
-	* rsync
-	* tee
-	* tree
+	* [ffmpeg](#ffmpeg)
+	* [less](#less)
+	* [mktemp](#mktemp)
+	* [more](#more)
+	* [printenv](#printenv)
+	* [qpdf](#qpdf)
+	* [rsync](#rsync)
+	* [tee](#tee)
+	* [tree](#tree)
 * Commands categorization table
 
 ## Commands
@@ -25,7 +30,6 @@ and the whole command is: 'cmd arg subarg --flag'
 echo <text>			- simly print the text
 	() -n <text>		- don't add newline at the end
 ```
-
 
 ### ffmpeg
 
@@ -58,7 +62,7 @@ ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 ### less
 
 ```text
-() -R	- Print text with ASCII control characters interpreted (e.g. color).
+less -R	- Print text with ASCII control characters interpreted (e.g. color).
 ```
 
 ### mktemp
@@ -92,7 +96,7 @@ XDG_SESSION_ID=3
 
 PDF file manipulation. Requires installation.
 
-```text
+```bash
 # Page count
 qpdf --show-npages file.pdf
 
@@ -147,7 +151,7 @@ Redirect the output to both stdout and a log file.
 
 ### tree
 
-```
+```text
 ()			- Show the directory tree starting from the current one.
 () -L <n>		- Specify how deep should the tree go.
 () ./start/dir		- Show the directory tree starting from the specified one.
@@ -158,7 +162,7 @@ Redirect the output to both stdout and a log file.
 |---|---|---|
 | Navigation and inspection | Where am I, what's here, where is X | `cd`, `ls`, `tree`, `pwd`, `find`, `which` |
 | Viewing file contents | Reading text-based contenet without editing | `cat`, `less`, `more`, `head`, `tail` |
-| Creating /modifying / removing | Changing what exists on disk | `touch`, `mkdir`, `cp`, `mv`, `rm`, `ln`, `mktemp` |
+| Creating, modifying, removing | Changing what exists on disk | `touch`, `mkdir`, `cp`, `mv`, `rm`, `ln`, `mktemp` |
 | Searching and text processing | Finding or transforming text content | `grep`, `sed`, `awk`, `sort`, `cut` |
 | Permissions and ownership | Who can access/change what | `chmod`, `chown` |
 | Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
