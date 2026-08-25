@@ -91,6 +91,16 @@ Word-splitting
 ./print_first_arg.sh "a b" c  # 'a b'
 ```
 
+Using quotes may give different results:
+
+```bash
+./script.sh "a b c"  # one argument
+./script.sh 1 'a b'  # two arguments
+./script.sh $(cat a_file)  # 14 args
+./script.sh "$(cat a_file)"  # 5 args
+./script.sh '$(cat a file)'  # 1 arg (not expanded)
+```
+
 ## Check number of arguments
 
 Example for 3 args.
@@ -116,16 +126,6 @@ echo "Script name: $0"
 echo "First arg: $1"
 echo "Second arg: $2"
 echo "Third arg: $3"
-```
-
-Using quotes may give different results:
-
-```bash
-./script.sh "a b c"  # one argument
-./script.sh 1 'a b'  # two arguments
-./script.sh $(cat a_file)  # 14 args
-./script.sh "$(cat a_file)"  # 5 args
-./script.sh '$(cat a file)'  # 1 arg (not expanded)
 ```
 
 ## Brace expansion
