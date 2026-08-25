@@ -115,7 +115,10 @@ Using quotes may give different results:
 
 ## Comparison operators
 
-Use these in a test command - see test command paragraph.
+Use these in a test command - see test command paragraph.  
+Usually we thing about such tests as 'a compared to b', but  
+some of these flags just check things on one argument.  
+This way it may look like 'check b', e.g.: '-x /path/scr'.
 
 Comparing numbers
 
@@ -148,6 +151,7 @@ Files and directories
 -w  - writable
 -x  - executable
 -s  - exists and is not empty
+-z  - exists and is empty
 -L  - symbolic link
 ```
 
@@ -155,8 +159,13 @@ Files and directories
 
 Use these e.g. in an 'if' statement.
 ```bash
+# Bracket form
 [ "$#" -ne 2 ]
 
+# No comparison, just check
+[ -x /usr/bin/sth ]
+
+# Text form
 test "$#" -ne 2
 ```
 
@@ -184,7 +193,14 @@ else
 	echo "Other num. of args"
 fi
 
-# switch case
+# nested if
+if [ "$#" -eq 1 ]; then
+	if [ "$2" -ne "off" ]; then
+		set_up_something.sh
+	fi
+fi
+
+# case-esac
 ...
 ```
 
@@ -244,7 +260,8 @@ fi
 
 ## Get an argument
 
-Get the arguments:
+These are special variables used to retrieve arguments passed to the  
+script in which they are called.
 
 ```bash
 echo "Number of arguments: $#"
@@ -311,8 +328,15 @@ Run a command in an isolated child process. No output capture.
 Use e.g. to run a 'cd' that you dont' want to leak into the current shell.
 
 ```
-()		- Syntax
-(cd /)		- Will go to the root dir in the subshell but won't move in the current one.
+(action_inside)			- Syntax
+(cd /)				- Will go to the root dir in the subshell but won't move in the current one.
+```
+
+## Sourcing
+
+```bash
+source script.sh
+. script.sh
 ```
 
 ## Connectors
