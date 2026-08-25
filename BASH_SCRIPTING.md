@@ -113,12 +113,31 @@ Using quotes may give different results:
 ./script.sh '$(cat a file)'  # 1 arg (not expanded)
 ```
 
+## Conditionals
+
+```bash
+# if-else
+# switch case
+```
+
+## Loops
+
+```bash
+```
+
 ## Check number of arguments
 
 Example for 3 args.
 
 ```bash
-#!/bin/bash
+# Variable
+# Because it's a single number, there is no theoretical reason for quotes,
+# but it follows Bash convention:
+# Quote variables unless you specifically need shell expansion behavior.
+echo $#
+echo "$#"
+
+# Practical usage example
 if [ "$#" -ne 3 ]; then
 	# Do the operations
 
