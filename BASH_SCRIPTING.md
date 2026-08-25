@@ -126,7 +126,7 @@ Use these in a test command - see test command paragraph.
 -ge - Greater than or equal
 ```
 
-# Test command
+## Test command
 
 Use these e.g. in an 'if' statement.
 ```bash
