@@ -180,10 +180,42 @@ mkdir dir{1..10}
 echo dir{1..10}
 ```
 
-## Subshells
+## Command substitution
+
+Run a command and substitute its output into the surrounding command line as text.
 
 ```bash
 # Print output from a command/pipe/etc.
 echo $(ls *.txt | grep Sample_*)
 SOME_VAR=$(python3 -c "print('ABCD1234')")
+```
+
+## Subshell
+
+Run a command in an isolated child process. No output capture.
+Use e.g. to run a 'cd' that you dont' want to leak into the current shell.
+
+```
+()		- Syntax
+(cd /)		- Will go to the root dir in the subshell but won't move in the current one.
+```
+
+## Connectors
+
+```text
+|
+&&
+||
+;
+```
+
+## Redirection
+
+```text
+>
+>>
+>>>
+<
+2>&1
+/dev/null
 ```
