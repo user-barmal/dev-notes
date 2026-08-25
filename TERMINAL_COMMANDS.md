@@ -26,6 +26,7 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [rsync](#rsync)
 	* [set](#set)
 	* [seq](#seq)
+	* [tar](#tar)
 	* [tee](#tee)
 	* [tree](#tree)
 	* [wc](#wc)
@@ -244,6 +245,21 @@ seq 5 10
 
 # inclusive sequence with step: <num1:step:num2>
 seq 1.5 -0.5 -15.3
+```
+
+### tar
+
+Flags
+
+```text
+-x				- Unpack files from archive.
+-z				- Unpack gzip compression.
+-f				- Specfiy filename.
+```
+
+Usage example
+```
+tar -xzf file.tar.gz		- Unpack tar.
 ```
 
 ### tee
