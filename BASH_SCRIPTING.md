@@ -157,7 +157,9 @@ Files and directories
 
 ## Test command
 
-Use these e.g. in an 'if' statement.
+Use these e.g. in an 'if' statement. Check status of a previously executed  
+test with 'echo $?'.
+
 ```bash
 # Bracket form
 [ "$#" -ne 2 ]
@@ -165,11 +167,19 @@ Use these e.g. in an 'if' statement.
 # No comparison, just check
 [ -x /usr/bin/sth ]
 
+# Negation in brackets
+[ ! "$VAR" -eq 2 ]
+
 # Text form
 test "$#" -ne 2
+
+# Negation in text form
+test ! "$VAR" -eq 2
 ```
 
 ## Conditionals
+
+if-elif-else-fi
 
 ```bash
 # if
@@ -200,7 +210,16 @@ if [ "$#" -eq 1 ]; then
 	fi
 fi
 
-# case-esac
+# if with exit code.
+# In this case we don't use the $() which would turn the output into text.
+if grep -q "text" a_file.txt; then
+	echo "It's there"
+fi
+```
+
+case-esac
+
+```bash
 ...
 ```
 
@@ -328,7 +347,8 @@ echo dir{1..10}
 
 ## Command substitution
 
-Run a command and substitute its output into the surrounding command line as text.
+Run a command and substitute its output into the surrounding command line as text.  
+It is important that this will pass the text, not the exit code e.g. to if statement.
 
 ```bash
 # Print output from a command/pipe/etc.
