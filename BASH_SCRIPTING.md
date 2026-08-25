@@ -160,6 +160,15 @@ Files and directories
 Use these e.g. in an 'if' statement. Check status of a previously executed  
 test with 'echo $?'.
 
+Syntax rule
+
+```text
+Put spaces around arguments and operators. It is done so Bash does not treat
+two parts as one variable
+[$name treated as one
+$name=="sth" as one.
+```
+
 ```bash
 # Bracket form
 [ "$#" -ne 2 ]
@@ -175,6 +184,48 @@ test "$#" -ne 2
 
 # Negation in text form
 test ! "$VAR" -eq 2
+```
+
+Connecting tests with logical operators (different than in [[ ]])
+
+```text
+# Logical operators inside
+-a	- and
+-o	- or
+[ sth -a sth2 -o sth3 ]
+
+# Logical operators outside
+&& ||
+[ test1 ] && [ test2 ] || [ test3 ]
+```
+
+## Extended test command
+
+It is a test command that has additional abilities in comparison with the basic one.  
+This one should be usually used instead of the basic one, but the basic one can be  
+used across different shells. This one may not work in other ones.  
+The syntax rules are the same as in the basic test. Everything should be separated with spaces.
+
+```bash
+# No word splitting by default example with comparison to single-bracket tests
+SOME_NAME="First Second"
+[ "$SOME_NAME" == "First Second" ]; echo $?   # Quoted variable not splitted - ok
+[ $SOME_NAME == "First Second" ]; echo $?     # Unquoted variable splitted - fail
+[[ "$SOME_NAME" == "First Second" ]; echo $?  # Quoted variable not splitted - ok
+[[ $SOME_NAME == "First Second" ]; echo $?    # Unquoted variable NOT splitted - ok
+```
+
+```bash
+# Pattern matching
+[[ $file == *.txt ]]
+```
+
+```bash
+# Regex =~
+```
+
+```bash
+# Boolean operators inside the brackets && ||
 ```
 
 ## Conditionals
