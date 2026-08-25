@@ -17,6 +17,7 @@ Everything after # is ignored. It can be added at the end of a running command.
 Prints 1 2 3:
 ```
 echo 1 2 3 # 4 5 6
+# this wont do anything
 ```
 
 ## Globbing
@@ -127,18 +128,42 @@ Using quotes may give different results:
 ./script.sh '$(cat a file)'  # 1 arg (not expanded)
 ```
 
-## Expand range
+## Brace expansion
 
-Expand a range of values with default 1 step, or with every n-th value:
+Provides various ways to expand a range into values.
+Don't use spaces inside the brackets, or it will not work correctly!
 
 ```bash
 # echo {n..k} includes both <n:k> with step 1
 echo {1..10}
 
+# echo {n..k} where n > k
+echo {10..1}
+
 # echo {n..k..s} includes both <n:k> with step s
 echo {1..10..2}
 
-# special usage examples (w/out space)
+# echo {n..k..s} where n > k
+echo {10..1..2}
+
+# echo {n..k} where the range is in characters
+echo {a..f}
+
+# echo range of characters with a step
+echo {a..h..2}
+
+# expand predefined values
+# NOTE: No spaces between characters!
+# Spaces will determine delimiters between files names.
+touch file_{100,200,300}
+
+# nesting expansion
+echo a{s{1,2,3},g{1,2,3}}  # out: as1 as2 as3 ag1 ag2 ag3
+
+# cartesian combination
+echo s{1,2}{3,4}  # out: s13 s14 s23 s24
+
+# usage examples
 mkdir dir{1..10}
 echo dir{1..10}
 ```
