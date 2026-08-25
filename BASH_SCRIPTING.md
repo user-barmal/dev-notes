@@ -210,8 +210,8 @@ if [ "$#" -eq 1 ]; then
 	fi
 fi
 
-# if with exit code.
-# In this case we don't use the $() which would turn the output into text.
+# if with exit code
+# In this case we don't use the $() which would pass the command output as text.
 if grep -q "text" a_file.txt; then
 	echo "It's there"
 fi
