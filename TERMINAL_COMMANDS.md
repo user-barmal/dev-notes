@@ -27,6 +27,7 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [set](#set)
 	* [seq](#seq)
 	* [tar](#tar)
+	* [tcpdump](#tcpdump)
 	* [tee](#tee)
 	* [tree](#tree)
 	* [wc](#wc)
@@ -262,6 +263,12 @@ Usage example
 tar -xzf file.tar.gz		- Unpack tar.
 ```
 
+### tcpdump
+
+```
+sudo tcpdump -i eth0		- Listen for data on eth0 Ethernet network interface.
+```
+
 ### tee
 
 Redirect the output to both stdout and a log file.
@@ -308,3 +315,4 @@ cat a_file.txt | wc -l
 | Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
 | Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
 | Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
+| Networking | ... | `tcpdump` |
