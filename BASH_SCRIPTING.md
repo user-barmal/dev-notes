@@ -235,6 +235,20 @@ exit 13  # May indicate some parsing error
 ## Loops
 
 ```bash
+# For loop - oneliner. Uses {1..10} which avoids using external seq cmd.
+for i in {1..10}; do some_steps.sh; done
+
+# Using a limited number of arguments
+for i in arg1 arg2 arg3
+do
+	some_steps.sh
+done
+
+# Using seq (and command expand in general)
+for i in $(seq 1 10)
+do
+	some_steps.sh
+done
 ```
 
 ## Check number of arguments

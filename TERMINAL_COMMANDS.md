@@ -23,6 +23,7 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [qpdf](#qpdf)
 	* [rsync](#rsync)
 	* [set](#set)
+	* [seq](#seq)
 	* [tee](#tee)
 	* [tree](#tree)
 	* [wc](#wc)
@@ -197,6 +198,29 @@ rsync -avP --dry-run --exclude=".ssh" user@192.168.10.10:~/ /home/local-user/bac
 set -euo pipefail
 ```
 
+### seq
+
+Flags
+
+```text
+-s "<sep>" / --separator=<sep>			- Define a separator. Default is '\n'.
+-w/--equal-width				- Fill the numbers with leading zeros. Takes no arg.
+-f "<format>" /--format=<format>		- Define the format in which numbers will be presented.
+						  Includes: "%a", "%e", "%f", "%g", "%A", "%E", "%F", "%G"
+```
+
+Example usage
+
+```bash
+# inclusive sequence: <1:num>
+seq 100
+
+# inclusive sequence: <num1:num2>
+seq 5 10
+
+# inclusive sequence with step: <num1:step:num2>
+seq 1.5 -0.5 -15.3
+```
 
 ### tee
 
