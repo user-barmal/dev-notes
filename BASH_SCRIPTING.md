@@ -117,6 +117,8 @@ Using quotes may give different results:
 
 Use these in a test command - see test command paragraph.
 
+Comparing numbers
+
 ```text
 -eq - Equal
 -ne - Not equal
@@ -124,6 +126,29 @@ Use these in a test command - see test command paragraph.
 -le - Less than or equal
 -gt - Greater than
 -ge - Greater than or equal
+```
+
+Comparing strings
+
+```text
+=   - Equal
+==  - Equal
+!=  - Not equal
+<   - If comes before alphabetically
+>   - If comes after alphabetically
+```
+
+Files and directories
+
+```text
+-e  - exists
+-f  - exists and is a regular file
+-d  - exists and is a directory
+-r  - readable
+-w  - writable
+-x  - executable
+-s  - exists and is not empty
+-L  - symbolic link
 ```
 
 ## Test command
