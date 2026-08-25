@@ -19,11 +19,13 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [mktemp](#mktemp)
 	* [more](#more)
 	* [printenv](#printenv)
+	* [pwd](#pwd)
 	* [qpdf](#qpdf)
 	* [rsync](#rsync)
 	* [set](#set)
 	* [tee](#tee)
 	* [tree](#tree)
+	* [wc](#wc)
 * [Commands grouped by functions](#commands-grouped-by-functions)
 
 ## Commands
@@ -130,6 +132,15 @@ SHLVL=2
 XDG_SESSION_ID=3
 ...
 ```
+### pwd
+
+Show the current location path. Can be used to confirm a location or put the output  
+into a script.
+
+```bash
+# Output e.g.: /home/user/program/subdir/
+pwd
+```
 
 ### qpdf
 
@@ -201,6 +212,25 @@ Redirect the output to both stdout and a log file.
 ()			- Show the directory tree starting from the current one.
 () -L <n>		- Specify how deep should the tree go.
 () ./start/dir		- Show the directory tree starting from the specified one.
+```
+
+### wc
+
+Word-count
+
+Flags
+
+```text
+-c <file>		- Characters
+-w <file>		- Words
+-l <file>		- Lines
+```
+
+Usage
+
+```bash
+# Check number of lines in a file a_file.txt
+cat a_file.txt | wc -l
 ```
 
 ## Commands grouped by functions
