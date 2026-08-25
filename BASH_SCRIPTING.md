@@ -113,11 +113,82 @@ Using quotes may give different results:
 ./script.sh '$(cat a file)'  # 1 arg (not expanded)
 ```
 
+## Comparison operators
+
+Use these in a test command - see test command paragraph.
+
+```text
+-eq - Equal
+-ne - Not equal
+-lt - Less than
+-le - Less than or equal
+-gt - Greater than
+-ge - Greater than or equal
+```
+
+# Test command
+
+Use these e.g. in an 'if' statement.
+```bash
+[ "$#" -ne 2 ]
+
+test "$#" -ne 2
+```
+
 ## Conditionals
 
 ```bash
+# if
+if [ "$#" -ne 2 ]; then
+	echo "No. of args not equal to 2"
+fi
+
 # if-else
+if [ "$#" -eq 2 ]; then
+	echo "No. of args equal to 2"
+else
+	echo "Not 2 arguments"
+fi
+
+# if-elif-else
+if [ "$#" -eq 1 ]; then
+	echo "One arg"
+elif [ "$#" -eq 2 ]; then
+	echo "Two args"
+else
+	echo "Other num. of args"
+fi
+
 # switch case
+...
+```
+
+## Exit status
+
+Every command and script in Bash returns an exit status when it finishes.
+Exit status is checked in the conditionals to determine the true/false values.
+
+```text
+0 - success
+non-zero - failure or another non-success condition
+```
+
+The exit status of a previously executed command can be checked with
+
+```bash
+echo $?
+```
+
+The status in a script can be set with the following command
+
+```bash
+# Exit without failure
+exit 0
+
+# Indicate a failure exit e.g. in an if-else conditional
+# Various values can mean different issues to provide useful info about the fail status.
+exit 1   # May indicate general, not catched fail
+exit 13  # May indicate some parsing error
 ```
 
 ## Loops
