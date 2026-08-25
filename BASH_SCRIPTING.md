@@ -54,6 +54,18 @@ ls file[!123].txt
 ls file[^123].txt
 ```
 
+## Variables
+...
+
+## Special variables
+
+```text
+IFS - Internal Field Separator. Bash shell variable related to Bash word splitting.
+```
+
+## Arrays
+...
+
 ## Expanding
 ...
 
