@@ -211,7 +211,7 @@ if [ "$#" -eq 1 ]; then
 fi
 
 # if with command output - passes the command printed output to if
-if [ "$(get_mount_name.sh) 2>/dev/null" == "/some/mount/name" ]; then
+if [ "$(./get_mount_name.sh 2>/dev/null)" == "/some/mount/name" ]; then
 	echo "Mounted (based on the passed string check)"
 fi
 
