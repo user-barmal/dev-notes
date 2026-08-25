@@ -18,6 +18,8 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [mkdir](#mkdir)
 	* [mktemp](#mktemp)
 	* [more](#more)
+	* [pgrep](#pgrep)
+	* [pkill](#pkill)
 	* [printenv](#printenv)
 	* [pwd](#pwd)
 	* [qpdf](#qpdf)
@@ -119,6 +121,28 @@ mktemp -d
 
 ### more
 Older version of 'less'. No option for going back. Use 'less' instead.
+
+### pgrep
+
+Return the PID of a process requested by name.
+
+```
+# Simple request that will search for a partial match: process_name1 and process_name2 are a match
+pgrep process_name
+
+# Searching for an exact match
+pgrep -x process_name
+
+# Kill process by name. It will return an error if proc not found. Use pkill instead.
+kill -9 $(pgrep -x process_name)
+```
+
+### pkill
+
+```
+# Kill a process by name
+pkill -9 -x process_name
+```
 
 ### printenv
 
