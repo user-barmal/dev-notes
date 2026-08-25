@@ -210,10 +210,18 @@ if [ "$#" -eq 1 ]; then
 	fi
 fi
 
-# if with exit code
-# In this case we don't use the $() which would pass the command output as text.
+# if with command output - passes the command printed output to if
+if [ "$(get_mount_name.sh) 2>/dev/null" == "/some/mount/name" ]; then
+	echo "Mounted (based on the passed string check)"
+fi
+
+# if with exit code - passes the command exit code to if
 if grep -q "text" a_file.txt; then
 	echo "It's there"
+fi
+
+if ./check_mount.sh; then
+	echo "Mounted (based on exit code check)"
 fi
 ```
 
