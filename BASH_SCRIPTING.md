@@ -228,9 +228,7 @@ SOME_NAME="First Second"
 # Boolean operators inside the brackets && ||
 ```
 
-## Conditionals
-
-if-elif-else-fi
+## Conditionals - if-elif-else-fi
 
 ```bash
 # if
@@ -276,11 +274,12 @@ if ./check_mount.sh; then
 fi
 ```
 
-case-esac
+## Conditionals - case-esac
+
+Basic syntax  
+The case statement supports standard Bash globbing patterns (*, ?, [], [^])
 
 ```bash
-# Basic syntax
-
 case $VAR in
 	pattern1)
 		# code to run if variable matches pattern1
@@ -291,9 +290,11 @@ case $VAR in
 		# default code to run if no patterns match (optional)
 		;;
 esac
+```
 
-# OR logic using single pipe
+OR logic using single pipe
 
+```bash
 case $CHOICE in
 	[yY] | [yY][eE][sS])
 		echo "You said yes"
@@ -303,6 +304,36 @@ case $CHOICE in
 		;;
 	*)
 		echo "Invalid response"
+esac
+```
+
+AND logic using concatenation ':'
+
+```bash
+case $ROLE:$STATUS in
+	"admin:active")
+		echo "Access granted"
+		;;
+	"user:active")
+		echo "Limited access"
+		;;
+	*:inactive)
+		echo "Account inactive"
+	*)
+		echo "Unknown combination"
+esac
+```
+
+Checking multiple matches using ;;& - may not work in older versions of Bash
+
+```bash
+case $NUMBER in
+	*[05])
+		echo "The number is divisible by 5"
+		;;&  # Continue checking further matches despite a match
+	*[13579])
+		echo "The number is odd"
+		;;
 esac
 ```
 
