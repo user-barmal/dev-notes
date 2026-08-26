@@ -326,3 +326,4 @@ cat a_file.txt | wc -l
 | Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
 | Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
 | Networking | ... | `tcpdump` |
+| Behavior modifiers | ... | `shopt`, `set`, `export`, `alias`, `unalias` |
