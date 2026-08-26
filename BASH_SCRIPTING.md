@@ -337,6 +337,23 @@ case $NUMBER in
 esac
 ```
 
+Blind fall-through - execute the next block without pattern matching  
+Admin will print 3 rows, user 2 and guest 1.
+
+```bash
+case $ROLE in
+	"admin")
+		echo "Delete and modify files"
+		;&
+	"user")
+		echo "Create and edit files"
+		;&
+	"guest")
+		echo "View files"
+		;;
+esac
+```
+
 ## Exit status
 
 Every command and script in Bash returns an exit status when it finishes.
