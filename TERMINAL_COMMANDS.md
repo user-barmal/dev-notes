@@ -13,6 +13,7 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [cd](#cd)
 	* [date](#date)
 	* [echo](#echo)
+	* [env](#env)
 	* [ffmpeg](#ffmpeg)
 	* [less](#less)
 	* [mkdir](#mkdir)
@@ -68,6 +69,14 @@ NOW_DATE=$(date '+%Y%m%d-%H%M%S')
 ```text
 echo <text>			- simly print the text
 	() -n <text>		- don't add newline at the end
+```
+
+### env
+
+```bash
+# Print names and values of variables in the environment
+# For this task, both 'env' and 'printenv' behave identically.
+env
 ```
 
 ### ffmpeg
@@ -149,6 +158,7 @@ pkill -9 -x process_name
 ### printenv
 
 Print all Linux variables used in the OS.
+For this task, both 'env' and 'printenv' behave identically.
 
 ```text
 Example output:
