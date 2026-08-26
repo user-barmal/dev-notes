@@ -279,7 +279,31 @@ fi
 case-esac
 
 ```bash
-...
+# Basic syntax
+
+case $VAR in
+	pattern1)
+		# code to run if variable matches pattern1
+		;;
+	pattern2)
+		# code to run if variable matches pattern2
+	*)
+		# default code to run if no patterns match (optional)
+		;;
+esac
+
+# OR logic using single pipe
+
+case $CHOICE in
+	[yY] | [yY][eE][sS])
+		echo "You said yes"
+		;;
+	[nN] | [nN][oO])
+		echo "You said no"
+		;;
+	*)
+		echo "Invalid response"
+esac
 ```
 
 ## Exit status
