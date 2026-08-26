@@ -10,6 +10,31 @@ about how bash *executes* code.
 **Does NOT belong here:** standalone programs/builtins you'd type to do something  
 (`grep`, `find`, `cd`, `ls`) - those go into `TERMINAL_COMMANDS.md`.
 
+## Table of Contents
+
+* [Comments](#Comments)
+* [Globbing](#Globbing)
+* [Variables](#Variables)
+* [Special Variables](#Special-variables)
+* [Arrays](#Arrays)
+* [Expanding](#Expanding)
+* [Quoting and word splitting](#Quoting-and-word-splitting)
+* [Comparison operators](#Comparison-operators)
+* [Test command](#Test-command)
+* [Extended test command](#Extended-test-command)
+* [Conditionals - if-elif-else-fi](#Conditionals---if-elif-else-fi)
+* [Conditionals - case-esac](#Conditionals---case-esac)
+* [Loops](#Loops)
+* [Exit status](#Exit-status)
+* [Get an argument](#Get-an-argument)
+* [Check number of arguments](#Check-number-of-arguments)
+* [Brace expansion](#Brace-expansion)
+* [Command substitution](#Command-substitution)
+* [Subshell](#Subshell)
+* [Sourcing](#Sourcing)
+* [Connectors](#Connectors)
+* [Redirection](#Redirection)
+
 ## Comments
 
 Everything after # is ignored. It can be added at the end of a running command.
@@ -69,7 +94,7 @@ IFS - Internal Field Separator. Bash shell variable related to Bash word splitti
 ## Expanding
 ...
 
-## Quoting, word-splitting
+## Quoting and word splitting
 
 Unquoted - full expansion + word-splitting + globbing
 
@@ -354,6 +379,25 @@ case $ROLE in
 esac
 ```
 
+## Loops
+
+```bash
+# For loop - oneliner. Uses {1..10} which avoids using external seq cmd.
+for i in {1..10}; do some_steps.sh; done
+
+# Using a limited number of arguments
+for i in arg1 arg2 arg3
+do
+	some_steps.sh
+done
+
+# Using seq (and command expand in general)
+for i in $(seq 1 10)
+do
+	some_steps.sh
+done
+```
+
 ## Exit status
 
 Every command and script in Bash returns an exit status when it finishes.
@@ -380,25 +424,6 @@ exit 0
 # Various values can mean different issues to provide useful info about the fail status.
 exit 1   # May indicate general, not catched fail
 exit 13  # May indicate some parsing error
-```
-
-## Loops
-
-```bash
-# For loop - oneliner. Uses {1..10} which avoids using external seq cmd.
-for i in {1..10}; do some_steps.sh; done
-
-# Using a limited number of arguments
-for i in arg1 arg2 arg3
-do
-	some_steps.sh
-done
-
-# Using seq (and command expand in general)
-for i in $(seq 1 10)
-do
-	some_steps.sh
-done
 ```
 
 ## Get an argument
