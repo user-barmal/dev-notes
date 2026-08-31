@@ -16,10 +16,12 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [env](#env)
 	* [ffmpeg](#ffmpeg)
 	* [less](#less)
+	* [ls](#ls)
 	* [mkdir](#mkdir)
 	* [mktemp](#mktemp)
 	* [more](#more)
 	* [pgrep](#pgrep)
+	* [ping](#ping)
 	* [pkill](#pkill)
 	* [printenv](#printenv)
 	* [pwd](#pwd)
@@ -113,6 +115,24 @@ ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 less -R	- Print text with ASCII control characters interpreted (e.g. color).
 ```
 
+### ls
+
+Flags
+
+```
+-1
+-a
+-h
+-l
+-F		- Adds additional character to each name that indicates the type, e.g. directory/ script.sh*
+```
+
+Usage - flags can be connected
+
+```
+ls -alhF
+```
+
 ### mkdir
 
 ```
@@ -147,6 +167,10 @@ pgrep -x process_name
 # Kill process by name. It will return an error if proc not found. Use pkill instead.
 kill -9 $(pgrep -x process_name)
 ```
+
+### ping
+
+Ping command is available on different OS's, but its flags will vary in behavior.
 
 ### pkill
 
@@ -325,5 +349,5 @@ cat a_file.txt | wc -l
 | Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
 | Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
 | Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
-| Networking | ... | `tcpdump` |
+| Networking | ... | `ping`, `tcpdump` |
 | Behavior modifiers | ... | `shopt`, `set`, `export`, `alias`, `unalias` |
