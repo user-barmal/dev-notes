@@ -15,6 +15,8 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [echo](#echo)
 	* [env](#env)
 	* [ffmpeg](#ffmpeg)
+	* [grep](#grep)
+	* [ip](#ip)
 	* [less](#less)
 	* [ls](#ls)
 	* [mkdir](#mkdir)
@@ -109,6 +111,37 @@ ffmpeg -ss 10 -i input.mp4 -vcoded libx264 -crf 28 output.mp4
 ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 ```
 
+### grep
+
+Get-regex-print
+
+```
+# Simple usage
+grep string filename
+
+# grep with OR
+grep -E 'case1|case2|case3'
+```
+
+### ip
+
+Flags
+
+```text
+# Pre-flags - ip <pre> option <subopt>
+-br				- brief info
+-d/--details			- show detailed info
+-o/--oneline			- show data one line per object
+
+# The suboption is assumed to be 'show' if not defined. If want to use 'show' it can be ommited.
+
+a/addr/address			- Can anything between the shortest and the longest form.
+l/link
+n/neighbor
+r/route
+	get <ip>		- Show a route from routing table to the specified IP.
+```
+
 ### less
 
 ```text
@@ -181,6 +214,17 @@ kill -9 $(pgrep -x process_name)
 ### ping
 
 Ping command is available on different OS's, but its flags will vary in behavior.
+
+```bash
+# Simple ping
+ping 192.168.15.15
+
+# Ping from specified interface <interface> <target>
+ping -I Ethernet112 10.0.0.57
+
+# Ping from specified IP <source> <target>
+ping -I 10.0.0.55 10.0.0.57
+```
 
 ### pkill
 
@@ -328,6 +372,12 @@ sudo tcpdump -i any
 
 # Listen for data on eth0 Ethernet network interface. Filter for specified protocols, e.g. 'arp and icmp'
 sudo tcpdump -i eth0 'prot1 or prot2'
+
+# Don't resolve IP addresses to host names (-n)
+sudo tcpdump -i eth0 -n prot1
+
+# Additionally don't resolve port numbers to service names (-nn)
+sudo tcpdump -i eth0 -nn prot1
 ```
 
 ### tee
