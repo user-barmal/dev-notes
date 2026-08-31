@@ -124,6 +124,7 @@ Flags
 -a
 -h
 -l
+-A
 -F		- Adds additional character to each name that indicates the type, e.g. directory/ script.sh*
 -L
 ```
@@ -308,8 +309,25 @@ tar -xzf file.tar.gz		- Unpack tar.
 
 ### tcpdump
 
-```
-sudo tcpdump -i eth0		- Listen for data on eth0 Ethernet network interface.
+Analyze the TCP traffic on specified interfaces.
+
+```bash
+# Cmd: sudo tcpdump -i <interface> ... -i <interfaceN> 'prot1 or prot2 ...'
+
+# Listen for data on eth0 Ethernet network interface
+sudo tcpdump -i eth0
+
+# Listen for data on eth0 Ethernet network interface. Filter only defined protocol, e.g. arp
+sudo tcpdump -i eth0 protocol
+
+# Listen for data on a few interfaces.
+sudo tcpdump -i eth0 -i eth1 -i eth2
+
+# Listen for data on all interfaces
+sudo tcpdump -i any
+
+# Listen for data on eth0 Ethernet network interface. Filter for specified protocols, e.g. 'arp and icmp'
+sudo tcpdump -i eth0 'prot1 or prot2'
 ```
 
 ### tee
@@ -358,5 +376,5 @@ cat a_file.txt | wc -l
 | Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
 | Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
 | Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
-| Networking | ... | `ping`, `tcpdump` |
+| Networking | ... | `ip`, `ping`, `tcpdump` |
 | Behavior modifiers | ... | `shopt`, `set`, `export`, `alias`, `unalias` |
