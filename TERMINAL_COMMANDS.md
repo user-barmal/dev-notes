@@ -10,8 +10,10 @@ and the whole command is: 'cmd arg subarg --flag'
 ## Table of Contents
 
 * [Commands](#Commands)
+	* [apt](#apt)
 	* [cd](#cd)
 	* [date](#date)
+	* [dpkg](#dpkg)
 	* [echo](#echo)
 	* [env](#env)
 	* [ffmpeg](#ffmpeg)
@@ -35,10 +37,24 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [tcpdump](#tcpdump)
 	* [tee](#tee)
 	* [tree](#tree)
+	* [veracrypt](#veracrypt)
 	* [wc](#wc)
 * [Commands grouped by functions](#commands-grouped-by-functions)
 
 ## Commands
+
+### apt
+
+Higher-level package management tool. It can download packages from configured repositories.  
+Unlike 'dpkg' it resolves and installs dependencies and can install local '.deb' files.
+
+```
+# Install from an external source
+sudo apt install screen
+
+# Install a local .deb package
+sudo apt install ./package.deb
+```
 
 ### cd
 
@@ -66,6 +82,28 @@ cd -
 ```bash
 # Date in a format useful for appending to a log name
 NOW_DATE=$(date '+%Y%m%d-%H%M%S')
+```
+
+### dpkg
+
+Install from a '.deb' package.  
+It installs the package, but does not resolve/download dependencies.  
+For easy '.deb' installation with dependency handling, use 'apt' instead.
+
+```
+# List all packages and search examples
+dpkg -l
+dpkg -l > packages.log
+dpkg -l | grep some_package_name
+
+# Install
+sudo dpkg -i PACKAGE_NAME.deb
+
+# Remove
+sudo dpkg -r installed-package-name
+
+# Reconfigure
+sudo dpkg-reconfigure PACKAGE_NAME.deb
 ```
 
 ### echo
@@ -394,6 +432,15 @@ Redirect the output to both stdout and a log file.
 ()			- Show the directory tree starting from the current one.
 () -L <n>		- Specify how deep should the tree go.
 () ./start/dir		- Show the directory tree starting from the specified one.
+```
+
+### veracrypt
+
+Official documentation: [Veracrypt command line usage for Linux and macOS](#https://veracrypt.io/en/Command%20Line%20Usage%20for%20Unix.html)
+
+Requires installation from a .deb package.
+
+```
 ```
 
 ### wc
