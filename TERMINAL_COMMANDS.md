@@ -139,7 +139,7 @@ Example aliases
 
 ```
 alias ll='ls -alh'
-alias lla='la -ls -A'
+alias lla='ls -lA'
 ```
 
 ### mkdir
