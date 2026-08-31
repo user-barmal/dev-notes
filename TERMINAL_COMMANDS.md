@@ -436,7 +436,7 @@ Redirect the output to both stdout and a log file.
 
 ### veracrypt
 
-Official documentation: [Veracrypt command line usage for Linux and macOS](#https://veracrypt.io/en/Command%20Line%20Usage%20for%20Unix.html)
+Official documentation: [Veracrypt command line usage for Linux and macOS](https://veracrypt.io/en/Command%20Line%20Usage%20for%20Unix.html)
 
 Requires installation from a .deb package.
 
