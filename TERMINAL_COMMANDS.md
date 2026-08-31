@@ -125,12 +125,21 @@ Flags
 -h
 -l
 -F		- Adds additional character to each name that indicates the type, e.g. directory/ script.sh*
+-L
 ```
 
 Usage - flags can be connected
 
 ```
 ls -alhF
+```
+
+It is common to add aliases for various ls modes in the configuration file - here ~/.bashrc
+Example aliases
+
+```
+alias ll='ls -alh'
+alias lla='la -ls -A'
 ```
 
 ### mkdir
