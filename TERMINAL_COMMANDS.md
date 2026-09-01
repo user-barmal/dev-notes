@@ -11,13 +11,18 @@ and the whole command is: 'cmd arg subarg --flag'
 
 * [Commands](#Commands)
 	* [apt](#apt)
+	* [awk](#awk)
 	* [cd](#cd)
 	* [date](#date)
+	* [docker](#docker)
 	* [dpkg](#dpkg)
 	* [echo](#echo)
 	* [env](#env)
+	* [exit](#exit)
 	* [ffmpeg](#ffmpeg)
+	* [find](#find)
 	* [grep](#grep)
+	* [head](#head)
 	* [ip](#ip)
 	* [less](#less)
 	* [ls](#ls)
@@ -30,15 +35,20 @@ and the whole command is: 'cmd arg subarg --flag'
 	* [printenv](#printenv)
 	* [pwd](#pwd)
 	* [qpdf](#qpdf)
+	* [rm](#rm)
 	* [rsync](#rsync)
+	* [sed](#sed)
 	* [set](#set)
 	* [seq](#seq)
+	* [tail](#tail)
 	* [tar](#tar)
 	* [tcpdump](#tcpdump)
 	* [tee](#tee)
+	* [touch](#touch)
 	* [tree](#tree)
 	* [veracrypt](#veracrypt)
 	* [wc](#wc)
+	* [which](#which)
 * [Commands grouped by functions](#commands-grouped-by-functions)
 
 ## Commands
@@ -55,6 +65,10 @@ sudo apt install screen
 # Install a local .deb package
 sudo apt install ./package.deb
 ```
+
+### awk
+
+...
 
 ### cd
 
@@ -121,6 +135,15 @@ echo <text>			- simly print the text
 env
 ```
 
+### exit
+
+Exits shell  
+Many tools also use this keyword to exit, e.g. 'ssh'.
+
+```
+exit
+```
+
 ### ffmpeg
 
 ```bash
@@ -149,6 +172,10 @@ ffmpeg -ss 10 -i input.mp4 -vcoded libx264 -crf 28 output.mp4
 ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 ```
 
+### find 
+
+...
+
 ### grep
 
 Get-regex-print
@@ -160,6 +187,10 @@ grep string filename
 # grep with OR
 grep -E 'case1|case2|case3'
 ```
+
+### head
+
+...
 
 ### ip
 
@@ -175,6 +206,8 @@ Flags
 
 a/addr/address			- Can anything between the shortest and the longest form.
 l/link
+	show
+		dev <devname>	- Show data for an interface specified by name.
 n/neighbor
 r/route
 	get <ip>		- Show a route from routing table to the specified IP.
@@ -217,8 +250,11 @@ alias lla='ls -lA'
 ### mkdir
 
 ```
-mkdir
-mkdir -p
+# Create a directory - will fail if creating in nested directories that don't exist
+mkdir /home/user/dir1
+
+# Create nested directories if they don't exist - creates sub3 but also sub2 and sub1 if they aren't there
+mkdir -p /home/user/dir1/sub1/sub2/sub3
 ```
 
 ### mktemp
@@ -328,6 +364,10 @@ qpdf --object-streams=generate --compress-streams=y input.pdf output.pdf
 qpdf input.pdf --rotate=+90:2-5 -- output.pdf
 ```
 
+### rm
+
+...
+
 ### rsync
 
 Synchronize an external directory to a specified target one. Good for backup.  
@@ -336,6 +376,7 @@ Faster than scp because it can ommit files that are already there.
 ```text
 # Flags
 () --delete	- this flag ensures that it is the exact copy. Removes things also from backup.
+() --exclude	- exclude the provided path from the rsync operation
 () -a		- preserve permissions, timestamps, etc.
 () -v		- verbose
 () -P		- progress + resume support
@@ -343,6 +384,10 @@ Faster than scp because it can ommit files that are already there.
 # Example execution:
 rsync -avP --dry-run --exclude=".ssh" user@192.168.10.10:~/ /home/local-user/backup/
 ```
+
+### sed
+
+...
 
 ### set
 
@@ -374,6 +419,10 @@ seq 5 10
 seq 1.5 -0.5 -15.3
 ```
 
+### tail
+
+...
+
 ### tar
 
 Flags
@@ -392,6 +441,17 @@ tar -xzf file.tar.gz		- Unpack tar.
 ### tcpdump
 
 Analyze the TCP traffic on specified interfaces.
+
+Flags
+
+```text
+-e			- Show Ethernet frame header
+-i			- Specify interface
+-n			- Don't resolve IP addresses to host names
+-nn			- Additional to 'n'. Don't resolve port numbers to service names
+```
+
+Usage
 
 ```bash
 # Cmd: sudo tcpdump -i <interface> ... -i <interfaceN> 'prot1 or prot2 ...'
@@ -425,6 +485,10 @@ Redirect the output to both stdout and a log file.
 ```bash
 ./setup-configuration.sh | tee configuration.log
 ```
+
+### touch
+
+...
 
 ### tree
 
@@ -461,6 +525,10 @@ Usage
 # Check number of lines in a file a_file.txt
 cat a_file.txt | wc -l
 ```
+
+### which
+
+...
 
 ## Commands grouped by functions
 | Category | Description | Example commands |
