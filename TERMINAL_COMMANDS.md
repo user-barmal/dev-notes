@@ -9,6 +9,12 @@ and the whole command is: 'cmd arg subarg --flag'
 
 ## Table of Contents
 
+| Char | Cmds |
+|---|---|
+| a | [apt](#apt) [awk](#awk) |
+| b | |
+| c | [cd](#cd) |
+
 * [Commands](#Commands)
 	* [apt](#apt)
 	* [awk](#awk)
