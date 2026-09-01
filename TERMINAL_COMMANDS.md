@@ -19,29 +19,29 @@ and the whole command is: 'cmd arg subarg --flag'
 
 | Char | Cmds |
 |---|---|
-| a | [apt](#apt) [awk](#awk) |
+| a | [apt](#apt), [awk](#awk) |
 | b | |
 | c | [cd](#cd) |
-| d | [date](#date) [docker](#docker) [dpkg](#dpkg) |
-| e | [echo](#echo) [env](#env) [exit](#exit) |
-| f | [ffmpeg](#ffmpeg) [find](#find) |
+| d | [date](#date), [docker](#docker), [dpkg](#dpkg) |
+| e | [echo](#echo), [env](#env), [exit](#exit) |
+| f | [ffmpeg](#ffmpeg), [find](#find) |
 | g | [grep](#grep) |
 | h | [head](#head) |
 | i | [ip](#ip) |
 | j | |
 | k | |
-| l | [less](#less) [ls](#ls) |
-| m | [mkdir](#mkdir) [mktemp](#mktemp) [more](#more) |
+| l | [less](#less), [ls](#ls) |
+| m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more) |
 | n | |
 | o | |
-| p | [pgrep](#pgrep) [ping](#ping) [pkill](#pkill) [printenv](#printenv) [pwd](#pwd) |
+| p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
 | q | [qpdf](#qpdf) |
-| r | [rm](#rm) [rsync](#rsync) |
-| s | [sed](#sed) [seq](#seq) [set](#set) |
-| t | [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [tee](#tee) [touch](#touch) [tree](#tree) |
+| r | [rm](#rm), [rsync](#rsync) |
+| s | [sed](#sed), [seq](#seq), [set](#set) |
+| t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tree](#tree) |
 | u | |
 | v | [veracrypt](#veracrypt) |
-| w | [wc](#wc) [which](#which) |
+| w | [wc](#wc), [which](#which) |
 | x | |
 | y | |
 | z | |
