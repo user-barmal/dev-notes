@@ -9,7 +9,7 @@ and the whole command is: 'cmd arg subarg --flag'
 
 ## Tables of Contents
 
-Table of content:
+* Table of content:
 	* [Commands grouped alphabetically](#Commands-grouped-alphabetically)
 	* [Commands grouped by functions](#Commands-grouped-by-functions)
 	* [Commands](#Commands)
