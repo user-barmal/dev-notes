@@ -7,55 +7,59 @@ Some of them may require additional instalation. This information is noted in th
 E.g.: cmd -> arg -> subarg -> () --flag - Here () means 'cmd arg subarg'  
 and the whole command is: 'cmd arg subarg --flag'
 
-## Table of Contents
+## Tables of Contents
+
+Table of content:
+	* [Commands grouped alphabetically](#Commands-grouped-alphabetically)
+	* [Commands grouped by functions](#Commands-grouped-by-functions)
+	* [Commands](#Commands)
+		* commands documentation
+
+## Commands grouped alphabetically
 
 | Char | Cmds |
 |---|---|
 | a | [apt](#apt) [awk](#awk) |
 | b | |
 | c | [cd](#cd) |
+| d | [date](#date) [docker](#docker) [dpkg](#dpkg) |
+| e | [echo](#echo) [env](#env) [exit](#exit) |
+| f | [ffmpeg](#ffmpeg) [find](#find) |
+| g | [grep](#grep) |
+| h | [head](#head) |
+| i | [ip](#ip) |
+| j | |
+| k | |
+| l | [less](#less) [ls](#ls) |
+| m | [mkdir](#mkdir) [mktemp](#mktemp) [more](#more) |
+| n | |
+| o | |
+| p | [pgrep](#pgrep) [ping](#ping) [pkill](#pkill) [printenv](#printenv) [pwd](#pwd) |
+| q | [qpdf](#qpdf) |
+| r | [rm](#rm) [rsync](#rsync) |
+| s | [sed](#sed) [seq](#seq) [set](#set) |
+| t | [tail](#tail) [tar](#tar) [tcpdump](#tcpdump) [tee](#tee) [touch](#touch) [tree](#tree) |
+| u | |
+| v | [veracrypt](#veracrypt) |
+| w | [wc](#wc) [which](#which) |
+| x | |
+| y | |
+| z | |
 
-* [Commands](#Commands)
-	* [apt](#apt)
-	* [awk](#awk)
-	* [cd](#cd)
-	* [date](#date)
-	* [docker](#docker)
-	* [dpkg](#dpkg)
-	* [echo](#echo)
-	* [env](#env)
-	* [exit](#exit)
-	* [ffmpeg](#ffmpeg)
-	* [find](#find)
-	* [grep](#grep)
-	* [head](#head)
-	* [ip](#ip)
-	* [less](#less)
-	* [ls](#ls)
-	* [mkdir](#mkdir)
-	* [mktemp](#mktemp)
-	* [more](#more)
-	* [pgrep](#pgrep)
-	* [ping](#ping)
-	* [pkill](#pkill)
-	* [printenv](#printenv)
-	* [pwd](#pwd)
-	* [qpdf](#qpdf)
-	* [rm](#rm)
-	* [rsync](#rsync)
-	* [sed](#sed)
-	* [set](#set)
-	* [seq](#seq)
-	* [tail](#tail)
-	* [tar](#tar)
-	* [tcpdump](#tcpdump)
-	* [tee](#tee)
-	* [touch](#touch)
-	* [tree](#tree)
-	* [veracrypt](#veracrypt)
-	* [wc](#wc)
-	* [which](#which)
-* [Commands grouped by functions](#commands-grouped-by-functions)
+## Commands grouped by functions
+
+| Category | Description | Example commands |
+|---|---|---|
+| Navigation and inspection | Where am I, what's here, where is X | `cd`, `ls`, `tree`, `pwd`, `find`, `which` |
+| Viewing file contents | Reading text-based contenet without editing | `cat`, `less`, `more`, `head`, `tail` |
+| Creating, modifying, removing | Changing what exists on disk | `touch`, `mkdir`, `cp`, `mv`, `rm`, `ln`, `mktemp` |
+| Searching and text processing | Finding or transforming text content | `grep`, `sed`, `awk`, `sort`, `cut` |
+| Permissions and ownership | Who can access/change what | `chmod`, `chown` |
+| Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
+| Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
+| Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
+| Networking | ... | `ip`, `ping`, `tcpdump` |
+| Behavior modifiers | ... | `shopt`, `set`, `export`, `alias`, `unalias` |
 
 ## Commands
 
@@ -536,16 +540,3 @@ cat a_file.txt | wc -l
 
 ...
 
-## Commands grouped by functions
-| Category | Description | Example commands |
-|---|---|---|
-| Navigation and inspection | Where am I, what's here, where is X | `cd`, `ls`, `tree`, `pwd`, `find`, `which` |
-| Viewing file contents | Reading text-based contenet without editing | `cat`, `less`, `more`, `head`, `tail` |
-| Creating, modifying, removing | Changing what exists on disk | `touch`, `mkdir`, `cp`, `mv`, `rm`, `ln`, `mktemp` |
-| Searching and text processing | Finding or transforming text content | `grep`, `sed`, `awk`, `sort`, `cut` |
-| Permissions and ownership | Who can access/change what | `chmod`, `chown` |
-| Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
-| Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
-| Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
-| Networking | ... | `ip`, `ping`, `tcpdump` |
-| Behavior modifiers | ... | `shopt`, `set`, `export`, `alias`, `unalias` |
