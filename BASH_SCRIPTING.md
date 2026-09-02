@@ -39,6 +39,7 @@ about how bash *executes* code.
 * [Connectors](#Connectors)
 * [Redirection](#Redirection)
 * [Functions](#Functions)
+* [Heredoc](#Heredoc)
 
 ## Comments
 
@@ -643,4 +644,18 @@ Call
 
 ```bash
 my_function
+```
+
+## Heredoc
+
+```bash
+cat<<NAME
+[...]
+NAME
+```
+
+```bash
+cat<<'NAME'
+[...]
+NAME
 ```
