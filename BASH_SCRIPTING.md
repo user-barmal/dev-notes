@@ -631,19 +631,35 @@ source script.sh
 
 ## Functions
 
-Body
+Basic syntax
 
 ```bash
+# Body
 my_function() {
 	local VARIABLE=3
 	echo "func_body"
 }
+
+# Call
+my_function
 ```
 
-Call
+Passing arguments is like passing them to a script
 
 ```bash
+# Body
+my_function() {
+	echo "Number of arguments passed: $#"
+	echo "Passed arguments: $@"
+}
+
+# Calls
 my_function
+my_function one_arg
+my_function 1 2
+my_function 1 '2 a'
+my_function 1 '2 a' $VAR
+my_function file_{1..20}.temp
 ```
 
 ## Heredoc
@@ -659,3 +675,11 @@ cat<<'NAME'
 [...]
 NAME
 ```
+
+## Scripting - shebang
+
+...
+
+## Scripting - execution permission
+
+...
