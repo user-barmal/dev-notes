@@ -616,12 +616,14 @@ shopt -u option_name
 
 Options
 
-```bash
-# Enable case-insensitive matching with globbing
-shopt -s nocaseglob
+```text
+autocd - ...
+cdspell - ...
+extglob - ...
+nocaseglob - Enable case-insensitive matching with globbing
+nullglob - ...
+globstar - Allow double start recursive search **
 
-# Allow double start recursive search **
-shopt -s globstar
 ```
 
 ### systemctl
