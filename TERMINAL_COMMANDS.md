@@ -37,7 +37,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
 | q | [qpdf](#qpdf) |
 | r | [rm](#rm), [route](#route), [rsync](#rsync) |
-| s | [sed](#sed), [seq](#seq), [set](#set), [systemctl](#systemctl) |
+| s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [systemctl](#systemctl) |
 | t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tree](#tree) |
 | u | [usermod](#usermod) |
 | v | [veracrypt](#veracrypt), [virsh](#virsh) |
@@ -59,7 +59,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
 | Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
 | Networking | ... | `bridge`, `ip`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
-| Behavior modifiers | ... | `shopt`, `set`, `export`, `alias`, `unalias` |
+| Behavior modifiers | ... | `set`, `shopt`, `export`, `alias`, `unalias` |
 
 ## Commands
 
@@ -279,7 +279,15 @@ ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 
 ### find 
 
-...
+```bash
+# Search for this exact name in this directory (dot means this dir) and subdirectories
+find . -name passed_name
+
+# Search for a name with globbing characters (for more info look at bash scripting doc - globbing)
+find . -name *.txt
+find . -name [abc]*.txt
+find . -name [^x]file.txt
+```
 
 ### grep
 
@@ -586,6 +594,13 @@ seq 5 10
 
 # inclusive sequence with step: <num1:step:num2>
 seq 1.5 -0.5 -15.3
+```
+
+### shopt
+
+```bash
+# Enable case-insensitive matching with globbing
+shopt -s nocaseglob
 ```
 
 ### systemctl

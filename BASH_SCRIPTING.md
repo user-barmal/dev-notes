@@ -58,31 +58,50 @@ This happens at the shell parsing stage, not inside the command.
 When `echo *.md` is written, bash finds what matches it and rewrites the command.
 
 
-Matches any number of characters
+Matches any number of characters '*'
 
 ```bash
 ls *
 ls *.md
 ```
 
-Matches one character
+Matches one character '?'
 
 ```bash
 ls file?.txt
 cat ./fan-temp-no-??/temp.log
 ```
 
-Matches any character from set
+Matches any character from set '[]'
 
 ```bash
 ls file[123].txt
 ```
 
-Matches any character not from set
+Matches any character not from set '[^]'
 
 ```bash
 ls file[!123].txt
 ls file[^123].txt
+```
+
+Matches characters from a range
+
+```text
+[0-9]
+[a-z]
+[A-Z]
+[3-6]
+[D-H]
+# Combine
+[1-5f-ja-c8-9]
+```
+
+Use globbing characters as normal ones '\' - escape character
+
+```bash
+# Search for: file?.txt, not using the '?' special character
+ls file\?.txt
 ```
 
 ## Variables
