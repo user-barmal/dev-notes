@@ -22,7 +22,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | a | [apt](#apt), [awk](#awk) |
 | b | [bridge](#bridge) |
 | c | [cd](#cd) |
-| d | [date](#date), [docker](#docker), [dpkg](#dpkg), [du](#du) |
+| d | [date](#date), [dd](#dd), [docker](#docker), [dpkg](#dpkg), [du](#du) |
 | e | [echo](#echo), [env](#env), [exit](#exit) |
 | f | [ffmpeg](#ffmpeg), [find](#find) |
 | g | [grep](#grep) |
@@ -32,7 +32,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | k | |
 | l | [less](#less), [ls](#ls) |
 | m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more) |
-| n | |
+| n | [ncdu](#ncdu) |
 | o | [ovs-vsctl](#ovs-vsctl) |
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
 | q | [qpdf](#qpdf) |
@@ -118,6 +118,17 @@ cd -
 NOW_DATE=$(date '+%Y%m%d-%H%M%S')
 ```
 
+### dd
+
+So-called 'disk destroyer'.  
+Use with caution!
+
+```text
+- Can immediatelly erase data due to writing the command with a typo.
+- Zero safety rails.
+- No error checking.
+```
+
 ### docker
 
 Docker is a large tool. Here are some quick commands used for simple actions.  
@@ -187,7 +198,9 @@ sudo dpkg-reconfigure PACKAGE_NAME.deb
 
 ### du
 
-Allows users to analyze and report disk usage.
+Allows users to analyze and report disk usage.  
+Use this for simple checks. For more advanced analysis use 'ncdu' instead  
+(requires installation).
 
 ```
 # Analyze starting from the current directory
@@ -198,6 +211,18 @@ du -h
 
 # Limit the depth of search
 du --max-depth=3
+
+# Print only summarized size
+du -s
+
+# Specifying directory to search through
+du /dir/to/search/
+
+# Excluding
+du --exclude="*.mp4" --exclude="tmp"
+
+# Mixing flags
+du -h --max-depth=1 ~/some/directory/ --exclude="system_dir" 2>/dev/null
 ```
 
 ### echo
@@ -379,6 +404,16 @@ mktemp -d
 
 ### more
 Older version of 'less'. No option for going back. Use 'less' instead.
+
+### ncdu
+
+An intuitive tool used for analyzing used space. Requries installation.  
+For simple checks 'du' command can be used.
+
+```
+# Simple execution - opens a terminal TUI (text-based user interface)
+ncdu
+```
 
 ### ovs-vsctl
 
