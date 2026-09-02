@@ -33,7 +33,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | l | [less](#less), [ls](#ls) |
 | m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more) |
 | n | |
-| o | |
+| o | [ovs-vsctl](#ovs-vsctl) |
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
 | q | [qpdf](#qpdf) |
 | r | [rm](#rm), [rsync](#rsync) |
@@ -58,7 +58,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
 | Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
 | Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
-| Networking | ... | `ip`, `ping`, `tcpdump` |
+| Networking | ... | `ip`, `ovs-vsctl`, `ping`, `tcpdump` |
 | Behavior modifiers | ... | `shopt`, `set`, `export`, `alias`, `unalias` |
 
 ## Commands
@@ -343,6 +343,11 @@ mktemp -d
 
 ### more
 Older version of 'less'. No option for going back. Use 'less' instead.
+
+### ovs-vsctl
+
+Virtual switching.
+...
 
 ### pgrep
 
