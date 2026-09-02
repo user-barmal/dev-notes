@@ -22,10 +22,13 @@ about how bash *executes* code.
 * [Comparison operators](#Comparison-operators)
 * [Test command](#Test-command)
 * [Extended test command](#Extended-test-command)
+* [Arithmetic evaluation](#Arithmetic-evaluation)
+* [Arithmetic expansion](#Arithmetic-expansion)
 * [Conditionals - if-elif-else-fi](#Conditionals---if-elif-else-fi)
 * [Conditionals - if-elif-else-fi oneliners](#Conditionals---if-elif-else-fi-oneliners)
 * [Conditionals - case-esac](#Conditionals---case-esac)
-* [Loops](#Loops)
+* [Loops - for](#Loops---for)
+* [Loops - while](#Loops---while)
 * [Exit status](#Exit-status)
 * [Get an argument](#Get-an-argument)
 * [Check number of arguments](#Check-number-of-arguments)
@@ -35,6 +38,7 @@ about how bash *executes* code.
 * [Sourcing](#Sourcing)
 * [Connectors](#Connectors)
 * [Redirection](#Redirection)
+* [Functions](#Functions)
 
 ## Comments
 
@@ -221,7 +225,7 @@ Connecting tests with logical operators (different than in [[ ]])
 [ sth -a sth2 -o sth3 ]
 
 # Logical operators outside
-&& ||
+&& || !
 [ test1 ] && [ test2 ] || [ test3 ]
 ```
 
@@ -252,6 +256,18 @@ SOME_NAME="First Second"
 
 ```bash
 # Boolean operators inside the brackets && ||
+```
+
+## Arithmetic evaluation
+
+```text
+(( ... ))
+```
+
+## Arithmetic expansion
+
+```text
+$(( ... ))
 ```
 
 ## Conditionals - if-elif-else-fi
@@ -418,7 +434,7 @@ case $ROLE in
 esac
 ```
 
-## Loops
+## Loops - for
 
 ```bash
 # For loop - oneliner. Uses {1..10} which avoids using external seq cmd.
@@ -435,6 +451,14 @@ for i in $(seq 1 10)
 do
 	some_steps.sh
 done
+```
+
+## Loops - while
+
+```bash
+# until loop difference
+# break and continue
+# nested loops
 ```
 
 ## Exit status
@@ -602,4 +626,21 @@ source script.sh
 <
 2>&1
 /dev/null
+```
+
+## Functions
+
+Body
+
+```bash
+my_function() {
+	local VARIABLE=3
+	echo "func_body"
+}
+```
+
+Call
+
+```bash
+my_function
 ```
