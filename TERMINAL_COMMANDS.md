@@ -192,14 +192,29 @@ ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 
 ### grep
 
-Get-regex-print
+grep is a tool for searching for a matching string.  
+grep - Name comes from an old syntax g/re/p - global/regex/print.  
+It supports basic regex by default and extended regex with -E flag.  
+The regex characters are additionally explained in details in the regex file  
+dedicated to explain it in various tools as the characters can differ.
 
+```text
+# Basic regex characters overview - more escaping
+a|b a* a\+ a\? a\{n\} a\{n,k\} \(abc\) [abc] ^line line$
+
+# Extended regex characters overview - cleaner syntax. Use for more complicated patterns.
+a|b a* a+ a? {n} a{n} a{n,k} (abc) [abc] ^line line$
 ```
-# Simple usage
+
+```bash
+# Simple usage - search for a string
 grep string filename
 
-# grep with OR
-grep -E 'case1|case2|case3'
+# Search with basic regex OR
+grep 'case1|case2|case3'
+
+# Search for a line start with 0: or 6: with extended regex:
+grep -E '^(0|6):' file
 ```
 
 ### head
