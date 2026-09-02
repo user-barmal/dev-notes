@@ -1,9 +1,14 @@
+## scp
+
+...
+
 ## ssh
 
 ```
-ssh -q					- Runs ssh in quite mode without any warning or welcomming
+ssh -q					- Runs ssh in quiet mode without any warning or welcomming
 					  messages. Used especially for scripting.
 ssh ${MY_USER}@${SERV_IP_ADDRESS}	- ssh with credentials passed in variables.
+ssh <name>				- ssh with Host name defined in ~/.ssh/config (see below)
 ssh -o <option>=<value>			- Start ssh with additional options.
 ```
 
