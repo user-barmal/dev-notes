@@ -598,9 +598,30 @@ seq 1.5 -0.5 -15.3
 
 ### shopt
 
+Syntax
+
+```bash
+# Check current options settings
+shopt
+
+# Check one option settings
+shopt option_name
+
+# Set an option
+shopt -s option_name
+
+# Unset an option
+shopt -u option_name
+```
+
+Options
+
 ```bash
 # Enable case-insensitive matching with globbing
 shopt -s nocaseglob
+
+# Allow double start recursive search **
+shopt -s globstar
 ```
 
 ### systemctl

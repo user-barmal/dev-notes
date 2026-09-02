@@ -97,6 +97,19 @@ Matches characters from a range
 [1-5f-ja-c8-9]
 ```
 
+Quotes disable globbing
+```bash
+ls *.txt
+ls "*.txt"  # disabled
+```
+
+Match recursively '**'
+
+```bash
+# Searches in all nested directories there (may require globstar setting - see shopt)
+ls /some/dir/**/*.txt
+```
+
 Use globbing characters as normal ones '\' - escape character
 
 ```bash
