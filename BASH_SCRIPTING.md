@@ -86,7 +86,16 @@ ls file[^123].txt
 ```
 
 ## Variables
-...
+
+'local' hides the exit status.
+In the following case, it will show the 'local' command status, not 'some_command'.
+
+```bash
+my_func() {
+	local x=$(some_command)
+	echo $?
+}
+```
 
 ## Special variables
 
