@@ -27,7 +27,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | f | [ffmpeg](#ffmpeg), [find](#find) |
 | g | [grep](#grep) |
 | h | [head](#head) |
-| i | [ip](#ip) |
+| i | [ifconfig](#ifconfig), [ip](#ip) |
 | j | |
 | k | |
 | l | [less](#less), [ls](#ls) |
@@ -36,11 +36,11 @@ and the whole command is: 'cmd arg subarg --flag'
 | o | [ovs-vsctl](#ovs-vsctl) |
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
 | q | [qpdf](#qpdf) |
-| r | [rm](#rm), [rsync](#rsync) |
+| r | [rm](#rm), [route](#route), [rsync](#rsync) |
 | s | [sed](#sed), [seq](#seq), [set](#set), [systemctl](#systemctl) |
 | t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tree](#tree) |
 | u | [usermod](#usermod) |
-| v | [veracrypt](#veracrypt) |
+| v | [veracrypt](#veracrypt), [virsh](#virsh) |
 | w | [wc](#wc), [which](#which) |
 | x | |
 | y | |
@@ -58,7 +58,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
 | Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
 | Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
-| Networking | ... | `ip`, `ovs-vsctl`, `ping`, `tcpdump` |
+| Networking | ... | `ip`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
 | Behavior modifiers | ... | `shopt`, `set`, `export`, `alias`, `unalias` |
 
 ## Commands
@@ -266,6 +266,19 @@ grep -E '^(0|6):' file
 
 ...
 
+### ifconfig
+
+```
+# Show interfaces configuration
+ifconfig
+
+# OVS bridge command
+ifconfig my_bridge up
+
+# Enable port
+ifconfig port_name up
+```
+
 ### ip
 
 Flags
@@ -285,6 +298,8 @@ l/link
 n/neighbor
 r/route
 	get <ip>		- Show a route from routing table to the specified IP.
+tuntap
+	add mode tap vport1
 ```
 
 ### less
@@ -347,7 +362,20 @@ Older version of 'less'. No option for going back. Use 'less' instead.
 ### ovs-vsctl
 
 Virtual switching.
-...
+
+```bash
+# Add a new OVS bridge
+ovs-vsctl add-br mybridge
+
+# Show configured virtual switches
+ovs-vsctl show
+
+# Delete a bridge
+ovs-vsctl del-br mybridge
+
+# Add eth0 to bridge
+ovs-vsctl add-port mybridge eth0
+```
 
 ### pgrep
 
@@ -446,6 +474,12 @@ qpdf input.pdf --rotate=+90:2-5 -- output.pdf
 ### rm
 
 ...
+
+### route
+
+```
+route -n
+```
 
 ### rsync
 
@@ -601,6 +635,10 @@ Requires installation from a .deb package.
 
 ```
 ```
+
+### virsh
+
+Virtual machines management. It is a CLI built to interact with libvirt.
 
 ### wc
 
