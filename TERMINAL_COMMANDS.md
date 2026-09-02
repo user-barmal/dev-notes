@@ -646,6 +646,10 @@ Requires installation from a .deb package.
 
 Virtual machines management. It is a CLI built to interact with libvirt.
 
+```bash
+virsh domiflist
+```
+
 ### wc
 
 Word-count
