@@ -22,7 +22,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | a | [apt](#apt), [awk](#awk) |
 | b | [bridge](#bridge) |
 | c | [cd](#cd) |
-| d | [date](#date), [docker](#docker), [dpkg](#dpkg) |
+| d | [date](#date), [docker](#docker), [dpkg](#dpkg), [du](#du) |
 | e | [echo](#echo), [env](#env), [exit](#exit) |
 | f | [ffmpeg](#ffmpeg), [find](#find) |
 | g | [grep](#grep) |
@@ -50,7 +50,7 @@ and the whole command is: 'cmd arg subarg --flag'
 
 | Category | Description | Example commands |
 |---|---|---|
-| Navigation and inspection | Where am I, what's here, where is X | `cd`, `ls`, `tree`, `pwd`, `find`, `which` |
+| Navigation and inspection | Where am I, what's here, where is X | `cd`, `du`, `ls`, `tree`, `pwd`, `find`, `which` |
 | Viewing file contents | Reading text-based contenet without editing | `cat`, `less`, `more`, `head`, `tail` |
 | Creating, modifying, removing | Changing what exists on disk | `touch`, `mkdir`, `cp`, `mv`, `rm`, `ln`, `mktemp` |
 | Searching and text processing | Finding or transforming text content | `grep`, `sed`, `awk`, `sort`, `cut` |
@@ -183,6 +183,21 @@ sudo dpkg -r installed-package-name
 
 # Reconfigure
 sudo dpkg-reconfigure PACKAGE_NAME.deb
+```
+
+### du
+
+Allows users to analyze and report disk usage.
+
+```
+# Analyze starting from the current directory
+du
+
+# Print file and directories size in human-readable format
+du -h
+
+# Limit the depth of search
+du --max-depth=3
 ```
 
 ### echo
