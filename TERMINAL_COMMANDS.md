@@ -39,7 +39,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | r | [rm](#rm), [rsync](#rsync) |
 | s | [sed](#sed), [seq](#seq), [set](#set), [systemctl](#systemctl) |
 | t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tree](#tree) |
-| u | |
+| u | [usermod](#usermod) |
 | v | [veracrypt](#veracrypt) |
 | w | [wc](#wc), [which](#which) |
 | x | |
@@ -574,6 +574,18 @@ Redirect the output to both stdout and a log file.
 ()			- Show the directory tree starting from the current one.
 () -L <n>		- Specify how deep should the tree go.
 () ./start/dir		- Show the directory tree starting from the specified one.
+```
+
+### usermod
+
+Manage user groups
+
+```bash
+# Add user to a group
+sudo usermod -aG groupname username
+
+# Check if user was added to the group. May require relog/reconnect to apply.
+cat /etc/group | grep groupname
 ```
 
 ### veracrypt
