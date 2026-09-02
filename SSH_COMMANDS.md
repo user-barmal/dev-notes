@@ -34,6 +34,7 @@ by specifying the key in the ssh command:
 
 ```bash
 ssh -i root_key root@ip_address
+```
 
 ### Commands
 
