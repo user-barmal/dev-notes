@@ -1,3 +1,9 @@
+## usage
+
+```text
+git <command> <flags>					- The following commands are the 'git' command options.
+```
+
 ## branch
 
 	-M <name>					- Forcefully rename the current branch to that name.
@@ -28,6 +34,10 @@
 
 	()						- List references in remote repo.
 							  Fails if no connection.
+
+## merge
+
+	--ff-only <branch-name>				- Merge only if fast-forward possible. Do while on target branch.
 
 ## push
 
