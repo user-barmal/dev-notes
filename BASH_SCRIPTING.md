@@ -23,6 +23,7 @@ about how bash *executes* code.
 * [Test command](#Test-command)
 * [Extended test command](#Extended-test-command)
 * [Conditionals - if-elif-else-fi](#Conditionals---if-elif-else-fi)
+* [Conditionals - if-elif-else-fi oneliners](#Conditionals---if-elif-else-fi-oneliners)
 * [Conditionals - case-esac](#Conditionals---case-esac)
 * [Loops](#Loops)
 * [Exit status](#Exit-status)
@@ -255,20 +256,27 @@ SOME_NAME="First Second"
 
 ## Conditionals - if-elif-else-fi
 
+if
+
 ```bash
-# if
 if [ "$#" -ne 2 ]; then
 	echo "No. of args not equal to 2"
 fi
+```
 
-# if-else
+if-else
+
+```bash
 if [ "$#" -eq 2 ]; then
 	echo "No. of args equal to 2"
 else
 	echo "Not 2 arguments"
 fi
+```
 
-# if-elif-else
+if-elif-else
+
+```bash
 if [ "$#" -eq 1 ]; then
 	echo "One arg"
 elif [ "$#" -eq 2 ]; then
@@ -276,20 +284,28 @@ elif [ "$#" -eq 2 ]; then
 else
 	echo "Other num. of args"
 fi
+```
 
-# nested if
+nested if
+```bash
 if [ "$#" -eq 1 ]; then
 	if [ "$2" -ne "off" ]; then
 		set_up_something.sh
 	fi
 fi
+```
 
-# if with command output - passes the command printed output to if
+if with command output - passes the command printed output to if
+
+```bash
 if [ "$(./get_mount_name.sh 2>/dev/null)" == "/some/mount/name" ]; then
 	echo "Mounted (based on the passed string check)"
 fi
+```
 
-# if with exit code - passes the command exit code to if
+if with exit code - passes the command exit code to if
+
+```bash
 if grep -q "text" a_file.txt; then
 	echo "It's there"
 fi
@@ -297,6 +313,29 @@ fi
 if ./check_mount.sh; then
 	echo "Mounted (based on exit code check)"
 fi
+```
+
+## Conditionals - if-elif-else-fi oneliners
+
+Due to hard readability it is not advised to make conditionals larger than  
+a simple 'if' as oneliners.
+
+if
+
+```bash
+if [ "$#" -eq 2 ]; then echo "2 args passed"; fi
+```
+
+if-else
+
+```bash
+if [ "$#" -eq 2 ]; then echo "2 args"; else echo "Other num. of args"; fi
+```
+
+if-elif-else
+
+```bash
+if [ "$#" -eq 1 ]; then echo "1 arg"; elif [ "$#" -eq 2 ]; then echo "2 args"; else echo "Other num. of args"; fi
 ```
 
 ## Conditionals - case-esac
@@ -518,8 +557,24 @@ Run a command in an isolated child process. No output capture.
 Use e.g. to run a 'cd' that you dont' want to leak into the current shell.
 
 ```
+# Usage
 (action_inside)			- Syntax
 (cd /)				- Will go to the root dir in the subshell but won't move in the current one.
+
+# Here due to the syntax it will be interpreted as array, not subshell
+VAR=(date)
+echo $VAR  # '(date)'
+
+# To properly assign a previous command success status use this instead
+(date); VAR=$?
+
+# Multiline subshell
+(
+	cd ~/
+	mkdir temp1
+	./do_something.sh
+	rmdir temp1
+)
 ```
 
 ## Sourcing
