@@ -32,7 +32,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | k | |
 | l | [less](#less), [ls](#ls) |
 | m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more) |
-| n | [ncdu](#ncdu) |
+| n | [ncdu](#ncdu), [nslookup](#nslookup) |
 | o | [ovs-vsctl](#ovs-vsctl) |
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
 | q | [qpdf](#qpdf) |
@@ -58,7 +58,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
 | Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
 | Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
-| Networking | ... | `bridge`, `ip`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
+| Networking | ... | `bridge`, `ip`, `nslookup`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
 | Behavior modifiers | ... | `set`, `shopt`, `export`, `alias`, `unalias` |
 
 ## Commands
@@ -421,6 +421,14 @@ For simple checks 'du' command can be used.
 ```
 # Simple execution - opens a terminal TUI (text-based user interface)
 ncdu
+```
+
+### nslookup
+
+Sends requests to a DNS server.
+
+```bash
+nslookup www.site-name.com
 ```
 
 ### ovs-vsctl
