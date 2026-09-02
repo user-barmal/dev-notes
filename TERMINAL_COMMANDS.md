@@ -20,7 +20,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | Char | Cmds |
 |---|---|
 | a | [apt](#apt), [awk](#awk) |
-| b | |
+| b | [bridge](#bridge) |
 | c | [cd](#cd) |
 | d | [date](#date), [docker](#docker), [dpkg](#dpkg) |
 | e | [echo](#echo), [env](#env), [exit](#exit) |
@@ -58,7 +58,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
 | Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
 | Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
-| Networking | ... | `ip`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
+| Networking | ... | `bridge`, `ip`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
 | Behavior modifiers | ... | `shopt`, `set`, `export`, `alias`, `unalias` |
 
 ## Commands
@@ -82,6 +82,12 @@ sudo apt install ./package.deb
 # Print only the last value in a line
 awk '{print $NF}' filename.txt
 echo "awk will only print: THIS" | awk '{print $NF}'
+```
+
+### bridge
+
+```bash
+bridge link
 ```
 
 ### cd
