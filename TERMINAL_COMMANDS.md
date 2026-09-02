@@ -37,7 +37,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
 | q | [qpdf](#qpdf) |
 | r | [rm](#rm), [rsync](#rsync) |
-| s | [sed](#sed), [seq](#seq), [set](#set) |
+| s | [sed](#sed), [seq](#seq), [set](#set), [systemctl](#systemctl) |
 | t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tree](#tree) |
 | u | |
 | v | [veracrypt](#veracrypt) |
@@ -78,7 +78,11 @@ sudo apt install ./package.deb
 
 ### awk
 
-...
+```
+# Print only the last value in a line
+awk '{print $NF}' filename.txt
+echo "awk will only print: THIS" | awk '{print $NF}'
+```
 
 ### cd
 
@@ -428,6 +432,10 @@ seq 5 10
 # inclusive sequence with step: <num1:step:num2>
 seq 1.5 -0.5 -15.3
 ```
+
+### systemctl
+
+...
 
 ### tail
 
