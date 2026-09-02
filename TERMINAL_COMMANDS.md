@@ -112,6 +112,51 @@ cd -
 NOW_DATE=$(date '+%Y%m%d-%H%M%S')
 ```
 
+### docker
+
+Docker is a large tool. Here are some quick commands used for simple actions.  
+Advanced docker tasks won't be discussed here.
+
+Docker image - static, read-only blueprint stored on disk  
+Docker container - a live, running instance of that image executing in memory
+
+Flags
+
+```text
+exec
+	-i		- Interactive. Keeps input connected.
+	-t		- Gives a terminal (TTY).
+```
+
+```bash
+# Open a live, interactive terminal inside a running container
+docker exec -it container_name bash
+
+# Copy a file
+docker cp container_name:/file/path/within/container /host/path/target
+
+# Create a container from an image
+docker run
+
+# List all locally stored docker images
+docker images
+
+# List running containers
+docker ps
+
+# List running and exited containers
+docker ps -a
+
+# Stop a running container gracefully
+docker stop
+
+# Stop/kill a running container immediatelly
+docker kill
+
+# Delete a stopped container
+docker rm
+```
+
 ### dpkg
 
 Install from a '.deb' package.  
