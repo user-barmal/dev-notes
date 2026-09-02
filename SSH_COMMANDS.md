@@ -30,7 +30,11 @@ If correct, you are granted the access.
 Example:
 I had a case where a device was configured to not allow password based connection.  
 It had a pair of keys configured in a way that if you had the key, you were able to log in  
-by specifying the key in the ssh command:
+by specifying the key in the ssh command. The shared key was a private key, and on the device  
+was a matching public key. The device was the server side with the user public key stored in  
+the /root/.ssh/authorized_keys.
+
+To log in used:
 
 ```bash
 ssh -i root_key root@ip_address
@@ -69,6 +73,12 @@ ServerAliveCountMax <no>		- ...
 ssh -R <IP-address>		- remove an entry in ~/.ssh/known_hosts for this IP-address.
 
 ssh -y -f ~/.ssh/id_rsa		- derive the public key from private one.
+```
+
+## /etc/ssh/sshd_config
+
+```text
+PasswordAuthentication no
 ```
 
 ## ~/.ssh/config
