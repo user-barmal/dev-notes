@@ -40,7 +40,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [systemctl](#systemctl) |
 | t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tree](#tree) |
 | u | [unzip](#unzip), [usermod](#usermod) |
-| v | [veracrypt](#veracrypt), [virsh](#virsh) |
+| v | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh) |
 | w | [wc](#wc), [which](#which) |
 | x | |
 | y | |
@@ -754,6 +754,14 @@ Requires installation from a .deb package.
 
 ```
 ```
+
+### vi
+
+Original text editor. A predecesor of vim.
+
+### vim
+
+Improved version of vi with much more options.
 
 ### virsh
 
