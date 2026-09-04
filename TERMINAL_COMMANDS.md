@@ -42,7 +42,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | u | [unzip](#unzip), [usermod](#usermod) |
 | v | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh) |
 | w | [wc](#wc), [which](#which) |
-| x | |
+| x | [xxd](#xxd) |
 | y | |
 | z | [zip](#zip) |
 
@@ -791,6 +791,10 @@ cat a_file.txt | wc -l
 ```
 
 ### which
+
+...
+
+### xxd
 
 ...
 

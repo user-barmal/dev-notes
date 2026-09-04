@@ -515,6 +515,21 @@ case $CHOICE in
 esac
 ```
 
+Lowercasing variable for simpler logic
+
+```bash
+case ${CHOICE,,} in
+	y | yes)
+		echo "You said yes"
+		;;
+	n | no)
+		echo "You said no"
+		;;
+	*)
+		echo "Invalid response"
+esac
+```
+
 AND logic using concatenation ':'
 
 ```bash
