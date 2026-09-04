@@ -485,7 +485,10 @@ if [ "$#" -eq 1 ]; then echo "1 arg"; elif [ "$#" -eq 2 ]; then echo "2 args"; e
 ## Conditionals - case-esac
 
 Basic syntax  
-The case statement supports standard Bash globbing patterns (*, ?, [], [^])
+The case statement supports standard Bash globbing patterns in patterns (*, ?, [], [^])  
+Globbing is not supported in the case variable.  
+In case you don't need to quote variable "$VAR" to avoid word splitting.  
+It natively supports it and wont split.
 
 ```bash
 case $VAR in
