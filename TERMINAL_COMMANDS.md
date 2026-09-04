@@ -655,14 +655,19 @@ globstar - Allow double start recursive search **
 Flags
 
 ```text
+-c				- Create a new archive.
 -x				- Unpack files from archive.
--z				- Unpack gzip compression.
+-z				- Pack/Unpack gzip compression.
 -f				- Specfiy filename.
 ```
 
 Usage example
 ```
-tar -xzf file.tar.gz		- Unpack tar.
+# Pack tar pointing to a directory
+tar -czvf new_archive_name.tar.gz /directory/to/tar/
+
+# Unpack tar
+tar -xzf file.tar.gz
 ```
 
 ### tcpdump
