@@ -31,7 +31,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | j | |
 | k | |
 | l | [less](#less), [ls](#ls) |
-| m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more) |
+| m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mv](#mv) |
 | n | [ncdu](#ncdu), [nslookup](#nslookup) |
 | o | [ovs-vsctl](#ovs-vsctl) |
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
@@ -39,12 +39,12 @@ and the whole command is: 'cmd arg subarg --flag'
 | r | [rm](#rm), [route](#route), [rsync](#rsync) |
 | s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [systemctl](#systemctl) |
 | t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tree](#tree) |
-| u | [usermod](#usermod) |
+| u | [unzip](#unzip), [usermod](#usermod) |
 | v | [veracrypt](#veracrypt), [virsh](#virsh) |
 | w | [wc](#wc), [which](#which) |
 | x | |
 | y | |
-| z | |
+| z | [zip](#zip) |
 
 ## Commands grouped by functions
 
@@ -413,6 +413,10 @@ mktemp -d
 ### more
 Older version of 'less'. No option for going back. Use 'less' instead.
 
+### mv
+
+...
+
 ### ncdu
 
 An intuitive tool used for analyzing used space. Requries installation.  
@@ -425,10 +429,14 @@ ncdu
 
 ### nslookup
 
-Sends requests to a DNS server.
+Sends requests to a DNS server. Find IP for name or name for IP.
 
 ```bash
+# IP for name
 nslookup www.site-name.com
+
+# Name for IP
+nslookup 57.146.111.1
 ```
 
 ### ovs-vsctl
@@ -717,6 +725,15 @@ Redirect the output to both stdout and a log file.
 () ./start/dir		- Show the directory tree starting from the specified one.
 ```
 
+### unzip
+
+Use zip/unzip to create/extract a zip file.
+
+```bash
+# Unpack a zip file
+unzip filename.zip
+```
+
 ### usermod
 
 Manage user groups
@@ -768,4 +785,8 @@ cat a_file.txt | wc -l
 ### which
 
 ...
+
+### zip
+
+Use zip/unzip to create/extract a zip file.
 
