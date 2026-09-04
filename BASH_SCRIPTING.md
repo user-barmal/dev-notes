@@ -136,7 +136,28 @@ IFS - Internal Field Separator. Bash shell variable related to Bash word splitti
 ```
 
 ## Arrays
-...
+
+```bash
+# 5 elements array with elements indexed 0:len-1
+AN_ARRAY=(one two three four five)
+
+# Simple variable expansion will return the first argument
+echo $AN_ARRAY
+# one
+
+# Read the whole array with '@'. It will not work without {}
+echo ${AN_ARRAY[@]}
+
+# Read an element by index
+# Positive indexes can be accessed with range: 0:len-1
+# Positive index out of range will return an empty string
+# Negative indexes can be accessed with range: -len:-1
+# Negative index out of range will return an empty string and an error message on stderr (msg comes before executing echo)
+echo ${AN_ARRAY[3]}
+echo ${AN_ARRAY[50]}
+echo ${AN_ARRAY[-3]}
+echo ${AN_ARRAY[-50]}
+```
 
 ## Expanding
 ...
