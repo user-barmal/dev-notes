@@ -76,6 +76,8 @@ sudo apt install screen
 sudo apt install ./package.deb
 ```
 
+---
+
 ### awk
 
 ```
@@ -84,11 +86,15 @@ awk '{print $NF}' filename.txt
 echo "awk will only print: THIS" | awk '{print $NF}'
 ```
 
+---
+
 ### bridge
 
 ```bash
 bridge link
 ```
+
+---
 
 ### cd
 
