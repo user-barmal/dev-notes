@@ -40,6 +40,8 @@ about how bash *executes* code.
 * [Redirection](#Redirection)
 * [Functions](#Functions)
 * [Heredoc](#Heredoc)
+* [Scripting - shebang](#Scripting---shebang)
+* [Scripting - execution permission](#Scripting---execution-permission)
 
 ## Comments
 
