@@ -121,6 +121,68 @@ ls file\?.txt
 
 ## Variables
 
+Lower/upper-case
+
+```bash
+VAR="AaBcCc123"
+
+echo ${VAR}  # AaBcCc123
+
+# Lowercase
+echo ${VAR,,}  # aabbcc123
+
+# Uppercase
+echo ${VAR^^}  # AABBCC123
+
+# Lowercase first character
+echo ${VAR,}  # aaBcCc123
+
+# Uppercase first character
+echo ${VAR^}  # AaBbCc123
+
+# Pattern matching
+echo ${VAR,,[AEIOU]}
+echo ${VAR^^[a-z]}
+```
+
+Prefix/suffix
+
+```bash
+# Remove prefix
+${VAR#pattern}
+${VAR##pattern}
+
+# Remove suffix
+${VAR%pattern}
+${VAR%%pattern}
+```
+
+Get part of a string
+
+```bash
+echo ${VAR:start}
+echo ${VAR:start:length}
+```
+
+Get var length
+
+```bash
+echo ${#VAR}
+```
+
+Default values
+
+```bash
+echo ${VAR:-default}
+echo ${VAR-default}
+echo ${VAR:=default}
+echo ${VAR=default}
+echo ${VAR:?error}
+echo ${VAR:+something}
+```
+
+Local vs. global variables
+
 'local' hides the exit status.
 In the following case, it will show the 'local' command status, not 'some_command'.
 
