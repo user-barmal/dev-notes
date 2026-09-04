@@ -11,7 +11,6 @@ about how bash *executes* code.
 (`grep`, `find`, `cd`, `ls`) - those go into `TERMINAL_COMMANDS.md`.
 
 ## Table of Contents
-
 * [Comments](#Comments)
 * [Globbing](#Globbing)
 * [Variables](#Variables)
@@ -42,6 +41,8 @@ about how bash *executes* code.
 * [Heredoc](#Heredoc)
 * [Scripting - shebang](#Scripting---shebang)
 * [Scripting - execution permission](#Scripting---execution-permission)
+* [Code examples](#Code-examples)
+* [Best practices](#Best-practices)
 
 ## Comments
 
@@ -807,5 +808,13 @@ NAME
 ...
 
 ## Scripting - execution permission
+
+...
+
+## Code examples
+
+...
+
+## Best practices
 
 ...
