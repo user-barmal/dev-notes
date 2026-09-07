@@ -24,11 +24,13 @@ about how bash *executes* code.
 * [Extended test command](#Extended-test-command)
 * [Arithmetic expression operators](#Arithmetic-expression-operators)
 * [Arithmetic evaluation vs. arithmetic expansion](#Arithmetic-evaluation-vs-arithmetic-expansion)
-* [Conditionals - if-elif-else-fi](#Conditionals---if-elif-else-fi)
-* [Conditionals - if-elif-else-fi oneliners](#Conditionals---if-elif-else-fi-oneliners)
-* [Conditionals - case-esac](#Conditionals---case-esac)
-* [Loops - for](#Loops---for)
-* [Loops - while](#Loops---while)
+* [Conditionals](#Conditionals)
+	* [if-elif-else-fi](#if-elif-else-fi)
+	* [if-elif-else-fi oneliners](#if-elif-else-fi-oneliners)
+	* [case-esac](#case-esac)
+* [Loops](#Loops)
+	* [for](#Loops---for)
+	* [while](#Loops---while)
 * [Exit status](#Exit-status)
 * [Get an argument](#Get-an-argument)
 * [Check number of arguments](#Check-number-of-arguments)
@@ -720,7 +722,9 @@ With `$(( ... ))`, the result of the expression is substituted:
 y=$(( 7 % 2 ))  # Command result substituted
 ```
 
-## Conditionals - if-elif-else-fi
+## Conditionals
+
+### if-elif-else-fi
 
 if
 
@@ -781,7 +785,7 @@ if ./check_mount.sh; then
 fi
 ```
 
-## Conditionals - if-elif-else-fi oneliners
+### if-elif-else-fi oneliners
 
 Due to hard readability it is not advised to make conditionals larger than  
 a simple 'if' as oneliners.
@@ -804,7 +808,7 @@ if-elif-else
 if [ "$#" -eq 1 ]; then echo "1 arg"; elif [ "$#" -eq 2 ]; then echo "2 args"; else echo "Other num. of args"; fi
 ```
 
-## Conditionals - case-esac
+### case-esac
 
 Basic syntax  
 The case statement supports standard Bash globbing patterns in patterns (`*`, `?`, `[]`, `[^]`)  
@@ -903,7 +907,9 @@ case $ROLE in
 esac
 ```
 
-## Loops - for
+## Loops
+
+### for
 
 ```bash
 # For loop - oneliner. Uses {1..10} which avoids using external seq cmd.
@@ -922,7 +928,7 @@ do
 done
 ```
 
-## Loops - while
+### while
 
 ```bash
 # until loop difference
