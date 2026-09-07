@@ -22,7 +22,7 @@ about how bash *executes* code.
 * [Test command](#Test-command)
 * [Extended test command](#Extended-test-command)
 * [Arithmetic expression operators](#Arithmetic-expression-operators)
-* [Arithmetic evaluation vs. arithmetic expansion](#Arithmetic-evaluation-vs.-arithmetic-expansion)
+* [Arithmetic evaluation vs. arithmetic expansion](#Arithmetic-evaluation-vs-arithmetic-expansion)
 * [Conditionals - if-elif-else-fi](#Conditionals---if-elif-else-fi)
 * [Conditionals - if-elif-else-fi oneliners](#Conditionals---if-elif-else-fi-oneliners)
 * [Conditionals - case-esac](#Conditionals---case-esac)
@@ -430,7 +430,7 @@ Increment:
 	++ --
 Comparison:
 	== != < <= > >=
-	[[ ]] -> -eq -ne -lt -le -gt -ge
+	[[ ]] equivalents: -eq -ne -lt -le -gt -ge
 Logical:
 	! && ||
 Bitwise:
