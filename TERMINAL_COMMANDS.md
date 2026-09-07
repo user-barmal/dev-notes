@@ -21,7 +21,7 @@ and the whole command is: 'cmd arg subarg --flag'
 |---|---|
 | a | [apt](#apt), [awk](#awk) |
 | b | [bridge](#bridge) |
-| c | [cd](#cd) |
+| c | [cd](#cd), [cp](#cp) |
 | d | [date](#date), [dd](#dd), [docker](#docker), [dpkg](#dpkg), [du](#du) |
 | e | [echo](#echo), [env](#env), [exit](#exit) |
 | f | [ffmpeg](#ffmpeg), [find](#find) |
@@ -111,6 +111,25 @@ cd /
 cd -
 ```
 
+### cp
+
+```bash
+# Simple copy of a file
+cp /path/copy/this/file /target/path
+
+# Copy a directory recursively and all its contents to a new destination ('/' doesn't matter)
+cp -r /path/to/source_dir /path/to/destination_dir
+cp -r /path/to/source_dir/ /path/to/destination_dir
+cp -r /path/to/source_dir /path/to/destination_dir/
+cp -r /path/to/source_dir/ /path/to/destination_dir/
+
+# Copy only the contents of a directory into an existing destination (with dot)
+cp -r /path/to/source_dir/. /path/to/destination_dir/
+
+# Copy while preserving file attributes (permissions, timestamps, ownership)
+cp -a /path/to/source_dir /path/to/destination_dir
+```
+
 ### date
 
 ```bash
@@ -149,8 +168,11 @@ exec
 # Open a live, interactive terminal inside a running container
 docker exec -it container_name bash
 
-# Copy a file
+# Copy a file from container
 docker cp container_name:/file/path/within/container /host/path/target
+
+# Copy a file to container
+docker cp /host/path/target container_name:/file/path/within/container
 
 # Create a container from an image
 docker run
@@ -657,7 +679,7 @@ Flags
 ```text
 -c				- Create a new archive.
 -x				- Unpack files from archive.
--z				- Pack/Unpack gzip compression.
+-z				- Pack/Unpack zip/unzip gzip compression.
 -f				- Specfiy filename.
 ```
 
