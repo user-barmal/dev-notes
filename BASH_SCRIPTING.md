@@ -11,6 +11,7 @@ about how bash *executes* code.
 (`grep`, `find`, `cd`, `ls`) - those go into `TERMINAL_COMMANDS.md`.
 
 ## Table of Contents
+* [Bash expansion order](#Bash-expansion-order)
 * [Comments](#Comments)
 * [Globbing](#Globbing)
 * [Variables](#Variables)
@@ -43,6 +44,45 @@ about how bash *executes* code.
 * [Scripting - execution permission](#Scripting---execution-permission)
 * [Code examples](#Code-examples)
 * [Best practices](#Best-practices)
+
+## Bash expansion order
+
+This is advanced for the first paragraph, but it's crucial for the following ones.  
+Bash has an order of doing things. Some syntax may not work the intended way because  
+of that.
+
+For example:
+
+```bash
+# Wrong order
+X=5
+Y=50
+echo {"$X".."$Y"}
+
+# Correct order
+echo $(seq $X $Y)
+```
+
+This won't work because brace expansion {} has precedence over parameter expansion $X, $Y.  
+Because of that the output will be first {$X..$Y} which is not a valid range.  
+Then the variables will be expanded to {5..50}. The output will be {5..50}.  
+For it to work, the variables would need to be first changed to numbers and then the  
+brace expansion.
+
+The order:
+
+```text
+| Priority | Name | Action |
+|---|---|---|
+| 1 | Brace expansion | {1..5} |
+| 2 | Tilde expansion | ~ |
+| 3 | Parameter expansion | $X, ${X} |
+| 4 | Command substitution | $(cmd), `cmd` |
+| 5 | Arithmetic expansion | $((...)) |
+| 6 | Word splitting | splitting $X into words |
+| 7 | Filename expansion | *, ?, [...] |
+| 8 | Quote removal | " ' \ |
+```
 
 ## Comments
 
@@ -568,6 +608,14 @@ Number bases
 (( x = 8#17 ))
 (( x = 10#17))
 (( x = 16#FF ))
+```
+
+Evaluate value from a string equation
+
+```bash
+# String has to be passed with "".
+# '' would not be expanded properly.
+echo $(( "(15 + 3) * 12 - 7/7" ))
 ```
 
 Further topics:
