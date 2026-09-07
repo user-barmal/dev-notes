@@ -21,28 +21,28 @@ and the whole command is: 'cmd arg subarg --flag'
 |---|---|
 | a | [apt](#apt), [awk](#awk) |
 | b | [bridge](#bridge) |
-| c | [cd](#cd), [cp](#cp) |
+| c | [cd](#cd), [cp](#cp), [curl](#curl) |
 | d | [date](#date), [dd](#dd), [docker](#docker), [dpkg](#dpkg), [du](#du) |
 | e | [echo](#echo), [env](#env), [exit](#exit) |
 | f | [ffmpeg](#ffmpeg), [find](#find) |
-| g | [grep](#grep) |
+| g | [git](#git), [grep](#grep) |
 | h | [head](#head) |
 | i | [ifconfig](#ifconfig), [ip](#ip) |
-| j | |
+| j | [jq](#jq) |
 | k | |
 | l | [less](#less), [ls](#ls) |
-| m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mv](#mv) |
+| m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mpv](#mpv), [mv](#mv) |
 | n | [ncdu](#ncdu), [nslookup](#nslookup) |
 | o | [ovs-vsctl](#ovs-vsctl) |
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
 | q | [qpdf](#qpdf) |
 | r | [read](#read), [rm](#rm), [route](#route), [rsync](#rsync) |
 | s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [systemctl](#systemctl) |
-| t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tree](#tree) |
+| t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree) |
 | u | [unzip](#unzip), [usermod](#usermod) |
 | v | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh) |
-| w | [wc](#wc), [which](#which) |
-| x | [xxd](#xxd) |
+| w | [wc](#wc), [wget](#wget), [which](#which) |
+| x | [xargs](#xargs), [xxd](#xxd) |
 | y | |
 | z | [zip](#zip) |
 
@@ -129,6 +129,10 @@ cp -r /path/to/source_dir/. /path/to/destination_dir/
 # Copy while preserving file attributes (permissions, timestamps, ownership)
 cp -a /path/to/source_dir /path/to/destination_dir
 ```
+
+### curl
+
+...
 
 ### date
 
@@ -378,6 +382,10 @@ tuntap
 	add mode tap vport1
 ```
 
+### jq
+
+...
+
 ### less
 
 ```text
@@ -434,6 +442,10 @@ mktemp -d
 
 ### more
 Older version of 'less'. No option for going back. Use 'less' instead.
+
+### mpv
+
+...
 
 ### mv
 
@@ -752,6 +764,10 @@ Redirect the output to both stdout and a log file.
 
 ...
 
+### tr
+
+...
+
 ### tree
 
 ```text
@@ -825,7 +841,15 @@ Usage
 cat a_file.txt | wc -l
 ```
 
+### wget
+
+...
+
 ### which
+
+...
+
+### xargs
 
 ...
 
