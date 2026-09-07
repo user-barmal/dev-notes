@@ -424,7 +424,7 @@ Syntax:
 Arithmetic:
 	+ - * / % **
 Assignment:
-	= += -= *= /= %= **=
+	= += -= *= /= %=
 	&= |= ^= <<= >>=
 Increment:
 	++ --
@@ -447,7 +447,7 @@ Number bases:
 
 Arithmetic operators
 
-```text
+```bash
 # Addition
 (( x + y ))
 
@@ -476,7 +476,6 @@ Assignment operators
 (( x *= 5 ))
 (( x /= 5 ))
 (( x %= 5 ))
-(( x **= 5 ))
 ```
 
 Bitwise assignments
