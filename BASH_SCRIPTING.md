@@ -63,9 +63,9 @@ echo {"$X".."$Y"}
 echo $(seq $X $Y)
 ```
 
-This won't work because brace expansion {} has precedence over parameter expansion $X, $Y.  
-Because of that the output will be first {$X..$Y} which is not a valid range.  
-Then the variables will be expanded to {5..50}. The output will be {5..50}.  
+This won't work because brace expansion `{}` has precedence over parameter expansion `$X`, `$Y`.  
+Because of that the output will be first `{$X..$Y}` which is not a valid range.  
+Then the variables will be expanded to `{5..50}`. The output will be `{5..50}`.  
 For it to work, the variables would need to be first changed to numbers and then the  
 brace expansion.
 
@@ -84,9 +84,13 @@ The order:
 | 8 | Quote removal | " ' \ |
 ```
 
+Note: This is the general expansion order, but some contexts block or alter some expansions.  
+For example, quoting prevents word splitting and filename expansion, while contexts  
+such as `[[...]]`, `((...))`, assignments have their own special parsing rules.
+
 ## Comments
 
-Everything after # is ignored. It can be added at the end of a running command.
+Everything after `#` is ignored. It can be added at the end of a running command.
 
 Prints 1 2 3:
 ```
@@ -101,7 +105,7 @@ This happens at the shell parsing stage, not inside the command.
 When `echo *.md` is written, bash finds what matches it and rewrites the command.
 
 
-Matches any number of characters '*'
+Matches any number of characters `*`
 
 ```bash
 ls *
@@ -115,13 +119,13 @@ ls file?.txt
 cat ./fan-temp-no-??/temp.log
 ```
 
-Matches any character from set '[]'
+Matches any character from set `[]`
 
 ```bash
 ls file[123].txt
 ```
 
-Matches any character not from set '[^]'
+Matches any character not from set `[^]`
 
 ```bash
 ls file[!123].txt
@@ -153,7 +157,7 @@ Match recursively '**'
 ls /some/dir/**/*.txt
 ```
 
-Use globbing characters as normal ones '\' - escape character
+Use globbing characters as normal ones `\` - escape character
 
 ```bash
 # Search for: file?.txt, not using the '?' special character
@@ -282,7 +286,7 @@ echo a b c  # 3 separate characters.
 ```
 
 Single quotes - no expansion at all. Preserving literal value of each character.  
-$VAR stays as text. Can't put (') inside also with esc character \.
+`$VAR` stays as text. Can't put `'` inside also with esc character `\`.
 
 ```bash
 echo '$VAR'
@@ -322,7 +326,7 @@ Using quotes may give different results:
 Use these in a test command - see test command paragraph.  
 Usually we thing about such tests as 'a compared to b', but  
 some of these flags just check things on one argument.  
-This way it may look like 'check b', e.g.: '-x /path/scr'.
+This way it may look like 'check b', e.g.: `-x /path/scr`.
 
 Comparing numbers
 
@@ -362,7 +366,7 @@ Files and directories
 ## Test command
 
 Use these e.g. in an 'if' statement. Check status of a previously executed  
-test with 'echo $?'.
+test with `echo $?`.
 
 Syntax rule
 
@@ -390,7 +394,7 @@ test "$#" -ne 2
 test ! "$VAR" -eq 2
 ```
 
-Connecting tests with logical operators (different than in [[ ]])
+Connecting tests with logical operators (different than in `[[ ]]`)
 
 ```text
 # Logical operators inside
@@ -434,11 +438,11 @@ SOME_NAME="First Second"
 
 ## Arithmetic expression operators
 
-Arithmetic evaluation (( )) exists specifically for arithmetic.  
-[[]] and [] handle other general conditions like:  
+Arithmetic evaluation `(( ))` exists specifically for arithmetic.  
+`[[]]` and `[]` handle other general conditions like:  
 file existence, string comparison, pattern matching, regex matching, etc.  
 Some arithmetic expressions can be done in these, but they lack the advanced  
-arithmetic features like %=, **, etc.  
+arithmetic features like `%=`, `**`, etc.  
 
 Simple rule:
 
@@ -602,7 +606,7 @@ Number bases
 # Hexadecimal
 (( x = 0x10 ))
 
-# BAE#NUMBER syntax - it means that number is in this base already, not that it's converted.
+# BASE#NUMBER syntax - it means that number is in this base already, not that it's converted.
 # Supported bases - 2-64
 (( x = 2#1010 ))
 (( x = 8#17 ))
@@ -632,10 +636,10 @@ Further topics:
 
 ## Arithmetic evaluation vs. arithmetic expansion
 
-Bash provides two constructs for evaluating arithmetic expressions: (( ... )) and $(( ... )).  
+Bash provides two constructs for evaluating arithmetic expressions: `(( ... ))` and `$(( ... ))`.  
 Both use the same arithmetic syntax and operators.
 
-With (( ... )), the expression is evaluaded as a command. The expression determines the command's  
+With `(( ... ))`, the expression is evaluaded as a command. The expression determines the command's  
 exit status:
 
 ```bash
@@ -643,7 +647,7 @@ exit status:
 (( 5 < 3 )); echo $?  # 0 - success
 ```
 
-With $(( ... )), the result of the expression is substituted:
+With `$(( ... ))`, the result of the expression is substituted:
 
 ```bash
 y=$(( 7 % 2 ))  # Command result substituted
@@ -736,9 +740,9 @@ if [ "$#" -eq 1 ]; then echo "1 arg"; elif [ "$#" -eq 2 ]; then echo "2 args"; e
 ## Conditionals - case-esac
 
 Basic syntax  
-The case statement supports standard Bash globbing patterns in patterns (*, ?, [], [^])  
+The case statement supports standard Bash globbing patterns in patterns (`*`, `?`, `[]`, `[^]`)  
 Globbing is not supported in the case variable.  
-In case you don't need to quote variable "$VAR" to avoid word splitting.  
+In case you don't need to quote variable `"$VAR"` to avoid word splitting.  
 It natively supports it and wont split.
 
 ```bash
@@ -801,7 +805,7 @@ case $ROLE:$STATUS in
 esac
 ```
 
-Checking multiple matches using ;;& - may not work in older versions of Bash
+Checking multiple matches using `;;&` - may not work in older versions of Bash
 
 ```bash
 case $NUMBER in
