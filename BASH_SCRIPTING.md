@@ -42,11 +42,11 @@ about how bash *executes* code.
 * [Redirection](#Redirection)
 * [Functions](#Functions)
 * [Heredoc](#Heredoc)
-* [Scripting - shebang](#Scripting---shebang)
-* [Scripting - execution permission](#Scripting---execution-permission)
-* [Code examples](#Code-examples)
+* [Scripting](#Scripting)
+	* [shebang](#shebang)
+	* [execution permission](#execution-permission)
 * [Best practices](#Best-practices)
-* [Patterns and examples](#Patterns-and-examples)
+* [Patterns and code examples](#Patterns-and-code-examples)
 
 ## Bash expansion order
 
@@ -1160,17 +1160,20 @@ cat<<'NAME'
 NAME
 ```
 
-## Scripting - shebang
+## Scripting
 
-...
+### shebang
 
-## Scripting - execution permission
+```bash
+#!
+```
 
-...
+### execution permission
 
-## Code examples
-
-...
+```text
+-rwxrwxrwx
+chmod +x
+```
 
 ## Best practices
 
