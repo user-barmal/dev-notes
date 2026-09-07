@@ -59,6 +59,8 @@ git <command> <flags>					- The following commands are the 'git' command options
 
 ## rebase
 
+	-i						- Interactive rebase.
+
 ## remote
 
 	-v						- Show remote links for pull and push.
@@ -68,5 +70,5 @@ git <command> <flags>					- The following commands are the 'git' command options
 ## reset
 
 	--soft HEAD~1					- Uncommit the last commit and leave the changes staged. Undo the commit but have the things ready.
-	HEAD~1						- Uncommit the last commit but just leave the changes as usual files modifications.
+	--mixed HEAD~1 (also default w/out flag)	- Uncommit the last commit but just leave the changes as usual files modifications.
 	--hard HEAD~1					- Uncommit the last commit and throw away the changes.

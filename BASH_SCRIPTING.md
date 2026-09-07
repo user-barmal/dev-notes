@@ -21,8 +21,8 @@ about how bash *executes* code.
 * [Comparison operators](#Comparison-operators)
 * [Test command](#Test-command)
 * [Extended test command](#Extended-test-command)
-* [Arithmetic evaluation](#Arithmetic-evaluation)
-* [Arithmetic expansion](#Arithmetic-expansion)
+* [Arithmetic expression operators](#Arithmetic-expression-operators)
+* [Arithmetic evaluation vs. arithmetic expansion](#Arithmetic-evaluation-vs.-arithmetic-expansion)
 * [Conditionals - if-elif-else-fi](#Conditionals---if-elif-else-fi)
 * [Conditionals - if-elif-else-fi oneliners](#Conditionals---if-elif-else-fi-oneliners)
 * [Conditionals - case-esac](#Conditionals---case-esac)
@@ -180,6 +180,12 @@ echo ${VAR:=default}
 echo ${VAR=default}
 echo ${VAR:?error}
 echo ${VAR:+something}
+```
+
+Number-base syntax
+
+```bash
+# Syntax: BASE#NUMBER
 ```
 
 Local vs. global variables
@@ -386,16 +392,214 @@ SOME_NAME="First Second"
 # Boolean operators inside the brackets && ||
 ```
 
-## Arithmetic evaluation
+## Arithmetic expression operators
+
+Arithmetic evaluation (( )) exists specifically for arithmetic.  
+[[]] and [] handle other general conditions like:  
+file existence, string comparison, pattern matching, regex matching, etc.  
+Some arithmetic expressions can be done in these, but they lack the advanced  
+arithmetic features like %=, **, etc.  
+
+Simple rule:
 
 ```text
-(( ... ))
+If you're doing arithmetic, use (( ... )).
+If condition is about things other than arithmetic, use [[ ... ]].
 ```
 
-## Arithmetic expansion
+```bash
+# Simple arithmetic operation
+[[ $x -eq 3 ]]
+
+# In this case it's better to use the arithmetic expression
+(( x == 3 ))
+```
+
+Cheat sheet
 
 ```text
-$(( ... ))
+Syntax:
+	(( ))
+	Spaces are not required inside in contrast to [[]]
+Arithmetic:
+	+ - * / % **
+Assignment:
+	= += -= *= /= %= **=
+	&= |= ^= <<= >>=
+Increment:
+	++ --
+Comparison:
+	== != < <= > >=
+	[[ ]] -> -eq -ne -lt -le -gt -ge
+Logical:
+	! && ||
+Bitwise:
+	& | ^ ~ << >>
+Ternary:
+	? :
+Grouping:
+	()
+Comma:
+	,
+Number bases:
+	0num, 0xnum, BASE#NUMBER (base <2-64>)
+```
+
+Arithmetic operators
+
+```text
+# Addition
+(( x + y ))
+
+# Subtraction
+(( x - y ))
+
+# Multiplication
+(( x * y ))
+
+# Division (integer division only - no floats in Bash arithmetic 7/3=2)
+(( x / y ))
+
+# Modulo
+(( x % y ))
+
+# Exponent
+(( x ** y ))
+```
+
+Assignment operators
+
+```bash
+(( x = 20 ))
+(( x += 5 ))
+(( x -= 5 ))
+(( x *= 5 ))
+(( x /= 5 ))
+(( x %= 5 ))
+(( x **= 5 ))
+```
+
+Bitwise assignments
+
+```bash
+(( x &= y ))
+(( x |= y ))
+(( x ^= y ))
+(( x <<= 2 ))
+(( x >>= 2 ))
+```
+
+Increment/decrement
+
+```bash
+# Post increment
+(( x++ ))
+
+# Post decrement
+(( x-- ))
+
+# Pre-increment
+(( ++x ))
+
+# Pre-decrement
+(( --x ))
+
+# Mixed
+(( y = ++x ))
+(( y = x++ ))
+```
+
+Comparison operators
+
+```bash
+(( x == y ))
+(( x != y ))
+(( x < y ))
+(( x <= y ))
+(( x > y ))
+(( x >= y ))
+```
+
+Logical operators
+
+```bash
+(( x && y ))
+(( x || y ))
+(( !x ))
+```
+
+Bitwise operators
+
+```bash
+(( x & y ))
+(( x | y ))
+(( x ^ y ))
+(( ~x ))
+(( x << 2 ))
+(( x >> 2 ))
+```
+
+Ternary operator
+
+```bash
+condition ? value_if_true : value_if_false
+```
+
+Precedence with parentheses
+
+```bash
+(( ( x + y ) * 2 ))
+```
+
+Number bases
+
+```bash
+# Decimal
+(( x = 10 ))
+
+# Octal
+(( x = 010 ))
+
+# Hexadecimal
+(( x = 0x10 ))
+
+# BAE#NUMBER syntax - it means that number is in this base already, not that it's converted.
+# Supported bases - 2-64
+(( x = 2#1010 ))
+(( x = 8#17 ))
+(( x = 10#17))
+(( x = 16#FF ))
+```
+
+Further topics:
+
+```text
+- Variables don't need $
+- Variables can be used recursively
+- Empty/unset variables
+- Command substitution can occur inside arithmetic
+- Conditional use in: if, while, until.
+- Multiple expressions with comma
+- C-style for loops
+```
+
+## Arithmetic evaluation vs. arithmetic expansion
+
+Bash provides two constructs for evaluating arithmetic expressions: (( ... )) and $(( ... )).  
+Both use the same arithmetic syntax and operators.
+
+With (( ... )), the expression is evaluaded as a command. The expression determines the command's  
+exit status:
+
+```bash
+(( 5 < 3 )); echo $?  # 1 - fail
+(( 5 < 3 )); echo $?  # 0 - success
+```
+
+With $(( ... )), the result of the expression is substituted:
+
+```bash
+y=$(( 7 % 2 ))  # Command result substituted
 ```
 
 ## Conditionals - if-elif-else-fi
