@@ -44,6 +44,7 @@ about how bash *executes* code.
 * [Scripting - execution permission](#Scripting---execution-permission)
 * [Code examples](#Code-examples)
 * [Best practices](#Best-practices)
+* [Patterns and examples](#Patterns-and-examples)
 
 ## Bash expansion order
 
@@ -313,6 +314,7 @@ A famous example is PATH which when overwritten can cause some problems with a f
 
 ```text
 IFS - Internal Field Separator. Bash shell variable related to Bash word splitting.
+SHELL - print the used shell, e.g.: /bin/bash
 ```
 
 ## Arrays
@@ -808,7 +810,8 @@ Basic syntax
 The case statement supports standard Bash globbing patterns in patterns (`*`, `?`, `[]`, `[^]`)  
 Globbing is not supported in the case variable.  
 In case you don't need to quote variable `"$VAR"` to avoid word splitting.  
-It natively supports it and wont split.
+It natively supports it and wont split.  
+Better than if/elif/else when checking for multiple values. It's easier to read this way.
 
 ```bash
 case $VAR in
@@ -823,7 +826,7 @@ case $VAR in
 esac
 ```
 
-OR logic using single pipe
+OR logic using single pipe `|`
 
 ```bash
 case $CHOICE in
@@ -1085,9 +1088,19 @@ source script.sh
 
 ## Redirection
 
+```bash
+# > - Write to a file. Overwrites the existing content.
+echo "Hello $USERNAME" > hello.txt
+cat log_data.log > file_to_send.log
+ls *.md > all_md_files_in_dir.txt
+
+# >> - Append to a file. It won't overwrite the content.
+echo "Another line in the file" >> hello.txt
+cat single_log.log >> master_log.log
+ls *.md /one/project/ >> list_of_projects_files.txt
+```
+
 ```text
->
->>
 >>>
 <
 2>&1
