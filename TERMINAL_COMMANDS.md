@@ -36,7 +36,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | o | [ovs-vsctl](#ovs-vsctl) |
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
 | q | [qpdf](#qpdf) |
-| r | [rm](#rm), [route](#route), [rsync](#rsync) |
+| r | [read](#read), [rm](#rm), [route](#route), [rsync](#rsync) |
 | s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [systemctl](#systemctl) |
 | t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tree](#tree) |
 | u | [unzip](#unzip), [usermod](#usermod) |
@@ -571,6 +571,14 @@ qpdf --object-streams=generate --compress-streams=y input.pdf output.pdf
 
 # Page manipulation
 qpdf input.pdf --rotate=+90:2-5 -- output.pdf
+```
+
+### read
+
+```bash
+# Stops to read user input and assign it to the specified variable
+read VARIABLE
+echo $VARIABLE
 ```
 
 ### rm
