@@ -90,7 +90,9 @@ such as `[[...]]`, `((...))`, assignments have their own special parsing rules.
 
 ## Comments
 
-Everything after `#` is ignored. It can be added at the end of a running command.
+Everything after `#` is ignored. It can be added at the end of a running command.  
+It starts a comment when it appears where a new word could begin.  
+It won't start a comment in the middle of a word like in `echo abc#def` or `echo -# not a comment`.
 
 Prints 1 2 3:
 ```
@@ -166,6 +168,33 @@ ls file\?.txt
 
 ## Variables
 
+Variables are used to store value. They are assigned simply with equal sign, but no spaces inbetween:
+
+```bash
+# Simple assignment
+VARIABLE=VALUE
+```
+
+Termination characters  
+All these characters will end the assignment
+
+```text
+unquoted-space tab newline
+; | &
+&& ||
+< >
+( )
+```
+
+# Example: Value terminated with unquoted space. B will return an error separately from the assignment.
+VARIABLE=A B C D
+VARIABLE=A;ls
+
+# Value not terminated by quoted space
+VARIABLE="A B C"
+```
+
+
 Lower/upper-case
 
 ```bash
@@ -226,7 +255,8 @@ echo ${VAR:?error}
 echo ${VAR:+something}
 ```
 
-Number-base syntax
+Number-base syntax  
+For more info on this, look into arithmetics `((...))`
 
 ```bash
 # Syntax: BASE#NUMBER
