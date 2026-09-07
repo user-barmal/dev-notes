@@ -294,6 +294,23 @@ my_func() {
 
 ## Special variables
 
+Bash variables
+
+```bash
+$?
+$N
+$*
+$@
+$#
+```
+
+Named variables in the system based on LUbuntu. They are more system related, but  
+as we assign and call variables with the Bash syntax, they are put here also to  
+increase the awareness for accidental system variable overwrite.  
+Before assigning a variable system-wide, `env` command can be used to see if  
+one with the same name is already assigned.  
+A famous example is PATH which when overwritten can cause some problems with a fix.
+
 ```text
 IFS - Internal Field Separator. Bash shell variable related to Bash word splitting.
 ```
