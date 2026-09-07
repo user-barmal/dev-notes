@@ -168,7 +168,9 @@ ls file\?.txt
 
 ## Variables
 
-Variables are used to store value. They are assigned simply with equal sign, but no spaces inbetween:
+Variables are used to store value. They are assigned simply with equal sign, but no spaces inbetween.  
+The name may contain characters from the range `[a-zA-Z0-9_]`, but the name can't start from a number.  
+It makes it `[a-zA-Z_][a-zA-Z0-9_]*` in regex.
 
 ```bash
 # Simple assignment
@@ -194,6 +196,22 @@ VARIABLE=A;ls
 VARIABLE="A B C"
 ```
 
+Variable calling
+
+```bash
+# OK
+echo $VAR
+echo $VAR;
+echo $VAR $VAR2
+
+# Not ok - name followed by a valid variable name character [a-zA-Z0-9_] will be interpreted as one var
+echo $VAR-
+echo $VAR0comment
+
+# Using curly brackets to specify the range of a variable name - can be followed by all characters
+echo ${VAR}abc
+echo ${VAR}0123
+```
 
 Lower/upper-case
 
