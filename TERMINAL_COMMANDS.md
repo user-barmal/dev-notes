@@ -611,7 +611,7 @@ route -n
 
 ### rsync
 
-Synchronize an external directory to a specified target one. Good for backup.  
+Synchronize a directory to a specified target one. Good for backup.  
 Faster than scp because it can ommit files that are already there.
 
 ```text
@@ -621,6 +621,14 @@ Faster than scp because it can ommit files that are already there.
 () -a		- preserve permissions, timestamps, etc.
 () -v		- verbose
 () -P		- progress + resume support
+
+# Simple source target rsyncing. Without '/' at the end of source path it will copy with the directory itself.
+# If the '/' is already in the variable, it does not need to be added.
+rsync -av "$SOURCE_PATH" "$TARGET_PATH"
+rsync -av "$SOURCE_PATH/" "$TARGET_PATH"
+
+# Excluding multiple directories/files
+rsync -av --exclude=".ssh" --exclude=".git" "$SOUCE_PATH/" "$TARGET_PATH"
 
 # Example execution:
 rsync -avP --dry-run --exclude=".ssh" user@192.168.10.10:~/ /home/local-user/backup/
