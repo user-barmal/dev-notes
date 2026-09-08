@@ -7,6 +7,7 @@ git <command> <flags>					- The following commands are the 'git' command options
 ## branch
 
 	-M <name>					- Forcefully rename the current branch to that name.
+	-r						- List remote branches for the repository.
 
 ## cherry-pick
 

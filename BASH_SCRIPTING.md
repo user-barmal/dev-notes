@@ -19,6 +19,7 @@ about how bash *executes* code.
 * [Arrays](#Arrays)
 * [Expanding](#Expanding)
 * [Quoting and word splitting](#Quoting-and-word-splitting)
+* [Piping](#Piping)
 * [Comparison operators](#Comparison-operators)
 * [Test command](#Test-command)
 * [Extended test command](#Extended-test-command)
@@ -42,6 +43,30 @@ about how bash *executes* code.
 * [Redirection](#Redirection)
 * [Functions](#Functions)
 * [Heredoc](#Heredoc)
+* [Bash builtins](#Bash-builtins)
+	* [Input output](#Input-output)
+		* [read](#read)
+		* [printf](#printf)
+	* [Functions and parameters](#Functions-and-parameters)
+		* [local](#local)
+		* [return](#return)
+		* [shift](#shift)
+		* [getopts](#getopts)
+	* [Variables and environment](#Variables-and-environment)
+		* [unset](#unset)
+		* [export](#export)
+		* [declare](#declare)
+		* [typeset](#typeset)
+	* [Script control](#Script-control)
+		* [exit](#exit)
+		* [break](#break)
+		* [continue](#continue)
+		* [trap](#trap)
+	* [Shell control](#Shell-control)
+		* [set](#set)
+		* [source](#source)
+		* [exec](#exec)
+		* [eval](#eval)
 * [Scripting](#Scripting)
 	* [shebang](#shebang)
 	* [execution permission](#execution-permission)
@@ -389,6 +414,10 @@ Using quotes may give different results:
 ./script.sh "$(cat a_file)"  # 5 args
 ./script.sh '$(cat a file)'  # 1 arg (not expanded)
 ```
+
+## Piping
+
+`|` - pipe used for redirection of first function's output as a second function's input
 
 ## Comparison operators
 

@@ -587,10 +587,16 @@ qpdf input.pdf --rotate=+90:2-5 -- output.pdf
 
 ### read
 
+This command is a Bash builtin and is also explained in my other document for Bash scripting.
+
 ```bash
 # Stops to read user input and assign it to the specified variable
 read VARIABLE
 echo $VARIABLE
+
+# Show prompt for user input
+read -p "Write your name: " $USERNAME
+echo $USERNAME
 ```
 
 ### rm
