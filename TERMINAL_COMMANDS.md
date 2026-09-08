@@ -2,6 +2,9 @@
 
 This document lists self-sufficient commands.
 Some of them may require additional instalation. This information is noted in their description.
+Some of the commands listed here are basic, but on the other hand other ones can be very advanced.  
+For some of them literal books were written. I won't try to cover all of those topics here.  
+The table of contents makes a note about which commands are considered as such advanced tools.  
 
 () - means the command with args from a tree. Used to minimize repetitions.  
 E.g.: cmd -> arg -> subarg -> () --flag - Here () means 'cmd arg subarg'  
@@ -45,6 +48,8 @@ and the whole command is: 'cmd arg subarg --flag'
 | x | [xargs](#xargs), [xxd](#xxd) |
 | y | |
 | z | [zip](#zip) |
+
+*) a major tool
 
 ## Commands grouped by functions
 
@@ -612,11 +617,14 @@ route -n
 ### rsync
 
 Synchronize a directory to a specified target one. Good for backup.  
-Faster than scp because it can ommit files that are already there.
+Faster than scp because it can ommit files that are already there.  
+Always start with the `--dry-run` flag. If the content is confirmed to be valid,  
+then remove this flag.
 
 ```text
 # Flags
 () --delete	- this flag ensures that it is the exact copy. Removes things also from backup.
+() --dry-run	- won't copy files. The files to be copied will be listed.
 () --exclude	- exclude the provided path from the rsync operation
 () -a		- preserve permissions, timestamps, etc.
 () -v		- verbose
@@ -632,7 +640,10 @@ rsync -av "$SOURCE_PATH/" "$TARGET_PATH"
 # Excluding multiple directories/files
 rsync -av --exclude=".ssh" --exclude=".git" "$SOUCE_PATH/" "$TARGET_PATH"
 
-# Example execution:
+# Example execution - from local to external
+rsync -av --exclude=".ssh" --exclude=".git"
+
+# Example execution - from external to local:
 rsync -avP --dry-run --exclude=".ssh" user@192.168.10.10:~/ /home/local-user/backup/
 ```
 
