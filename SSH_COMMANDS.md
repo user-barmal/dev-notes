@@ -65,6 +65,11 @@ SSH options and their meaning
 ```text
 ServerAliveInterval <s>			- ...
 ServerAliveCountMax <no>		- ...
+IdentityFile ~/.ssh/id_ed25519		- Use this identity as one of the identities available for authentication.
+					  Depending on the configuration, ssh may or may not try other keys after that.
+					  Useful if site (e.g. github.com) tries to use wrong key and fails
+					  and this is the one you specified on the site as the authentication one.
+IdentitiesOnly yes			- Only use the identities explicitly configured for this connection
 ```
 
 ## ssh-keygen
@@ -73,6 +78,12 @@ ServerAliveCountMax <no>		- ...
 ssh -R <IP-address>		- remove an entry in ~/.ssh/known_hosts for this IP-address.
 
 ssh -y -f ~/.ssh/id_rsa		- derive the public key from private one.
+
+# Create a pair of ed25519 keys
+ssh-keygen -t ed25519
+
+# Print the fingerprint of an SSH key
+ssh-keygen -lf ~/.ssh/id_ed25519.pub
 ```
 
 ## /etc/ssh/sshd_config
@@ -95,4 +106,6 @@ Host <name>
 	User <username>
 	ServerAliveInterval <seconds>
 	ServerAliveCountMax <no>
+	IdentityFile ~/.ssh/id_rsa
+	IdentitiesOnly yes
 ```
