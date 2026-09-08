@@ -37,10 +37,10 @@ and the whole command is: 'cmd arg subarg --flag'
 | m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mpv](#mpv), [mv](#mv) |
 | n | [ncdu](#ncdu), [nslookup](#nslookup) |
 | o | [ovs-vsctl](#ovs-vsctl) |
-| p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd) |
+| p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3) |
 | q | [qpdf](#qpdf) |
 | r | [read](#read), [rm](#rm), [route](#route), [rsync](#rsync) |
-| s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [systemctl](#systemctl) |
+| s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [su](#su), [systemctl](#systemctl) |
 | t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree) |
 | u | [unzip](#unzip), [usermod](#usermod) |
 | v | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh) |
@@ -310,10 +310,112 @@ ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
 
 ### find 
 
+Walk through a directory tree, evaluate expression and act on files that match your criteria.
+
+Specify directory
+
 ```bash
 # Search for this exact name in this directory (dot means this dir) and subdirectories
 find . -name passed_name
 
+# Search in the entire system (root directory)
+find / -name passed_name
+
+# Search in other specified directory
+find ~/.ssh -name passed_name
+```
+
+Search by name
+
+```bash
+# Filename
+# case-sensitive
+find . -name "pattern"
+
+# case-insensitive
+find . -iname "pattern"
+```
+
+Search by object type
+
+```bash
+# Search by type - regular file
+find . -type f
+
+# Search by type - directory
+find . -type d
+
+# Search by type - symbolic link
+find . -type l
+```
+
+Search by size  
+Uses: `c` bytes, `k` kilobytes, `M` megabytes, `G` gigabytes, `-` less than, `+` greater than
+
+```bash
+find . -size +100M
+find ~/saved_data -size +1G
+```
+
+Search by modification time  
+Uses: `-mtime` days, `mmin` minutes, `-` for newer than, `+` for older than
+
+```bash
+# Less than 7 days ago
+find . -mtime -7
+
+# More than 30 minutes ago
+find . -mmin +30
+```
+
+Search by owner or group
+
+```text
+-user username
+-group groupname
+```
+
+Search by specific permissions
+
+```text
+-perm <mode>
+-perm 777
+-perm /u+x
+```
+
+Search depth
+
+```text
+-maxdepth <number>
+```
+
+Actions
+
+```text
+-print
+-delete
+-exec <command> {} +
+-exec <command> {} \;
+```
+
+Combining flags
+
+```bash
+# AND
+find . -type f -name "*config*" -size +10k
+
+# OR
+find . -type f \( -name "*.jpg" -o -name "*.png" \)
+
+# NOT
+find . -type d ! -name "node_modules"
+find . -type f ! -size 0
+
+# Multiple
+find /var/log -type f -name "*.log" -size +50M -mtime +30 -exec gzip {} +
+```
+
+```
 # Search for a name with globbing characters (for more info look at bash scripting doc - globbing)
 find . -name *.txt
 find . -name [abc]*.txt
@@ -557,6 +659,10 @@ into a script.
 pwd
 ```
 
+### python3
+
+...
+
 ### qpdf
 
 PDF file manipulation. Requires installation.
@@ -710,6 +816,10 @@ nullglob - ...
 globstar - Allow double start recursive search **
 
 ```
+
+### su
+
+...
 
 ### systemctl
 
