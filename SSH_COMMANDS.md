@@ -1,3 +1,53 @@
+# SSH on a Linux system
+
+SSH lives in a few files, tools and directories on a typical system.  
+This document is created to discuss the possibilities of it all.
+
+```text
+SSH tools can be divided on:
+
+Client programs
+
+	ls -1 /usr/bin/ssh*
+
+	ssh
+	ssh-add
+	ssh-agent
+	ssh-argv0
+	ssh-askpass
+	ssh-copy-id
+	ssh-import-id
+	ssh-import-id-gh
+	ssh-import-id-lp
+	ssh-keygen
+	ssh-keyscan
+
+	and additionally
+	scp
+	sftp
+
+User's SSH directory
+
+	config
+	known_hosts
+	authorized_keys
+	<key files>
+
+System-wide configuration
+
+	/etc/ssh/
+	ssh_config
+	sshd_config
+	<host keys>
+
+The SSH server
+
+	/usr/bin/sshd
+	systemctl status ssh
+	systemctl status sshd
+```
+
+
 ## scp
 
 ...
