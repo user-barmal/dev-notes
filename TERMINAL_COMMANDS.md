@@ -621,7 +621,9 @@ Faster than scp because it can ommit files that are already there.
 () -a		- preserve permissions, timestamps, etc.
 () -v		- verbose
 () -P		- progress + resume support
+```
 
+```bash
 # Simple source target rsyncing. Without '/' at the end of source path it will copy with the directory itself.
 # If the '/' is already in the variable, it does not need to be added.
 rsync -av "$SOURCE_PATH" "$TARGET_PATH"
