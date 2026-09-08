@@ -436,6 +436,9 @@ a|b a* a\+ a\? a\{n\} a\{n,k\} \(abc\) [abc] ^line line$
 
 # Extended regex characters overview - cleaner syntax. Use for more complicated patterns.
 a|b a* a+ a? {n} a{n} a{n,k} (abc) [abc] ^line line$
+
+# Disable case sensitivity for regex
+-i/--ignore-case
 ```
 
 ```bash
@@ -447,6 +450,9 @@ grep 'case1|case2|case3'
 
 # Search for a line start with 0: or 6: with extended regex:
 grep -E '^(0|6):' file
+
+# Match case insensitive regex
+cat log_file_lab1_* | grep -E --ignore-case '^error: '
 ```
 
 ### head
@@ -480,6 +486,7 @@ Flags
 
 a/addr/address			- Can anything between the shortest and the longest form.
 l/link
+	add link <interface> name <interface>.<tag> type vlan id <tag> - Create VLAN subinterface.
 	show
 		dev <devname>	- Show data for an interface specified by name.
 n/neighbor
