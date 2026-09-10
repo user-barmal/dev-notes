@@ -437,7 +437,7 @@ dedicated to explain it in various tools as the characters can differ.
 a|b a* a\+ a\? a\{n\} a\{n,k\} \(abc\) [abc] ^line line$
 
 # Extended regex characters overview - cleaner syntax. Use for more complicated patterns.
-a|b a* a+ a? {n} a{n} a{n,k} (abc) [abc] ^line line$
+a|b a* a+ a? a{n} a{n} a{n,k} (abc) [abc] ^line line$
 
 # Disable case sensitivity for regex
 -i/--ignore-case
