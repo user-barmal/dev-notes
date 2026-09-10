@@ -22,10 +22,10 @@ and the whole command is: 'cmd arg subarg --flag'
 
 | Char | Cmds                                                                                                                    |
 |------|-------------------------------------------------------------------------------------------------------------------------|
-| a    | [apt](#apt), [awk](#awk)                                                                                                |
+| a    | [alsamixer](#alsamixer), [aplay](#aplay), [apt](#apt), [arecord](#arecord), [arp](#arp), [awk](#awk)                    |
 | b    | [bridge](#bridge)                                                                                                       |
-| c    | [cd](#cd), [cp](#cp), [crontabl](#crontab), [curl](#curl)                                                               |
-| d    | [date](#date), [dd](#dd), [docker](#docker), [dpkg](#dpkg), [du](#du)                                                   |
+| c    | [cd](#cd), [cp](#cp), [crontabl](#crontab), [curl](#curl), [cut](#cut)                                                  |
+| d    | [date](#date), [dd](#dd), [df](#df), [docker](#docker), [dpkg](#dpkg), [du](#du)                                        |
 | e    | [echo](#echo), [env](#env), [exit](#exit)                                                                               |
 | f    | [ffmpeg](#ffmpeg), [find](#find)                                                                                        |
 | g    | [git](#git), [grep](#grep)                                                                                              |
@@ -40,13 +40,13 @@ and the whole command is: 'cmd arg subarg --flag'
 | p    | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3)                |
 | q    | [qpdf](#qpdf)                                                                                                           |
 | r    | [read](#read), [rg](#rg), [rm](#rm), [route](#route), [rsync](#rsync)                                                   |
-| s    | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [su](#su), [systemctl](#systemctl)                              |
+| s    | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl)    |
 | t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree), [type](#type)  |
 | u    | [unzip](#unzip), [usermod](#usermod)                                                                                    |
 | v    | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh)                                                        |
 | w    | [wc](#wc), [wget](#wget), [which](#which)                                                                               |
 | x    | [xargs](#xargs), [xxd](#xxd)                                                                                            |
-| y    |                                                                                                                         |
+| y    | [yes](#yes)                                                                                                             |
 | z    | [zip](#zip)                                                                                                             |
 
 ## Commands grouped by functions
@@ -63,8 +63,17 @@ and the whole command is: 'cmd arg subarg --flag'
 | Process and system monitoring | Watching/controlling running processes      | `ps`, `pregp`, `top`, `kill`, `htop`                                |
 | Networking                    | ...                                         | `bridge`, `ip`, `nslookup`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
 | Behavior modifiers            | ...                                         | `set`, `shopt`, `export`, `alias`, `unalias`                        |
+| Virtual Machines              | KVM, QEMU, Libvirt                          | `virsh`                                                             |
 
 ## Commands
+
+### alsamixer
+
+...
+
+### aplay
+
+...
 
 ### apt
 
@@ -78,6 +87,10 @@ sudo apt install screen
 # Install a local .deb package
 sudo apt install ./package.deb
 ```
+
+### arecord
+
+...
 
 ### arp
 
@@ -141,6 +154,10 @@ cp -a /path/to/source_dir /path/to/destination_dir
 
 ...
 
+### cut
+
+...
+
 ### date
 
 ```bash
@@ -159,6 +176,10 @@ Use with caution!
 - No error checking.
 ```
 
+### df
+
+...
+
 ### docker
 
 Docker is a large tool. Here are some quick commands used for simple actions.  
@@ -175,16 +196,9 @@ exec
 	-t		- Gives a terminal (TTY).
 ```
 
+Manage containers
+
 ```bash
-# Open a live, interactive terminal inside a running container
-docker exec -it container_name bash
-
-# Copy a file from container
-docker cp container_name:/file/path/within/container /host/path/target
-
-# Copy a file to container
-docker cp /host/path/target container_name:/file/path/within/container
-
 # Create a container from an image
 docker run
 
@@ -206,6 +220,23 @@ docker kill
 # Delete a stopped container
 docker rm
 ```
+
+Do actions on a container
+
+```bash
+# Open a live, interactive terminal inside a running container
+docker exec -it container_name bash
+
+# Copy a file from container
+docker cp container_name:/file/path/within/container /host/path/target
+
+# Copy a file to container
+docker cp /host/path/target container_name:/file/path/within/container
+
+# Execute a command in a container
+docker exec container_name sh -c "command"
+```
+
 
 ### dpkg
 
@@ -839,9 +870,14 @@ globstar - Allow double start recursive search **
 
 ```
 
+### sort
+
+...
+
 ### ss
 
 ...
+
 
 ### su
 
@@ -1005,7 +1041,21 @@ Improved version of vi with much more options.
 Virtual machines management. It is a CLI built to interact with libvirt.
 
 ```bash
-virsh domiflist
+# List VMs
+virsh list --all
+
+# Inspect general VM info
+virsh dominfo vm_name
+
+# CPU info
+virsh nodeinfo
+
+
+virsh net-list --all
+virsh domblklist vm_name
+virsh domiflist vm_name
+virsh dumpxml vm_name
+virsh net-dhcp-leases network_name
 ```
 
 ### wc
@@ -1040,6 +1090,10 @@ cat a_file.txt | wc -l
 ...
 
 ### xxd
+
+...
+
+### yes
 
 ...
 
