@@ -51,18 +51,18 @@ and the whole command is: 'cmd arg subarg --flag'
 
 ## Commands grouped by functions
 
-| Category | Description | Example commands |
-|---|---|---|
-| Navigation and inspection | Where am I, what's here, where is X | `cd`, `du`, `ls`, `tree`, `pwd`, `find`, `which` |
-| Viewing file contents | Reading text-based contenet without editing | `cat`, `less`, `more`, `head`, `tail` |
-| Creating, modifying, removing | Changing what exists on disk | `touch`, `mkdir`, `cp`, `mv`, `rm`, `ln`, `mktemp` |
-| Searching and text processing | Finding or transforming text content | `grep`, `sed`, `awk`, `sort`, `cut` |
-| Permissions and ownership | Who can access/change what | `chmod`, `chown` |
-| Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
-| Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
-| Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
-| Networking | ... | `arp`, `bridge`, `host`, `ip`, `netstat`, `nmcli`, `nslookup`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
-| Behavior modifiers | ... | `set`, `shopt`, `export`, `alias`, `unalias` |
+| Category                      | Description                                 | Example commands                                                    |
+|-------------------------------|---------------------------------------------|---------------------------------------------------------------------|
+| Navigation and inspection     | Where am I, what's here, where is X         | `cd`, `du`, `ls`, `tree`, `pwd`, `find`, `which`                    |
+| Viewing file contents         | Reading text-based contenet without editing | `cat`, `less`, `more`, `head`, `tail`                               |
+| Creating, modifying, removing | Changing what exists on disk                | `touch`, `mkdir`, `cp`, `mv`, `rm`, `ln`, `mktemp`                  |
+| Searching and text processing | Finding or transforming text content        | `grep`, `sed`, `awk`, `sort`, `cut`                                 |
+| Permissions and ownership     | Who can access/change what                  | `chmod`, `chown`                                                    |
+| Compression and archiving     | Turning one file type into another          | `tar`, `zip`, `gzip`, `7z`                                          |
+| Format conversion             | Turning one file type into another          | `ffmpeg`, `img2pdf`                                                 |
+| Process and system monitoring | Watching/controlling running processes      | `ps`, `pregp`, `top`, `kill`, `htop`                                |
+| Networking                    | ...                                         | `bridge`, `ip`, `nslookup`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
+| Behavior modifiers            | ...                                         | `set`, `shopt`, `export`, `alias`, `unalias`                        |
 
 ## Commands
 
