@@ -18,7 +18,7 @@ Output: "sth different this will be a group"
 
 | Action | grep |
 |--------|------|
-| or     | `a|b`  |
+| or     | `a&#124;b`  |
 | -      | `a*`   |
 | -      | `a\+`  |
 | -      | `a\?`  |
