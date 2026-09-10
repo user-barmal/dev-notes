@@ -37,6 +37,12 @@ git <command> <flags>					- The following commands are the 'git' command options
 --amend --author "YourName <name@mail.com>" 	- Amends the credentials for a previous commit.
 ```
 
+## diff
+
+```text
+old_hash new_hash				- Show what changes are implemented between old_hash commit and new_hash commit.
+```
+
 ## fetch
 
 ```text
