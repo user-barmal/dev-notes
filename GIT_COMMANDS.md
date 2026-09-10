@@ -79,6 +79,7 @@ git <command> <flags>					- The following commands are the 'git' command options
 
 ```text
 remote_alias --delete branch_name		- Remove a remote branch. Does not remove its matching local branch. For that read about fetch --prune.
+						  Example: git push origin --delete fix_branch
 -u/--set-upstream origin <name>			- Link local branch to a remote branch.
 ```
 
