@@ -39,7 +39,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | o | [ovs-vsctl](#ovs-vsctl) |
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3) |
 | q | [qpdf](#qpdf) |
-| r | [read](#read), [rm](#rm), [route](#route), [rsync](#rsync) |
+| r | [read](#read), [rg](#rg), [rm](#rm), [route](#route), [rsync](#rsync) |
 | s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [su](#su), [systemctl](#systemctl) |
 | t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree) |
 | u | [unzip](#unzip), [usermod](#usermod) |
@@ -716,6 +716,10 @@ echo $VARIABLE
 read -p "Write your name: " $USERNAME
 echo $USERNAME
 ```
+
+### rg
+
+...
 
 ### rm
 
