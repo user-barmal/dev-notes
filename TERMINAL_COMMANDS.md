@@ -22,26 +22,26 @@ and the whole command is: 'cmd arg subarg --flag'
 
 | Char | Cmds |
 |---|---|
-| a | [apt](#apt), [awk](#awk) |
+| a | [apt](#apt), [arp](#arp), [awk](#awk) |
 | b | [bridge](#bridge) |
 | c | [cd](#cd), [cp](#cp), [curl](#curl) |
 | d | [date](#date), [dd](#dd), [docker](#docker), [dpkg](#dpkg), [du](#du) |
 | e | [echo](#echo), [env](#env), [exit](#exit) |
 | f | [ffmpeg](#ffmpeg), [find](#find) |
 | g | [git](#git), [grep](#grep) |
-| h | [head](#head) |
+| h | [head](#head), [host](#host) |
 | i | [ifconfig](#ifconfig), [ip](#ip) |
 | j | [jq](#jq) |
 | k | |
 | l | [less](#less), [ls](#ls) |
 | m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mpv](#mpv), [mv](#mv) |
-| n | [ncdu](#ncdu), [nslookup](#nslookup) |
+| n | [ncdu](#ncdu), [netstat](#netstat), [nmcli](#nmcli), [nslookup](#nslookup) |
 | o | [ovs-vsctl](#ovs-vsctl) |
 | p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3) |
 | q | [qpdf](#qpdf) |
 | r | [read](#read), [rg](#rg), [rm](#rm), [route](#route), [rsync](#rsync) |
-| s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [su](#su), [systemctl](#systemctl) |
-| t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree) |
+| s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [ss](#ss), [su](#su), [systemctl](#systemctl) |
+| t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [traceroute](#traceroute), [tree](#tree) |
 | u | [unzip](#unzip), [usermod](#usermod) |
 | v | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh) |
 | w | [wc](#wc), [wget](#wget), [which](#which) |
@@ -63,7 +63,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | Compression and archiving | Turning one file type into another | `tar`, `zip`, `gzip`, `7z` |
 | Format conversion | Turning one file type into another | `ffmpeg`, `img2pdf` |
 | Process and system monitoring | Watching/controlling running processes | `ps`, `pregp`, `top`, `kill`, `htop` |
-| Networking | ... | `bridge`, `ip`, `nslookup`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
+| Networking | ... | `arp`, `bridge`, `host`, `ip`, `netstat`, `nmcli`, `nslookup`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
 | Behavior modifiers | ... | `set`, `shopt`, `export`, `alias`, `unalias` |
 
 ## Commands
@@ -80,6 +80,10 @@ sudo apt install screen
 # Install a local .deb package
 sudo apt install ./package.deb
 ```
+
+### arp
+
+...
 
 ### awk
 
@@ -492,6 +496,7 @@ l/link
 n/neighbor
 r/route
 	get <ip>		- Show a route from routing table to the specified IP.
+rule
 tuntap
 	add mode tap vport1
 ```
@@ -574,6 +579,14 @@ For simple checks 'du' command can be used.
 # Simple execution - opens a terminal TUI (text-based user interface)
 ncdu
 ```
+
+### netstat
+
+...
+
+### nmcli
+
+...
 
 ### nslookup
 
@@ -828,6 +841,10 @@ globstar - Allow double start recursive search **
 
 ```
 
+### ss
+
+...
+
 ### su
 
 ...
@@ -913,6 +930,10 @@ Redirect the output to both stdout and a log file.
 ...
 
 ### tr
+
+...
+
+### traceroute
 
 ...
 
