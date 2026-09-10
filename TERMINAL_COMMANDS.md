@@ -949,14 +949,17 @@ Get info about the command type. An easy check if a command is a shell built in,
 With this command we can check which ones actually come directly from Bash.
 
 ```bash
-# cd is a shell builtin
+# outputs: cd is a shell builtin
 type cd
 
-# ls is aliased to 'ls -L --color=auto'
+# outputs: ls is aliased to 'ls -L --color=auto'
 type ls
 
-# traceroute is /usr/bin/traceroute
+# outputs: traceroute is /usr/bin/traceroute
 type traceroute
+
+# outputs: my_function is a function (followed by function body)
+type my_function
 ```
 
 ### unzip
