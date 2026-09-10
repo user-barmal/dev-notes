@@ -20,36 +20,34 @@ and the whole command is: 'cmd arg subarg --flag'
 
 ## Commands grouped alphabetically
 
-| Char | Cmds |
-|---|---|
-| a | [apt](#apt), [arp](#arp), [awk](#awk) |
-| b | [bridge](#bridge) |
-| c | [cd](#cd), [cp](#cp), [curl](#curl) |
-| d | [date](#date), [dd](#dd), [docker](#docker), [dpkg](#dpkg), [du](#du) |
-| e | [echo](#echo), [env](#env), [exit](#exit) |
-| f | [ffmpeg](#ffmpeg), [find](#find) |
-| g | [git](#git), [grep](#grep) |
-| h | [head](#head), [host](#host) |
-| i | [ifconfig](#ifconfig), [ip](#ip) |
-| j | [jq](#jq) |
-| k | |
-| l | [less](#less), [ls](#ls) |
-| m | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mpv](#mpv), [mv](#mv) |
-| n | [ncdu](#ncdu), [netstat](#netstat), [nmcli](#nmcli), [nslookup](#nslookup) |
-| o | [ovs-vsctl](#ovs-vsctl) |
-| p | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3) |
-| q | [qpdf](#qpdf) |
-| r | [read](#read), [rg](#rg), [rm](#rm), [route](#route), [rsync](#rsync) |
-| s | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [ss](#ss), [su](#su), [systemctl](#systemctl) |
-| t | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [traceroute](#traceroute), [tree](#tree) |
-| u | [unzip](#unzip), [usermod](#usermod) |
-| v | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh) |
-| w | [wc](#wc), [wget](#wget), [which](#which) |
-| x | [xargs](#xargs), [xxd](#xxd) |
-| y | |
-| z | [zip](#zip) |
-
-*) a major tool
+| Char | Cmds                                                                                                     |
+|------|----------------------------------------------------------------------------------------------------------|
+| a    | [apt](#apt), [awk](#awk)                                                                                 |
+| b    | [bridge](#bridge)                                                                                        |
+| c    | [cd](#cd), [cp](#cp), [curl](#curl)                                                                      |
+| d    | [date](#date), [dd](#dd), [docker](#docker), [dpkg](#dpkg), [du](#du)                                    |
+| e    | [echo](#echo), [env](#env), [exit](#exit)                                                                |
+| f    | [ffmpeg](#ffmpeg), [find](#find)                                                                         |
+| g    | [git](#git), [grep](#grep)                                                                               |
+| h    | [head](#head)                                                                                            |
+| i    | [ifconfig](#ifconfig), [ip](#ip)                                                                         |
+| j    | [jq](#jq)                                                                                                |
+| k    |                                                                                                          |
+| l    | [less](#less), [ls](#ls)                                                                                 |
+| m    | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mpv](#mpv), [mv](#mv)                                |
+| n    | [ncdu](#ncdu), [nslookup](#nslookup)                                                                     |
+| o    | [ovs-vsctl](#ovs-vsctl)                                                                                  |
+| p    | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3) |
+| q    | [qpdf](#qpdf)                                                                                            |
+| r    | [read](#read), [rg](#rg), [rm](#rm), [route](#route), [rsync](#rsync)                                    |
+| s    | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [su](#su), [systemctl](#systemctl)               |
+| t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree)  |
+| u    | [unzip](#unzip), [usermod](#usermod)                                                                     |
+| v    | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh)                                         |
+| w    | [wc](#wc), [wget](#wget), [which](#which)                                                                |
+| x    | [xargs](#xargs), [xxd](#xxd)                                                                             |
+| y    |                                                                                                          |
+| z    | [zip](#zip)                                                                                              |
 
 ## Commands grouped by functions
 
