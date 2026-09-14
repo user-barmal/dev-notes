@@ -18,26 +18,34 @@ Output: "sth different this will be a group"
 
 # Comparison Table
 
-| Action                           | grep (BRE)                    | grep -E (ERE)               | pytest                    | Notepad++                            |
-|----------------------------------|-------------------------------|-----------------------------|---------------------------|--------------------------------------|
-| escape char.<sup>1</sup>         | `\`                           | `\`                         | `\`                       |                                      |
-| alteration (or)                  | `a\|b`                        | `a\|b`                      | `a\|b`                    |                                      |
-| 0 or more                        | `a*`                          | `a*`                        | `a*`                      |                                      |
-| 1 or more                        | `a\+`                         | `a+`                        | `a+`                      |                                      |
-| 0 or 1                           |  `a\?`                        | `a?`                        | `a?`                      |                                      |
-| exactly n                        | `a\{n\}`                      | `a{n}`                      | `a{n}`                    |                                      |
-| n or more                        | `a\{n,\}`                     | `a{n,}`                     | `a{n,}`                   |                                      |
-| n to k                           | `a\{n,k\}`                    | `a{n,k}`                    | `a{n,k}`                  |                                      |
-| groups <sup>2</sup> <sup>3</sup> | `(abc)`, `\(first\|second\)+` | `abc`, `(first\|second)`    | `abc`, `(first\|second)`  |                                      |
-| backreference to n-th group      | `(abc)(def)` then e.g. `\2\1` |                             |                           |                                      |
-| class                            | `[abc]`                       | `[abc]`                     | `[abc]`                   |                                      |
-| neg class                        | `[^abc]`                      | `[^abc]`                    | `[^abc]`                  |                                      |
-| range                            | `[a-zA-Z0-9]`                 | `[a-zA-Z0-9]`               | `[a-zA-Z0-9]`             |                                      |
-| start of line                    | `^line`                       | `^line`                     | `^line`                   |                                      |
-| end of line                      | `line$`                       | `line$`                     | `line$`                   |                                      |
-| ignore case                      | -i/--ignore-case              | -i/--ignore-case            |                           |                                      |
-| char. class <sup>4</sup>         | `[:classname:]`               | `[:classname:]`             |                           |                                      |
-| replacement syntax               |                               |                             |                           | `abc(def)ghi(jkl) \2\1` <sup>5</sup> |
+| Action                           | grep (BRE)                    | grep -E (ERE)               | grep -P (Perl-Comp. PCRE)   | pytest                    | Notepad++                            |
+|----------------------------------|-------------------------------|-----------------------------|-----------------------------|---------------------------|--------------------------------------|
+| escape char.<sup>1</sup>         | `\`                           | `\`                         |                             | `\`                       |                                      |
+| alteration (or)                  | `a\|b`                        | `a\|b`                      |                             | `a\|b`                    |                                      |
+| 0 or more                        | `a*`                          | `a*`                        |                             | `a*`                      |                                      |
+| 1 or more                        | `a\+`                         | `a+`                        |                             | `a+`                      |                                      |
+| 0 or 1                           |  `a\?`                        | `a?`                        |                             | `a?`                      |                                      |
+| exactly n                        | `a\{n\}`                      | `a{n}`                      |                             | `a{n}`                    |                                      |
+| n or more                        | `a\{n,\}`                     | `a{n,}`                     |                             | `a{n,}`                   |                                      |
+| n to k                           | `a\{n,k\}`                    | `a{n,k}`                    |                             | `a{n,k}`                  |                                      |
+| groups <sup>2</sup> <sup>3</sup> | `(abc)`, `\(first\|second\)+` | `abc`, `(first\|second)`    |                             | `abc`, `(first\|second)`  |                                      |
+| backreference to n-th group      | `(abc)(def)` then e.g. `\2\1` |                             |                             |                           |                                      |
+| class                            | `[abc]`                       | `[abc]`                     |                             | `[abc]`                   |                                      |
+| neg class                        | `[^abc]`                      | `[^abc]`                    |                             | `[^abc]`                  |                                      |
+| range                            | `[a-zA-Z0-9]`                 | `[a-zA-Z0-9]`               |                             | `[a-zA-Z0-9]`             |                                      |
+| start of line                    | `^line`                       | `^line`                     |                             | `^line`                   |                                      |
+| end of line                      | `line$`                       | `line$`                     |                             | `line$`                   |                                      |
+| ignore case                      | -i/--ignore-case              | -i/--ignore-case            |                             |                           |                                      |
+| char. class <sup>4</sup>         | `[:classname:]`               | `[:classname:]`             |                             |                           |                                      |
+| replacement syntax               |                               |                             |                             |                           | `abc(def)ghi(jkl) \2\1` <sup>5</sup> |
+
+```text
+greedy and lazy
+*?
++?
+??
+{n,m}?
+```
 
 Note: If you are looking at the table in the raw .md, there are additional escape characters for the  
 `|` pipe character to not being interpreted as the table elements.  
