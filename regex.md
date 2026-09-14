@@ -34,27 +34,29 @@ Output: "sth different this will be a group"
 | ignore case   | -i/--ignore-case   | -i/--ignore-case   |        |           |
 | char. class   | `[:classname:]`*   | `[:classname:]`*   |        |           |
 
-*) POSIX Class-name types for grep:
+*) POSIX Class-name types for grep (see below)
 
-Character class: `[:classname:]`
+# Character class
+
+For grep, character class: `[:classname:]`
 Character classes need to be wrapped in `[]` to give the bracket expression `[[:classname:]]`.
-Without the bracket expression `:digit:` would just mean match from these characters: `[:dgit]`
+Without the bracket expression `[:digit:]` would just mean match from these characters: `[:dgit]`
 
 `classname` values:
 
-| Name   | Meaning            | Direct form                   |
-|--------|--------------------|-------------------------------|
-| digit  | Digits 0-9         | `[0-9]`                       |
-| alpha  | Alphabetic         | `[a-zA-Z]`                    |
-| alnum  | Alphanumeric       | `[a-zA-Z0-9]`                 |
-| lower  | Lower-case         | `[a-z]`                       |
-| upper  | Upper-case         | `[A-Z]`                       |
-| blank  | Space + tab        | `[ \t]`                       |
-| space  | Space chars.       | `[ \t\n\v\f\r]`*              |
-| cntrl  | Control chars.     | `[\x00-\x1F\x7F]`*            |
-| graph  | Printable + [^ ]   | `[!-~]`* (all ASCI, no space) |
-| punct  | Punctuation        | `[!"#$%&'()*+,\-]`*           |
-| xdigit | Hexadecimal digits | `[0-9A-Fa-f]`                 |
+| POSIX class char. name | Meaning            | Direct form                   |
+|------------------------|--------------------|-------------------------------|
+| digit                  | Digits 0-9         | `[0-9]`                       |
+| alpha                  | Alphabetic         | `[a-zA-Z]`                    |
+| alnum                  | Alphanumeric       | `[a-zA-Z0-9]`                 |
+| lower                  | Lower-case         | `[a-z]`                       |
+| upper                  | Upper-case         | `[A-Z]`                       |
+| blank                  | Space + tab        | `[ \t]`                       |
+| space                  | Space chars.       | `[ \t\n\v\f\r]`*              |
+| cntrl                  | Control chars.     | `[\x00-\x1F\x7F]`*            |
+| graph                  | Printable + [^ ]   | `[!-~]`* (all ASCI, no space) |
+| punct                  | Punctuation        | `[!"#$%&'()*+,\-]`*           |
+| xdigit                 | Hexadecimal digits | `[0-9A-Fa-f]`                 |
 
 *) approximation/not easily convertible - don't use them to cover the same range.  
 Shown as example what is included.
