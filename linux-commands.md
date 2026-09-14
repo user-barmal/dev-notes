@@ -24,8 +24,8 @@ and the whole command is: 'cmd arg subarg --flag'
 |------|-------------------------------------------------------------------------------------------------------------------------|
 | a    | [alsamixer](#alsamixer), [aplay](#aplay), [apt](#apt), [arecord](#arecord), [arp](#arp), [awk](#awk)                    |
 | b    | [bridge](#bridge)                                                                                                       |
-| c    | [cd](#cd), [cp](#cp), [crontabl](#crontab), [curl](#curl), [cut](#cut)                                                  |
-| d    | [date](#date), [dd](#dd), [df](#df), [docker](#docker), [dpkg](#dpkg), [du](#du)                                        |
+| c    | [cd](#cd), [cp](#cp), [crontabl](#crontab), [cryptsetup](#cryptsetup), [curl](#curl), [cut](#cut)                       |
+| d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [docker](#docker), [dpkg](#dpkg), [du](#du)       |
 | e    | [echo](#echo), [env](#env), [exit](#exit)                                                                               |
 | f    | [ffmpeg](#ffmpeg), [find](#find)                                                                                        |
 | g    | [git](#git), [grep](#grep)                                                                                              |
@@ -64,6 +64,20 @@ and the whole command is: 'cmd arg subarg --flag'
 | Networking                    | ...                                         | `bridge`, `ip`, `nslookup`, `ovs-vsctl`, `ping`, `route`, `tcpdump` |
 | Behavior modifiers            | ...                                         | `set`, `shopt`, `export`, `alias`, `unalias`                        |
 | Virtual Machines              | KVM, QEMU, Libvirt                          | `virsh`                                                             |
+| Disk encryption               | ...                                         | `cryptsetup`, `veracrypt`                                           |
+
+## Full programs
+
+These are programs that are intended to use outside of terminal with GUI.  
+Despite that part of them offers an additional possibility to run in commandline.  
+This information is noted.
+
+| Tool         | Description                    | CLI             |
+|--------------|--------------------------------|-----------------|
+| Audacity     | Semi-advanced audio processing | n/a             |
+| Darktable    | Image processing               | `darktable-cli` |
+| GIMP         | Image processing               | `gimp -i`       |
+| Packettracer | Networking simulator           | n/a             |
 
 ## Commands
 
