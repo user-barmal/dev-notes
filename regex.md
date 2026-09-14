@@ -34,7 +34,7 @@ Output: "sth different this will be a group"
 | ignore case   | -i/--ignore-case            | -i/--ignore-case            |        |           |
 | char. class   | `[:classname:]`<sup>1</sup> | `[:classname:]`<sup>1</sup> |        |           |
 
-<sup>1</sup>) POSIX Class-name types for grep (see below)
+[1] POSIX Class-name types for grep (see below)
 
 # Character class
 
@@ -59,5 +59,5 @@ Because they are intened to be used inside the `[]`, they can be mixed: `[0-5[:p
 | punct                  | Punctuation        | `[!"#$%&'()*+,\-]`<sup>1</sup> |
 | xdigit                 | Hexadecimal digits | `[0-9A-Fa-f]`                  |
 
-<sup>1</sup>) approximation/not easily convertible - don't use them to cover the same range.  
+[1] approximation/not easily convertible - don't use them to cover the same range.  
 Shown as example what is included.

@@ -479,10 +479,10 @@ dedicated to explain it in various tools as the characters can differ.
 
 ```text
 # Basic regex characters overview - more escaping
-a|b a* a\+ a\? a\{n\} a\{n,k\} \(abc\) [abc] ^line line$
+a|b a* a\+ a\? a\{n\} a\{n,k\} \(abc\) [abc] ^line line$ [:classname:]
 
 # Extended regex characters overview - cleaner syntax. Use for more complicated patterns.
-a|b a* a+ a? a{n} a{n} a{n,k} (abc) [abc] ^line line$
+a|b a* a+ a? a{n} a{n} a{n,k} (abc) [abc] ^line line$ [:classname:]
 
 # Disable case sensitivity for regex
 -i/--ignore-case
@@ -500,6 +500,12 @@ grep -E '^(0|6):' file
 
 # Match case insensitive regex
 cat log_file_lab1_* | grep -E --ignore-case '^error: '
+
+# Advanced search using classes - basic IP check
+grep -E '[[:digit:]]{1,3}\.[[:digit]]{1,3}\.[[:digit]]{1,3}\.[[:digit]]{1,3}' config_file
+
+# Bracked expression with added class - [0-9abc]
+grep -E '[[:digit:]abc]'
 ```
 
 ### head
