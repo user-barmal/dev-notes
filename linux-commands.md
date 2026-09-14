@@ -479,10 +479,10 @@ dedicated to explain it in various tools as the characters can differ.
 
 ```text
 # Basic regex characters overview - more escaping
-a|b a* a\+ a\? a\{n\} a\{n,k\} \(abc\) [abc] ^line line$ [:classname:]
+a|b a* a\+ a\? a\{n\} a\{n,\} a\{n,k\} \(abc\) [abc] ^line line$ [:classname:]
 
 # Extended regex characters overview - cleaner syntax. Use for more complicated patterns.
-a|b a* a+ a? a{n} a{n} a{n,k} (abc) [abc] ^line line$ [:classname:]
+a|b a* a+ a? a{n} a{n,} a{n,k} (abc) [abc] ^line line$ [:classname:]
 
 # Disable case sensitivity for regex
 -i/--ignore-case

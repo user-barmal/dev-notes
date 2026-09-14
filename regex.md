@@ -18,30 +18,32 @@ Output: "sth different this will be a group"
 
 # Comparison Table
 
-| Action          | grep (BRE)                  | grep -E (ERE)               | pytest           | Notepad++ |
-|-----------------|-----------------------------|-----------------------------|------------------|-----------|
-| escape char.    | `\`                         | `\`                         | `\`              |           |
-| alteration (or) | `a\|b`                      | `a\|b`                      | `a|b`            |           |
-| 0 or more       | `a*`                        | `a*`                        | `a*`             |           |
-| 1 or more       | `a\+`                       | `a+`                        | `a+`             |           |
-| 0 or 1          |  `a\?`                      | `a?`                        | `a?`             |           |
-| exactly n       | `a\{n\}`                    | `a{n}`                      | `a{n}`           |           |
-| n or more       | `a\{n,\}`                   | `a{n,}`                     | `a{n,}`          |           |
-| n to k          | `a\{n,k\}`                  | `a{n,k}`                    | `a{n,k}`         |           |
-| groups          | `\(first\|second\)`         | `(first|second)`            | `(first|second)` |           |
-| class           | `[abc]`                     | `[abc]`                     | `[abc]`          |           |
-| neg class       | `[^abc]`                    | `[^abc]`                    | `[^abc]`         |           |
-| range           | `[a-zA-Z0-9]`               | `[a-zA-Z0-9]`               | `[a-zA-Z0-9]`    |           |
-| start of line   | `^line`                     | `^line`                     | `^line`          |           |
-| end of line     | `line$`                     | `line$`                     | `line$`          |           |
-| ignore case     | -i/--ignore-case            | -i/--ignore-case            |                  |           |
-| char. class     | `[:classname:]`<sup>1</sup> | `[:classname:]`<sup>1</sup> |                  |           |
+| Action          | grep (BRE)                  | grep -E (ERE)               | pytest             | Notepad++ |
+|-----------------|-----------------------------|-----------------------------|--------------------|-----------|
+| escape char.    | `\`                         | `\`                         | `\`                |           |
+| alteration (or) | `a\|b`                      | `a\|b`                      | `a\|b`             |           |
+| 0 or more       | `a*`                        | `a*`                        | `a*`               |           |
+| 1 or more       | `a\+`                       | `a+`                        | `a+`               |           |
+| 0 or 1          |  `a\?`                      | `a?`                        | `a?`               |           |
+| exactly n       | `a\{n\}`                    | `a{n}`                      | `a{n}`             |           |
+| n or more       | `a\{n,\}`                   | `a{n,}`                     | `a{n,}`            |           |
+| n to k          | `a\{n,k\}`                  | `a{n,k}`                    | `a{n,k}`           |           |
+| groups          | `\(first\|second\)`         | `(first\|second)`           | `(first\|second)`  |           |
+| class           | `[abc]`                     | `[abc]`                     | `[abc]`            |           |
+| neg class       | `[^abc]`                    | `[^abc]`                    | `[^abc]`           |           |
+| range           | `[a-zA-Z0-9]`               | `[a-zA-Z0-9]`               | `[a-zA-Z0-9]`      |           |
+| start of line   | `^line`                     | `^line`                     | `^line`            |           |
+| end of line     | `line$`                     | `line$`                     | `line$`            |           |
+| ignore case     | -i/--ignore-case            | -i/--ignore-case            |                    |           |
+| char. class     | `[:classname:]`<sup>1</sup> | `[:classname:]`<sup>1</sup> |                    |           |
 
-[1] POSIX Class-name types for grep (see below)
-[X] Can be extended by adding OR `|` inside.
-[Y] Can be extended by adding quantifiers `*+?` to it.
+[1] POSIX Class-name types for grep (see below)  
+[X] Can be extended by adding OR `|` inside.  
+[Y] Can be extended by adding quantifiers `*+?` to it.  
 [Z] Escape character is used to be able to search for characters that have special usage in regex:  
 `\[ \] \( \) \\ \*` and more.
+[N] Note: If you are looking at the table in the raw .md, there are additional escape characters for the  
+`|` pipe character to not being interpreted as the table elements.
 
 # Character class
 
