@@ -23,11 +23,11 @@ and the whole command is: 'cmd arg subarg --flag'
 | Char | Cmds                                                                                                                    |
 |------|-------------------------------------------------------------------------------------------------------------------------|
 | a    | [alsamixer](#alsamixer), [aplay](#aplay), [apt](#apt), [arecord](#arecord), [arp](#arp), [awk](#awk)                    |
-| b    | [bridge](#bridge)                                                                                                       |
+| b    | [bridge](#bridge), [busybox](#busybox)                                                                                  |
 | c    | [cd](#cd), [cp](#cp), [crontabl](#crontab), [cryptsetup](#cryptsetup), [curl](#curl), [cut](#cut)                       |
 | d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [docker](#docker), [dpkg](#dpkg), [du](#du)       |
 | e    | [echo](#echo), [env](#env), [exit](#exit)                                                                               |
-| f    | [ffmpeg](#ffmpeg), [find](#find)                                                                                        |
+| f    | [ffmpeg](#ffmpeg), [find](#find), [fusermount](#fusermount)                                                             |
 | g    | [git](#git), [glow](#glow), [grep](#grep)                                                                               |
 | h    | [head](#head)                                                                                                           |
 | i    | [ifconfig](#ifconfig), [ip](#ip)                                                                                        |
@@ -122,6 +122,12 @@ echo "awk will only print: THIS" | awk '{print $NF}'
 
 ```bash
 bridge link
+```
+
+### busybox
+
+```bash
+busybox commandname
 ```
 
 ### cd
@@ -468,6 +474,14 @@ find . -name *.txt
 find . -name [abc]*.txt
 find . -name [^x]file.txt
 ```
+
+### fusermount
+
+...
+
+### git
+
+...
 
 ### glow
 
