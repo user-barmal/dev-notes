@@ -39,12 +39,12 @@ and the whole command is: 'cmd arg subarg --flag'
 | o    | [ovs-vsctl](#ovs-vsctl)                                                                                                   |
 | p    | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3)                  |
 | q    | [qpdf](#qpdf)                                                                                                             |
-| r    | [read](#read), [rg](#rg), [rm](#rm), [route](#route), [rsync](#rsync)                                                     |
+| r    | [read](#read), [rg](#rg), [rm](#rm), [rmdir](#rmdir), [route](#route), [rsync](#rsync)                                    |
 | s    | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl)      |
 | t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree), [type](#type)    |
 | u    | [umount](#umount), [unzip](#unzip), [usermod](#usermod)                                                                   |
 | v    | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh)                                                          |
-| w    | [wc](#wc), [wget](#wget), [which](#which)                                                                                 |
+| w    | [watch](#watch), [wc](#wc), [wget](#wget), [which](#which)                                                                |
 | x    | [xargs](#xargs), [xxd](#xxd)                                                                                              |
 | y    | [yes](#yes)                                                                                                               |
 | z    | [zip](#zip)                                                                                                               |
@@ -1124,6 +1124,18 @@ virsh domblklist vm_name
 virsh domiflist vm_name
 virsh dumpxml vm_name
 virsh net-dhcp-leases network_name
+```
+
+### watch
+
+Run a command in specified intervals
+
+```bash
+# Check if a log file increases in size
+watch -n 1 'cat log_file.log | wc -l'
+
+# Analyze the fresh data from a log
+watch -n 5 'tail -n 10 log_file.log'
 ```
 
 ### wc
