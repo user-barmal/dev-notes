@@ -106,6 +106,9 @@ ssh -o option_name=value
 # SSH with your private key specified with a flag
 # use e.g. if you manage multiple keys for multiple connections
 ssh -i /path/to/private_key username@remote_host
+
+# SSH over a specified port
+ssh username@remote_host -p ${SPECIFIED_PORTNUMBER}
 ```
 
 SSH options and their meaning
