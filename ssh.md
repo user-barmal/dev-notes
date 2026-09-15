@@ -157,3 +157,20 @@ Host <name>
 	IdentityFile ~/.ssh/id_rsa
 	IdentitiesOnly yes
 ```
+
+# SSH-related tools
+
+```text
+# sshfs - simple mount
+sshfs user@ip:/absolute/path/to/dir ~/remote
+
+# ssh - with reconnection (useful when WiFi drops)
+sshfs -o reconnect user@ip:/absolute/path/to/dir ~/remote
+
+# rsync
+
+# scp
+
+# sftp
+
+```
