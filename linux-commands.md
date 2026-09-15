@@ -34,7 +34,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | j    | [jq](#jq)                                                                                                               |
 | k    |                                                                                                                         |
 | l    | [less](#less), [ls](#ls)                                                                                                |
-| m    | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mpv](#mpv), [mv](#mv)                                               |
+| m    | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mount](#mount), [mpv](#mpv), [mv](#mv)                              |
 | n    | [ncdu](#ncdu), [nslookup](#nslookup)                                                                                    |
 | o    | [ovs-vsctl](#ovs-vsctl)                                                                                                 |
 | p    | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3)                |
@@ -42,7 +42,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | r    | [read](#read), [rg](#rg), [rm](#rm), [route](#route), [rsync](#rsync)                                                   |
 | s    | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl)    |
 | t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree), [type](#type)  |
-| u    | [unzip](#unzip), [usermod](#usermod)                                                                                    |
+| u    | [umount](#umount), [unzip](#unzip), [usermod](#usermod)                                                                 |
 | v    | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh)                                                        |
 | w    | [wc](#wc), [wget](#wget), [which](#which)                                                                               |
 | x    | [xargs](#xargs), [xxd](#xxd)                                                                                            |
@@ -473,6 +473,14 @@ find . -name [^x]file.txt
 
 Pretty-print/interpret and color an MD file inside the terminal window.
 
+```bash
+# Output the whole file interpreted in the terminal
+glow an_md_file.md
+
+# Open a 'less' command like window with the file interpreted
+glow -p an_md_file.md
+```
+
 ### grep
 
 grep is a tool for searching for a matching string.  
@@ -617,6 +625,10 @@ mktemp -d
 
 ### more
 Older version of 'less'. No option for going back. Use 'less' instead.
+
+### mount
+
+...
 
 ### mpv
 
@@ -1024,6 +1036,10 @@ type traceroute
 # outputs: my_function is a function (followed by function body)
 type my_function
 ```
+
+### umount
+
+...
 
 ### unzip
 
