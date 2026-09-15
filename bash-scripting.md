@@ -461,6 +461,27 @@ Files and directories
 -L  - symbolic link
 ```
 
+File descriptors  
+This one may be a bit harder to understand.  
+It is about catching where do the stdin, stdout, stderr go.  
+It may be useful to e.g. color output text only if it goes to terminal and  
+keep it colorless when put to a file/pipe/etc.
+
+```text
+# Definition
+-t 0 - stdin is a terminal
+-t 1 - stdout is a terminal
+-t 2 - stderr is a terminal
+
+# [[ -t 1 ]] true
+./script.sh
+
+# [[ -t 1 ]] false
+./script.sh 1>/dev/null
+./script.sh > output.txt
+./script.sh | grep something
+```
+
 ## Test command
 
 Use these e.g. in an 'if' statement. Check status of a previously executed  
