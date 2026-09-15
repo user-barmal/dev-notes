@@ -28,7 +28,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [docker](#docker), [dpkg](#dpkg), [du](#du)       |
 | e    | [echo](#echo), [env](#env), [exit](#exit)                                                                               |
 | f    | [ffmpeg](#ffmpeg), [find](#find)                                                                                        |
-| g    | [git](#git), [grep](#grep)                                                                                              |
+| g    | [git](#git), [glow](#glow), [grep](#grep)                                                                               |
 | h    | [head](#head)                                                                                                           |
 | i    | [ifconfig](#ifconfig), [ip](#ip)                                                                                        |
 | j    | [jq](#jq)                                                                                                               |
@@ -469,6 +469,10 @@ find . -name [abc]*.txt
 find . -name [^x]file.txt
 ```
 
+### glow
+
+Pretty-print/interpret and color an MD file inside the terminal window.
+
 ### grep
 
 grep is a tool for searching for a matching string.  
@@ -502,10 +506,13 @@ grep -E '^(0|6):' file
 cat log_file_lab1_* | grep -E --ignore-case '^error: '
 
 # Advanced search using classes - basic IP check
-grep -E '[[:digit:]]{1,3}\.[[:digit]]{1,3}\.[[:digit]]{1,3}\.[[:digit]]{1,3}' config_file
+grep -E '[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}' config_file
 
 # Bracked expression with added class - [0-9abc]
 grep -E '[[:digit:]abc]'
+
+# Recursive grep
+grep -r "phrase" path/to/catalogue
 ```
 
 ### head
