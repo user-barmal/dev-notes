@@ -20,34 +20,34 @@ and the whole command is: 'cmd arg subarg --flag'
 
 ## Commands grouped alphabetically
 
-| Char | Cmds                                                                                                                    |
-|------|-------------------------------------------------------------------------------------------------------------------------|
-| a    | [alsamixer](#alsamixer), [aplay](#aplay), [apt](#apt), [arecord](#arecord), [arp](#arp), [awk](#awk)                    |
-| b    | [bridge](#bridge), [busybox](#busybox)                                                                                  |
-| c    | [cd](#cd), [cp](#cp), [crontabl](#crontab), [cryptsetup](#cryptsetup), [curl](#curl), [cut](#cut)                       |
-| d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [docker](#docker), [dpkg](#dpkg), [du](#du)       |
-| e    | [echo](#echo), [env](#env), [exit](#exit)                                                                               |
-| f    | [ffmpeg](#ffmpeg), [find](#find), [fusermount](#fusermount)                                                             |
-| g    | [git](#git), [glow](#glow), [grep](#grep)                                                                               |
-| h    | [head](#head)                                                                                                           |
-| i    | [ifconfig](#ifconfig), [ip](#ip)                                                                                        |
-| j    | [jq](#jq)                                                                                                               |
-| k    |                                                                                                                         |
-| l    | [less](#less), [ls](#ls)                                                                                                |
-| m    | [man](#man), [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mount](#mount), [mpv](#mpv), [mv](#mv)                 |
-| n    | [ncdu](#ncdu), [nslookup](#nslookup)                                                                                    |
-| o    | [ovs-vsctl](#ovs-vsctl)                                                                                                 |
-| p    | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3)                |
-| q    | [qpdf](#qpdf)                                                                                                           |
-| r    | [read](#read), [rg](#rg), [rm](#rm), [route](#route), [rsync](#rsync)                                                   |
-| s    | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl)    |
-| t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree), [type](#type)  |
-| u    | [umount](#umount), [unzip](#unzip), [usermod](#usermod)                                                                 |
-| v    | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh)                                                        |
-| w    | [wc](#wc), [wget](#wget), [which](#which)                                                                               |
-| x    | [xargs](#xargs), [xxd](#xxd)                                                                                            |
-| y    | [yes](#yes)                                                                                                             |
-| z    | [zip](#zip)                                                                                                             |
+| Char | Cmds                                                                                                                      |
+|------|---------------------------------------------------------------------------------------------------------------------------|
+| a    | [alsamixer](#alsamixer), [aplay](#aplay), [apt](#apt), [apt-get](#apt-get), [arecord](#arecord), [arp](#arp), [awk](#awk) |
+| b    | [bridge](#bridge), [busybox](#busybox)                                                                                    |
+| c    | [cd](#cd), [cp](#cp), [crontabl](#crontab), [cryptsetup](#cryptsetup), [curl](#curl), [cut](#cut)                         |
+| d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [docker](#docker), [dpkg](#dpkg), [du](#du)         |
+| e    | [echo](#echo), [env](#env), [exit](#exit)                                                                                 |
+| f    | [ffmpeg](#ffmpeg), [find](#find), [fusermount](#fusermount)                                                               |
+| g    | [git](#git), [glow](#glow), [grep](#grep)                                                                                 |
+| h    | [head](#head)                                                                                                             |
+| i    | [ifconfig](#ifconfig), [ip](#ip)                                                                                          |
+| j    | [jq](#jq)                                                                                                                 |
+| k    |                                                                                                                           |
+| l    | [less](#less), [ls](#ls)                                                                                                  |
+| m    | [man](#man), [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mount](#mount), [mpv](#mpv), [mv](#mv)                   |
+| n    | [ncdu](#ncdu), [nslookup](#nslookup)                                                                                      |
+| o    | [ovs-vsctl](#ovs-vsctl)                                                                                                   |
+| p    | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3)                  |
+| q    | [qpdf](#qpdf)                                                                                                             |
+| r    | [read](#read), [rg](#rg), [rm](#rm), [route](#route), [rsync](#rsync)                                                     |
+| s    | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl)      |
+| t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree), [type](#type)    |
+| u    | [umount](#umount), [unzip](#unzip), [usermod](#usermod)                                                                   |
+| v    | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh)                                                          |
+| w    | [wc](#wc), [wget](#wget), [which](#which)                                                                                 |
+| x    | [xargs](#xargs), [xxd](#xxd)                                                                                              |
+| y    | [yes](#yes)                                                                                                               |
+| z    | [zip](#zip)                                                                                                               |
 
 ## Commands grouped by functions
 
@@ -101,6 +101,10 @@ sudo apt install screen
 # Install a local .deb package
 sudo apt install ./package.deb
 ```
+
+### apt-get
+
+...
 
 ### arecord
 
