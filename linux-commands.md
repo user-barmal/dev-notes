@@ -34,7 +34,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | j    | [jq](#jq)                                                                                                               |
 | k    |                                                                                                                         |
 | l    | [less](#less), [ls](#ls)                                                                                                |
-| m    | [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mount](#mount), [mpv](#mpv), [mv](#mv)                              |
+| m    | [man](#man), [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mount](#mount), [mpv](#mpv), [mv](#mv)                 |
 | n    | [ncdu](#ncdu), [nslookup](#nslookup)                                                                                    |
 | o    | [ovs-vsctl](#ovs-vsctl)                                                                                                 |
 | p    | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3)                |
@@ -615,6 +615,13 @@ Example aliases
 ```
 alias ll='ls -alh'
 alias lla='ls -lA'
+```
+
+### man
+
+```bash
+# Show a manual of another command
+man command_name
 ```
 
 ### mkdir
