@@ -1168,14 +1168,37 @@ ls *.md /one/project/ >> list_of_projects_files.txt
 Basic syntax
 
 ```bash
-# Body
+# Body without function keyword
 my_function() {
+	local VARIABLE=3
+	echo "func_body"
+}
+
+# Body with function keyword - () optional
+function my_function {
+	local VARIABLE=3
+	echo "func_body"
+}
+
+# Also valid with both
+function my_function() {
 	local VARIABLE=3
 	echo "func_body"
 }
 
 # Call
 my_function
+```
+
+Oneliner declaration  
+It requires a space `' '` after `{` and before `}`.
+Symbol `;` is required before `}`.  
+Space `' '` after `()` is not required.
+
+```bash
+my_function() { echo action-1; echo action-2; }
+
+function my_func_2 { echo action-3; echo action-4; }
 ```
 
 Passing arguments is like passing them to a script
