@@ -101,7 +101,7 @@ add alias user@ip:/path/to/repo			- Specify a remote repo for a local one. It wi
 remove alias					- Remove a configured remote repo for a local one.
 -v						- Show remote links for pull and push.
 get-url origin					- Get the remote repo link.
-set-url origin <ssh repo link>			- Used to change HTTPS link to SSH one.
+set-url origin <ssh repo link>			- Used to update the remote link. Can be used e.g. to change HTTPS link to SSH one.
 set-url --push alias DISABLED			- Disable push for the remote repo specified with the alias name.
 ```
 
