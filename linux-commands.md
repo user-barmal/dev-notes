@@ -42,7 +42,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | r    | [read](#read), [rg](#rg), [rm](#rm), [rmdir](#rmdir), [route](#route), [rsync](#rsync)                                              |
 | s    | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl)                |
 | t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree), [type](#type)              |
-| u    | [umount](#umount), [unzip](#unzip), [usermod](#usermod)                                                                             |
+| u    | [umount](#umount), [unzip](#unzip), [useradd](#useradd), [usermod](#usermod)                                                        |
 | v    | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh)                                                                    |
 | w    | [watch](#watch), [wc](#wc), [wget](#wget), [which](#which)                                                                          |
 | x    | [xargs](#xargs), [xxd](#xxd)                                                                                                        |
@@ -65,7 +65,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | Behavior modifiers            | ...                                         | `set`, `shopt`, `export`, `alias`, `unalias`                        |
 | Virtual Machines              | KVM, QEMU, Libvirt                          | `virsh`                                                             |
 | Disk encryption               | ...                                         | `cryptsetup`, `veracrypt`                                           |
-| Users and permissions         | ...                                         | `chmod`, `chown`, `su`                                              |
+| Users and permissions         | ...                                         | `chmod`, `chown`, `su`, `useradd`                                   |
 
 ## Full programs
 
@@ -1083,6 +1083,10 @@ Use zip/unzip to create/extract a zip file.
 # Unpack a zip file
 unzip filename.zip
 ```
+
+### useradd
+
+...
 
 ### usermod
 

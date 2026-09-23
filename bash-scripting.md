@@ -1210,6 +1210,55 @@ cat<<'NAME'
 NAME
 ```
 
+## Bash builtins
+
+### Input output
+
+read
+
+printf
+
+### Functions and parameters
+
+local
+
+return
+
+shift
+
+getopts
+
+### Variables and environment
+
+unser
+
+export
+
+declare
+
+typeset
+
+
+### Script control
+
+exit
+
+break
+
+continue
+
+trap
+
+### Shell control
+
+set
+
+source
+
+exec
+
+eval
+
 ## Scripting
 
 ### shebang
