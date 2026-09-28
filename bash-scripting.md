@@ -16,6 +16,7 @@ about how bash *executes* code.
 * [Globbing](#Globbing)
 * [Variables](#Variables)
 * [Special Variables](#Special-variables)
+* [Process substitution](#Process-substitution)
 * [Arrays](#Arrays)
 * [Expanding](#Expanding)
 * [Quoting and word splitting](#Quoting-and-word-splitting)
@@ -330,6 +331,10 @@ $N
 $*
 $@
 $#
+$_ - contains the last argument of the previous command
+$$ - current shell PID
+$! - PID of the most recently started background job
+!! - executes previous command
 ```
 
 Named variables in the system based on LUbuntu. They are more system related, but  
@@ -342,6 +347,16 @@ A famous example is PATH which when overwritten can cause some problems with a f
 ```text
 IFS - Internal Field Separator. Bash shell variable related to Bash word splitting.
 SHELL - print the used shell, e.g.: /bin/bash
+```
+
+## Process substitution
+
+```bash
+diff <(sort a.txt) <(sort b.txt)
+cat <(echo hello)
+
+echo hello > >(cat)
+tee >(gzip > a.gz) >(gzip > b.gz) < input.txt >/dev/null
 ```
 
 ## Arrays
