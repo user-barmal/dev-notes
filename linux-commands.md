@@ -26,7 +26,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | b    | [bridge](#bridge), [busybox](#busybox)                                                                                              |
 | c    | [cd](#cd), [chmod](#chmod), [chown](#chown), [cp](#cp), [crontabl](#crontab), [cryptsetup](#cryptsetup), [curl](#curl), [cut](#cut) |
 | d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [docker](#docker), [dpkg](#dpkg), [du](#du)                   |
-| e    | [echo](#echo), [env](#env), [exit](#exit)                                                                                           |
+| e    | [echo](#echo), [env](#env), [eval](#eval), [exit](#exit)                                                                            |
 | f    | [ffmpeg](#ffmpeg), [find](#find), [fusermount](#fusermount)                                                                         |
 | g    | [git](#git), [glow](#glow), [grep](#grep)                                                                                           |
 | h    | [head](#head)                                                                                                                       |
@@ -336,6 +336,10 @@ echo <text>			- simly print the text
 # For this task, both 'env' and 'printenv' behave identically.
 env
 ```
+
+### eval
+
+...
 
 ### exit
 
