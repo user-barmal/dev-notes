@@ -96,6 +96,9 @@ They differ from grep classes with being Unicode-aware.
 \s - whitespace
 \S - non-whitespace
 \b - word boundary
+\B - non-word boundary
+\A
+\Z
 
 # Replacement syntax
 
