@@ -334,6 +334,7 @@ $#
 $_ - contains the last argument of the previous command
 $$ - current shell PID
 $! - PID of the most recently started background job
+$- - prints the current set of options in the current shell. May print sth. like 'himBH'. Each character meaning an option.
 !! - executes previous command
 ```
 
