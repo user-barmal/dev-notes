@@ -561,6 +561,9 @@ grep -E '[[:digit:]abc]'
 
 # Recursive grep
 grep -r "phrase" path/to/catalogue
+
+# Except/exclude - search for lines without the following phrase
+grep -v phrase
 ```
 
 ### head
@@ -633,6 +636,9 @@ Usage - flags can be connected
 
 ```
 ls -alhF
+
+# In the current directory show only files (not directories)
+ls -ap | grep -v /
 ```
 
 It is common to add aliases for various ls modes in the configuration file - here ~/.bashrc
