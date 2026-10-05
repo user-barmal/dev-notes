@@ -385,6 +385,9 @@ ffmpeg -ss 10 -i input.mp4 -vcoded libx264 -crf 28 output.mp4
 
 # Cut a segment
 ffmpeg -ss 10 -t 30 -i in.mp4 -c copy out.mp4
+
+# Draw a spectrogram image file for an audio input file
+ffmpeg -i input_file.wav -lavfi showspectrumpic=s=1920x1080:legend=1 spectrogram_output.png
 ```
 
 ### find 
