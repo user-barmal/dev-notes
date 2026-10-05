@@ -32,7 +32,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | h    | [head](#head)                                                                                                                       |
 | i    | [ifconfig](#ifconfig), [ip](#ip)                                                                                                    |
 | j    | [jq](#jq)                                                                                                                           |
-| k    |                                                                                                                                     |
+| k    | [keepassxc](#keepassxc)                                                                                                             |
 | l    | [less](#less), [ls](#ls)                                                                                                            |
 | m    | [man](#man), [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mount](#mount), [mpv](#mpv), [mv](#mv)                             |
 | n    | [ncdu](#ncdu), [nslookup](#nslookup)                                                                                                |
@@ -78,6 +78,7 @@ This information is noted.
 | Audacity     | Semi-advanced audio processing | n/a             |
 | Darktable    | Image processing               | `darktable-cli` |
 | GIMP         | Image processing               | `gimp -i`       |
+| KeePassXC    | Local password vault           | `keepassxc`     |
 | Packettracer | Networking simulator           | n/a             |
 
 ## Commands
@@ -612,6 +613,10 @@ tuntap
 ```
 
 ### jq
+
+...
+
+### keepassxc
 
 ...
 
