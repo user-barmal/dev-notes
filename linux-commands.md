@@ -1136,7 +1136,10 @@ Manage user groups
 # Add user to a group
 sudo usermod -aG groupname username
 
-# Check if user was added to the group. May require relog/reconnect to apply.
+# Add user to multiple groups at once
+sudo usermod -aG group1,group2 username
+
+# Check if user was added to a group. May require relog/reconnect to apply.
 cat /etc/group | grep groupname
 ```
 
