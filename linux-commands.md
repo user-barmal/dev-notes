@@ -119,6 +119,10 @@ sudo apt install ./package.deb
 ### awk
 
 ```
+# Print n-th value in a row, where 'n' is a number. Useful to extract data from repetitive rows.
+'a b c' | awk '{print $3}'
+ll | awk '{print $n}'
+
 # Print only the last value in a line
 awk '{print $NF}' filename.txt
 echo "awk will only print: THIS" | awk '{print $NF}'
@@ -218,6 +222,15 @@ Use with caution!
 
 Check difference between two files. Useful for checking changes in a file as  
 with `git diff`.
+
+```text
+-y - Side by side comparison
+-u - Unified. Changes one by one signed with '-' and '+' in one stream.
+
+--color=always - Color the command output to visually separate old and new content.
+--suppress-common-lines - Hide the unchanged lines.
+--width=NUMBER - Set the width of the output.
+```
 
 ```bash
 diff file-1 file-2
