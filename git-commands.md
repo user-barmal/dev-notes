@@ -113,6 +113,13 @@ set-url --push alias DISABLED			- Disable push for the remote repo specified wit
 --hard HEAD~1					- Uncommit the last commit and throw away the changes.
 ```
 
+## revert
+
+```text
+revert <commit_number>				- Reverts the commit with written number and commits this as a next commit.
+						  This way we have the commit and the reverse commit above.
+```
+
 ## switch
 
 	-c feature_br_name --track alias/feature_br_name - Create a local branch for a remote one and immediatelly pull all the content to it so they match.
