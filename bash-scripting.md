@@ -123,9 +123,11 @@ Everything after `#` is ignored. It can be added at the end of a running command
 It starts a comment when it appears where a new word could begin.  
 It won't start a comment in the middle of a word like in `echo abc#def` or `echo -# not a comment`.
 
-Prints 1 2 3:
 ```
+# Prints 1 2 3:
 echo 1 2 3 # 4 5 6
+
+# A comment line:
 # this wont do anything
 ```
 
