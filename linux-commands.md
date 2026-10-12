@@ -811,6 +811,7 @@ SHLVL=2
 XDG_SESSION_ID=3
 ...
 ```
+
 ### pwd
 
 Show the current location path. Can be used to confirm a location or put the output  
