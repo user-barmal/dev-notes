@@ -18,7 +18,7 @@ Output: "sth different this will be a group"
 
 # Comparison Table
 
-| Action                           | grep (BRE)                    | grep -E (ERE)               | grep -P (Perl-Comp. PCRE)   | pytest                    | Notepad++                            |
+| Action                           | grep (BRE)                    | grep -E (ERE)               | grep -P (Perl-Comp. PCRE)   | python (re)               | Notepad++                            |
 |----------------------------------|-------------------------------|-----------------------------|-----------------------------|---------------------------|--------------------------------------|
 | escape char.<sup>1</sup>         | `\`                           | `\`                         |                             | `\`                       |                                      |
 | alteration (or)                  | `a\|b`                        | `a\|b`                      |                             | `a\|b`                    |                                      |
