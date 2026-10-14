@@ -59,7 +59,9 @@ Footnotes:
 [4] POSIX Class-name types for grep (see below)  
 [5] This will call the n-th group (here 1 or 2), so the replacement string will be `jkldef`
 
-# Character class
+# Character classes
+
+## grep
 
 For grep, character class syntax is: `[:classname:]`  
 Character classes need to be wrapped in `[]` to give the bracket expression `[[:classname:]]`.
@@ -85,20 +87,22 @@ Because they are intened to be used inside the `[]`, they can be mixed: `[0-5[:p
 [1] approximation/not easily convertible - don't use them to cover the same range.  
 Shown as example what is included.
 
-# Python regex shorthand character classes
+## Python regex
 
 They differ from grep classes with being Unicode-aware.
 
-\d - digit
-\D - non-digit
-\w - word character
-\W - non-word character
-\s - whitespace
-\S - non-whitespace
-\b - word boundary
-\B - non-word boundary
-\A
-\Z
+| class char. | Meaning            | Direct form                    |
+|-------------|--------------------|--------------------------------|
+| \d          | Digits 0-9         | `[0-9]`                        |
+| \D          | Non-digit          |                                |
+| \w          | Word character     |                                |
+| \W          | non-word character |                                |
+| \s          | whitespace         |                                |
+| \S          | non-whitespace     |                                |
+| \b          | word boundary      |                                |
+| \B          | non-word boundary  |                                |
+| \A          |                    |                                |
+| \Z          |                    |                                |
 
 # Replacement syntax
 
