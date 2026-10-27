@@ -48,7 +48,13 @@ The SSH server
 
 ## scp
 
-...
+```bash
+# Simple copy
+scp ${USER}@{IP_ADDR}:/path/to/file loca/path/to/paste
+
+# Recursive copy of a directory
+scp -r ${USER}@{IP_ADDR}:/path/to/dir local/path/to/paste
+```
 
 ## ssh
 
