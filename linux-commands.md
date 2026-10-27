@@ -267,8 +267,11 @@ docker ps
 # List running and exited containers
 docker ps -a
 
+# Start a stopped container
+docker start container-name
+
 # Stop a running container gracefully
-docker stop
+docker stop container-name
 
 # Stop/kill a running container immediatelly
 docker kill
