@@ -102,6 +102,12 @@ sudo apt install screen
 
 # Install a local .deb package
 sudo apt install ./package.deb
+
+sudo apt update
+
+sudo apt upgrade
+
+sudo apt autoremove
 ```
 
 ### apt-get
