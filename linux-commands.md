@@ -256,6 +256,7 @@ Flags
 exec
 	-i		- Interactive. Keeps input connected.
 	-t		- Gives a terminal (TTY).
+	-w /path/dir/   - Specifies a path to start from when logging in a container.
 ```
 
 Manage containers
@@ -292,7 +293,10 @@ Do actions on a container
 # Open a live, interactive terminal inside a running container
 docker exec -it container_name bash
 
-# Copy a file from container
+# Open interactive terminal with path specified
+docker exec -it -w /data/project/files/ container_name bash
+
+# Copy a file from container (does not support wildcards like *.txt)
 docker cp container_name:/file/path/within/container /host/path/target
 
 # Copy a file to container
@@ -301,7 +305,6 @@ docker cp /host/path/target container_name:/file/path/within/container
 # Execute a command in a container
 docker exec container_name sh -c "command"
 ```
-
 
 ### dpkg
 
@@ -1237,7 +1240,10 @@ cat a_file.txt | wc -l
 
 ### xargs
 
-...
+```bash
+# Specify a placeholder for an argument with -I
+cat list-of-vars.txt | xargs -I {} echo "prefix" {} "suffix"
+```
 
 ### xxd
 
