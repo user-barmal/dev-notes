@@ -911,9 +911,16 @@ then remove this flag.
 () --delete	- this flag ensures that it is the exact copy. Removes things also from backup.
 () --dry-run	- won't copy files. The files to be copied will be listed.
 () --exclude	- exclude the provided path from the rsync operation
-() -a		- preserve permissions, timestamps, etc.
+() -a		- Archive mode. It enables multiple flags (if don't care about ownership, just use -r): -rlptgoD
 () -v		- verbose
 () -P		- progress + resume support
+() -r		- recursive, enter directories and copy their content
+() -l		- preserve symbolic links
+() -p		- preserve permissions
+() -t		- preserve modification times
+() -g		- preserve group
+() -o		- preserve owner
+() -D		- preserve device and special files
 ```
 
 ```bash
