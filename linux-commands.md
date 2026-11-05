@@ -24,7 +24,7 @@ and the whole command is: 'cmd arg subarg --flag'
 |------|-------------------------------------------------------------------------------------------------------------------------------------|
 | a    | [alsamixer](#alsamixer), [aplay](#aplay), [apt](#apt), [apt-get](#apt-get), [arecord](#arecord), [arp](#arp), [awk](#awk)           |
 | b    | [bridge](#bridge), [busybox](#busybox)                                                                                              |
-| c    | [cd](#cd), [chmod](#chmod), [chown](#chown), [cp](#cp), [crontabl](#crontab), [cryptsetup](#cryptsetup), [curl](#curl), [cut](#cut) |
+| c    | [cd](#cd), [chmod](#chmod), [chown](#chown), [convert](#convert), [cp](#cp), [crontabl](#crontab), [cryptsetup](#cryptsetup), [curl](#curl), [cut](#cut) |
 | d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [diff](#diff), [docker](#docker), [dpkg](#dpkg), [du](#du)    |
 | e    | [echo](#echo), [env](#env), [eval](#eval), [exit](#exit)                                                                            |
 | f    | [ffmpeg](#ffmpeg), [find](#find), [fusermount](#fusermount)                                                                         |
@@ -33,7 +33,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | i    | [ifconfig](#ifconfig), [ip](#ip)                                                                                                    |
 | j    | [jq](#jq)                                                                                                                           |
 | k    | [keepassxc](#keepassxc)                                                                                                             |
-| l    | [less](#less), [ls](#ls)                                                                                                            |
+| l    | [less](#less), [ln](#ln), [ls](#ls)                                                                                                 |
 | m    | [man](#man), [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mount](#mount), [mpv](#mpv), [mv](#mv)                             |
 | n    | [ncdu](#ncdu), [nslookup](#nslookup)                                                                                                |
 | o    | [ovs-vsctl](#ovs-vsctl)                                                                                                             |
@@ -174,6 +174,19 @@ cd -
 ### chown
 
 ...
+
+### convert
+
+Tool installed with `sudo apt install imagemagick-7.q16`.
+Write command `convert` in the terminal and it will give you a hint about a particular actual version.
+This command comes from ImageMagick and is used for image manimpulation.
+ImageMagick itself comes with a lot more tools.
+The same functions can be called from the tool by `magick`.
+
+```bash
+# Resize images by a factor example
+mkdir factor_70 && ls -1 *[jpg,JPG,png] | xargs -I {} convert {} -quality 70 ./factor_70/{}
+```
 
 ### cp
 
@@ -649,6 +662,18 @@ tuntap
 
 ```text
 less -R	- Print text with ASCII control characters interpreted (e.g. color).
+```
+
+### ln
+
+Symbolic link (-s)
+It just points to the original directory without copying.
+Modifying here, modifies in the original directory.
+Deleting the link does not delete the original directory.
+If the original directory is moved, then link stops working.
+
+```bash
+ln -s /path/to/original /path/to/shortcut
 ```
 
 ### ls
