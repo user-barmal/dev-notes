@@ -1239,17 +1239,43 @@ my_function file_{1..20}.temp
 
 ## Heredoc
 
+Unquoted delimiter.  
+Delimiter can be set to a custom value: NAME/EOF/etc.
+
 ```bash
 cat<<NAME
 [...]
 NAME
+
+cat<<EOF
+Hello $USERNAME
+$(whoami)
+EOF
 ```
+
+The shell performs expansion inside the document:
+```bash
+# Variable value
+$VARIABLE
+
+# Command output
+$(command)
+`command`
+
+# Escaping characters
+\
+```
+
+Quoted delimiter.  
+Can use '' or "".
 
 ```bash
 cat<<'NAME'
 [...]
 NAME
 ```
+
+Shell performs no expansion. Content is treated literally.
 
 ## Bash builtins
 
