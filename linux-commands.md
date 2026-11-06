@@ -41,7 +41,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | q    | [qpdf](#qpdf)                                                                                                                       |
 | r    | [read](#read), [rg](#rg), [rm](#rm), [rmdir](#rmdir), [route](#route), [rsync](#rsync)                                              |
 | s    | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl)                |
-| t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tr](#tr), [tree](#tree), [type](#type)              |
+| t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tmux](#tmux), [tr](#tr), [tree](#tree), [type](#type) |
 | u    | [umount](#umount), [unzip](#unzip), [useradd](#useradd), [usermod](#usermod)                                                        |
 | v    | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh)                                                                    |
 | w    | [watch](#watch), [wc](#wc), [wget](#wget), [which](#which)                                                                          |
@@ -1124,6 +1124,28 @@ Redirect the output to both stdout and a log file.
 ### touch
 
 ...
+
+### tmux
+
+A terminal that allows detaching, logging out and logging in later without the job being interrupted.  
+It is a server-client program that manages pseudo-terminals.  
+The server is independent from the client. If e.g. your SSH connection drops, only the client goes away.  
+When you reattach, a new client connects to the same server.
+
+```bash
+# Set up a new tmux session
+tmux new -s myprocess
+
+# Deattach
+# Through shortcuts: Ctrl+B, then D.
+
+# Log back in
+tmux attach -t myprocess
+
+# List active tmux
+tmux ls
+tmux list-windows -a
+```
 
 ### tr
 
