@@ -1021,11 +1021,15 @@ Options
 ```text
 autocd - ...
 cdspell - ...
-extglob - ...
+extglob - Enables 5 extended pattern operators giving glob patterns more power. Default - off.
+	?(pattern) - zero or one
+	*(pattern) - zero or more
+	+(pattern) - one or more
+	@(pattern) - exactly one occurence
+	!(pattern) - Anything except the pattern
 nocaseglob - Enable case-insensitive matching with globbing
 nullglob - ...
 globstar - Allow double start recursive search **
-
 ```
 
 ### sort
