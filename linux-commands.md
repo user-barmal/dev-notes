@@ -252,7 +252,7 @@ with `git diff`.
 ```
 
 ```bash
-diff file-1 file-2
+diff file-old file-new
 ```
 
 ### docker
