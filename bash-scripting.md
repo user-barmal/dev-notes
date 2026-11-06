@@ -293,6 +293,25 @@ Get var length
 echo ${#VAR}
 ```
 
+Search and replace
+
+```bash
+# Replace first match
+${VAR/pattern/replacement}
+
+# Replace all matches
+${VAR//pattern/replacement}
+
+# Anchored: only at start
+${VAR/#pattern/replacement}
+
+# Anchored: only at end
+${VAR/%pattern/replacement}
+
+# If you omit the replacement, it deletes the match
+${VAR//o/}
+```
+
 Default values
 
 ```bash
