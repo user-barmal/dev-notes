@@ -25,7 +25,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | a    | [alsamixer](#alsamixer), [aplay](#aplay), [apt](#apt), [apt-get](#apt-get), [arecord](#arecord), [arp](#arp), [awk](#awk)           |
 | b    | [bridge](#bridge), [busybox](#busybox)                                                                                              |
 | c    | [cd](#cd), [chmod](#chmod), [chown](#chown), [convert](#convert), [cp](#cp), [crontabl](#crontab), [cryptsetup](#cryptsetup), [curl](#curl), [cut](#cut) |
-| d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [diff](#diff), [docker](#docker), [dpkg](#dpkg), [du](#du)    |
+| d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [diff](#diff), [dmesg](#dmesg), [docker](#docker), [dpkg](#dpkg), [du](#du) |
 | e    | [echo](#echo), [env](#env), [eval](#eval), [exit](#exit)                                                                            |
 | f    | [ffmpeg](#ffmpeg), [find](#find), [fusermount](#fusermount)                                                                         |
 | g    | [git](#git), [glow](#glow), [grep](#grep)                                                                                           |
@@ -254,6 +254,10 @@ with `git diff`.
 ```bash
 diff file-old file-new
 ```
+
+### dmesg
+
+...
 
 ### docker
 
