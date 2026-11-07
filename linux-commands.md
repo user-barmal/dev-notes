@@ -27,7 +27,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | c    | [cd](#cd), [chmod](#chmod), [chown](#chown), [convert](#convert), [cp](#cp), [crontabl](#crontab), [cryptsetup](#cryptsetup), [curl](#curl), [cut](#cut) |
 | d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [diff](#diff), [dmesg](#dmesg), [docker](#docker), [dpkg](#dpkg), [du](#du) |
 | e    | [echo](#echo), [env](#env), [eval](#eval), [exit](#exit)                                                                            |
-| f    | [ffmpeg](#ffmpeg), [find](#find), [fusermount](#fusermount)                                                                         |
+| f    | [false](#false), [ffmpeg](#ffmpeg), [find](#find), [fusermount](#fusermount)                                                        |
 | g    | [git](#git), [glow](#glow), [grep](#grep)                                                                                           |
 | h    | [head](#head)                                                                                                                       |
 | i    | [ifconfig](#ifconfig), [ip](#ip)                                                                                                    |
@@ -41,7 +41,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | q    | [qpdf](#qpdf)                                                                                                                       |
 | r    | [read](#read), [rg](#rg), [rm](#rm), [rmdir](#rmdir), [route](#route), [rsync](#rsync)                                              |
 | s    | [screen](#screen), [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl) |
-| t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tmux](#tmux), [tr](#tr), [tree](#tree), [type](#type) |
+| t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tmux](#tmux), [tr](#tr), [tree](#tree), [true](#true), [type](#type) |
 | u    | [umount](#umount), [unzip](#unzip), [useradd](#useradd), [usermod](#usermod)                                                        |
 | v    | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh)                                                                    |
 | w    | [watch](#watch), [wc](#wc), [wget](#wget), [which](#which)                                                                          |
@@ -401,6 +401,10 @@ Many tools also use this keyword to exit, e.g. 'ssh'.
 ```
 exit
 ```
+
+### false
+
+...
 
 ### ffmpeg
 
@@ -1044,7 +1048,17 @@ globstar - Allow double start recursive search **
 
 ### sort
 
-...
+Sort input data passed with pipe `|` or after from a file.
+```bash
+# Just sort
+sort
+
+# Sort and output unique
+sort -u
+
+# Randomize
+sort --random-sort
+```
 
 ### ss
 
@@ -1061,7 +1075,10 @@ globstar - Allow double start recursive search **
 
 ### tail
 
-...
+```bash
+tail -n <NUM> A_FILE
+tail -<NUM> A_FILE
+```
 
 ### tar
 
@@ -1172,6 +1189,10 @@ tmux list-windows -a
 () -L <n>		- Specify how deep should the tree go.
 () ./start/dir		- Show the directory tree starting from the specified one.
 ```
+
+### true
+
+...
 
 ### type
 
