@@ -40,7 +40,7 @@ and the whole command is: 'cmd arg subarg --flag'
 | p    | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3)                            |
 | q    | [qpdf](#qpdf)                                                                                                                       |
 | r    | [read](#read), [rg](#rg), [rm](#rm), [rmdir](#rmdir), [route](#route), [rsync](#rsync)                                              |
-| s    | [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl)                |
+| s    | [screen](#screen), [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl) |
 | t    | [tail](#tail), [tar](#tar), [tcpdump](#tcpdump), [tee](#tee), [touch](#touch), [tmux](#tmux), [tr](#tr), [tree](#tree), [type](#type) |
 | u    | [umount](#umount), [unzip](#unzip), [useradd](#useradd), [usermod](#usermod)                                                        |
 | v    | [veracrypt](#veracrypt), [vi](#vi), [vim](#vim), [virsh](#virsh)                                                                    |
@@ -964,6 +964,12 @@ rsync -av --exclude=".ssh" --exclude=".git"
 rsync -avP --dry-run --exclude=".ssh" user@192.168.10.10:~/ /home/local-user/backup/
 ```
 
+### screen
+
+```bash
+sudo screen /dev/ttyUSB0 115200
+```
+
 ### sed
 
 ...
@@ -1129,8 +1135,8 @@ Redirect the output to both stdout and a log file.
 
 A terminal that allows detaching, logging out and logging in later without the job being interrupted.  
 It is a server-client program that manages pseudo-terminals.  
-The server is independent from the client. If e.g. your SSH connection drops, only the client goes away.  
-When you reattach, a new client connects to the same server.
+The server is independent from the client. If e.g. your SSH connection drops even while connected to tmux,  
+only the client goes away. When you reattach, a new client connects to the same server.
 
 ```bash
 # Set up a new tmux session
