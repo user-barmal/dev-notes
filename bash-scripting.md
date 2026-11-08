@@ -315,11 +315,22 @@ ${VAR//o/}
 Default values
 
 ```bash
+# Use default if VAR unset or empty
 echo ${VAR:-default}
+
+# Use default only if VAR unset. Doesn't match on empty
 echo ${VAR-default}
+
+# If VAR unset or empty, assign default to VAR and return it
 echo ${VAR:=default}
+
+# If VAR is unset, assign default to VAR and return it. Doesn't match on empty
 echo ${VAR=default}
+
+# If VAR is unset or empty, print error to stderr and cause a non-interactive Bash shell to exit with !=0 status
 echo ${VAR:?error}
+
+# If VAR is set and non-empty, return the value
 echo ${VAR:+something}
 ```
 
@@ -1198,6 +1209,9 @@ ls *.md /one/project/ >> list_of_projects_files.txt
 <
 2>&1
 /dev/null
+
+# Only redirect stderr to stdout without redirecting stdout anywhere explicitly
+2>&1
 ```
 
 ## Functions
