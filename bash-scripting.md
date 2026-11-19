@@ -38,6 +38,7 @@ about how bash *executes* code.
 * [Get an argument](#Get-an-argument)
 * [Check number of arguments](#Check-number-of-arguments)
 * [Brace expansion](#Brace-expansion)
+* [Brace command group](#Brace-command-group)
 * [Command substitution](#Command-substitution)
 * [Subshell](#Subshell)
 * [Sourcing](#Sourcing)
@@ -620,7 +621,8 @@ SOME_NAME="First Second"
 ```
 
 ```bash
-# Regex =~
+# Match regex =~
+[[ "$RC0" =~ ^[0-9]+$ ]]
 ```
 
 ```bash
@@ -1159,6 +1161,44 @@ echo s{1,2}{3,4}  # out: s13 s14 s23 s24
 # usage examples
 mkdir dir{1..10}
 echo dir{1..10}
+```
+
+## Brace command group
+
+Command group runs them in the current shell. It is important for variables usage and modification state.  
+The main reason is to treat multiple commands as a single unit, and to apply the same operation to all of them.
+
+```bash
+# Basic syntax - multiline
+{
+	command1
+	command2
+}
+
+# Basic syntax - oneline
+{ command1; command2; }
+
+# Usage example - pass all outputs at once
+{
+	command1
+	command2
+} | tee output_file.log
+
+# Group error handling
+{
+	command1
+	command2
+} || {
+	echo "Commands failure"
+}
+
+# Single redirection
+{
+	echo "Start diag"
+	command1
+	command2
+	echo "Stop diag"
+} > diag.log 2>&1
 ```
 
 ## Command substitution
