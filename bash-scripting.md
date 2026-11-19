@@ -18,6 +18,7 @@ about how bash *executes* code.
 * [Special Variables](#Special-variables)
 * [Process substitution](#Process-substitution)
 * [Arrays](#Arrays)
+* [Associative arrays](#associative-arrays)
 * [Expanding](#Expanding)
 * [Quoting and word splitting](#Quoting-and-word-splitting)
 * [Piping](#Piping)
@@ -414,6 +415,29 @@ echo ${AN_ARRAY[3]}
 echo ${AN_ARRAY[50]}
 echo ${AN_ARRAY[-3]}
 echo ${AN_ARRAY[-50]}
+```
+
+## Associative arrays
+
+Simmilar to Python dict.
+
+```bash
+# declare
+declare -A my_dict
+
+# assign
+my_dict["key1"]=value1
+my_dict["key2"]=value2
+
+# call
+# call without {} won't work. It will return empty output for $my_dict and it will echo ["key1"] as a literal string.
+echo ${my_dict["key1"]}
+
+# echo all keys
+echo ${!my_dict[@]}
+
+# echo all values
+echo ${my_dict[@]}
 ```
 
 ## Expanding
