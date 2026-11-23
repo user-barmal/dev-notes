@@ -1548,3 +1548,31 @@ chmod +x
 ## Best practices
 
 ...
+
+## Patterns and code examples
+
+```bash
+# Do an operation on objects from current directory. Useful in simple cases, e.g. add
+# prefix to all files in a directory with only files.
+# Notice how '*' is used directly as it is not required to use it with a command.
+# There are just many cases in which it wouldn't work correctly like just typing it in
+# a terminal window without any command will try to run the first name as a command
+for file in *; do mv ${file} PREFIX_${file}; done
+
+# Executing a command via glob expansion - a specific case.
+# Assume this executed in an empty dir.
+# If the expansion was done in a command position as it is here, Bash will try to execute the command.
+# Because here 'ls', 'du' are real commands they will give their output because they will be executed.
+touch ls; *
+# or
+touch du; *
+
+# From this line execution forward, tee the current shell output to both stdout and the specified log file
+exec > >(tee -a "/path/to/logfile.log") 2>&1
+
+# Supress stdout, but keep stderr and break the loop when command exits with an error status
+for i in {1..10}; do your_command >/dev/null || break; done
+
+# Stdout supression and exit script outside of a loop
+your_command >/dev/null || exit 1
+```
