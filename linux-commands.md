@@ -31,13 +31,13 @@ and the whole command is: 'cmd arg subarg --flag'
 | g    | [git](#git), [glow](#glow), [grep](#grep)                                                                                           |
 | h    | [head](#head)                                                                                                                       |
 | i    | [ifconfig](#ifconfig), [ip](#ip)                                                                                                    |
-| j    | [jq](#jq)                                                                                                                           |
+| j    | [journalctl](#journalctl), [jq](#jq)                                                                                                |
 | k    | [keepassxc](#keepassxc)                                                                                                             |
-| l    | [less](#less), [ln](#ln), [ls](#ls)                                                                                                 |
+| l    | [less](#less), [ln](#ln), [ls](#ls), [lsmod](#lsmod)                                                                                |
 | m    | [man](#man), [mkdir](#mkdir), [mktemp](#mktemp), [more](#more), [mount](#mount), [mpv](#mpv), [mv](#mv)                             |
 | n    | [ncdu](#ncdu), [nslookup](#nslookup)                                                                                                |
 | o    | [ovs-vsctl](#ovs-vsctl)                                                                                                             |
-| p    | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [pwd](#pwd), [python3](#python3)                            |
+| p    | [pgrep](#pgrep), [ping](#ping), [pkill](#pkill), [printenv](#printenv), [printf](#printf), [pwd](#pwd), [python3](#python3)         |
 | q    | [qpdf](#qpdf)                                                                                                                       |
 | r    | [read](#read), [rg](#rg), [rm](#rm), [rmdir](#rmdir), [route](#route), [rsync](#rsync)                                              |
 | s    | [screen](#screen), [sed](#sed), [seq](#seq), [set](#set), [shopt](#shopt), [sort](#sort), [ss](#ss), [su](#su), [systemctl](#systemctl) |
@@ -618,6 +618,9 @@ grep -r "phrase" path/to/catalogue
 
 # Except/exclude - search for lines without the following phrase
 grep -v phrase
+
+# Count
+grep -c phrase file
 ```
 
 ### head
@@ -718,6 +721,10 @@ Example aliases
 alias ll='ls -alh'
 alias lla='ls -lA'
 ```
+
+### lsmod
+
+Show the status of modules in the Linux Kernel.
 
 ### man
 
@@ -860,6 +867,10 @@ SHLVL=2
 XDG_SESSION_ID=3
 ...
 ```
+
+### printf
+
+...
 
 ### pwd
 
