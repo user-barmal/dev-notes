@@ -389,6 +389,30 @@ echo ${VAR:?error}
 echo ${VAR:+something}
 ```
 
+Indirect parameter expansion
+
+"${!...}" syntax
+
+```bash
+# Indirect expansion
+a="value"
+reference="a"
+
+echo $reference  # "a"
+echo ${!reference}  # "value"
+
+# Array keys
+declare -A d=( [first]=1 [second]=2 )
+
+echo ${d[@]}  # "1 2"
+echo ${!d[@]}  # "first second"
+echo ${!d[*]}  # "first second"
+
+# Prefix matching
+echo ${!prefix*}
+echo ${!prefix@}
+```
+
 Number-base syntax  
 For more info on this, look into arithmetics `((...))`
 
