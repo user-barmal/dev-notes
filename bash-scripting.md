@@ -1378,50 +1378,50 @@ Shell performs no expansion. Content is treated literally.
 
 ### Input output
 
-read
+#### read
 
-printf
+#### printf
 
 ### Functions and parameters
 
-local
+#### local
 
-return
+#### return
 
-shift
+#### shift
 
-getopts
+#### getopts
 
 ### Variables and environment
 
-unser
+#### unser
 
-export
+#### export
 
-declare
+#### declare
 
-typeset
+#### typeset
 
 
 ### Script control
 
-exit
+#### exit
 
-break
+#### break
 
-continue
+#### continue
 
-trap
+#### trap
 
 ### Shell control
 
-set
+#### set
 
-source
+#### source
 
-exec
+#### exec
 
-eval
+#### eval
 
 ## Scripting
 
