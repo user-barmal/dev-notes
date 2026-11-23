@@ -19,6 +19,7 @@ Builtin commands can be mentioned.
 	* [Expanding](#Expanding)
 	* [Brace expansion](#Brace-expansion)
 	* [Quoting and word splitting](#Quoting-and-word-splitting)
+	* [ANSI-C quoting](#ANSI-C-quoting)
 	* [Process substitution](#Process-substitution)
 	* [Command substitution](#Command-substitution)
 * [Variables and data structures](#Variables-and-data-structures)
@@ -538,6 +539,36 @@ Using quotes may give different results:
 ./script.sh $(cat a_file)  # 14 args
 ./script.sh "$(cat a_file)"  # 5 args
 ./script.sh '$(cat a file)'  # 1 arg (not expanded)
+```
+
+## ANSI-C quoting
+
+Syntax
+
+```bash
+$'...'
+```
+
+Covers special characters
+
+```bash
+# Newline
+\n
+
+# Tab
+\t
+
+# Backslash
+\\
+
+# Single quote
+\'
+
+# Hexadecimal character
+\xHH
+
+# Unicode character
+\uHHHH
 ```
 
 ## Piping
