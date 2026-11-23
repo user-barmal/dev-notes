@@ -22,7 +22,7 @@ and the whole command is: 'cmd arg subarg --flag'
 
 | Char | Cmds                                                                                                                                |
 |------|-------------------------------------------------------------------------------------------------------------------------------------|
-| a    | [alsamixer](#alsamixer), [aplay](#aplay), [apt](#apt), [apt-get](#apt-get), [arecord](#arecord), [arp](#arp), [awk](#awk)           |
+| a    | [alsamixer](#alsamixer), [aplay](#aplay), [apropos](#apropos), [apt](#apt), [apt-get](#apt-get), [arecord](#arecord), [arp](#arp), [awk](#awk)           |
 | b    | [bridge](#bridge), [busybox](#busybox)                                                                                              |
 | c    | [cd](#cd), [chmod](#chmod), [chown](#chown), [convert](#convert), [cp](#cp), [crontabl](#crontab), [cryptsetup](#cryptsetup), [curl](#curl), [cut](#cut) |
 | d    | [darktable-cli](#darktable-cli), [date](#date), [dd](#dd), [df](#df), [diff](#diff), [dmesg](#dmesg), [docker](#docker), [dpkg](#dpkg), [du](#du) |
@@ -88,6 +88,10 @@ This information is noted.
 ...
 
 ### aplay
+
+...
+
+### apropos
 
 ...
 
