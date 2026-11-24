@@ -1039,6 +1039,10 @@ seq 5 10
 seq 1.5 -0.5 -15.3
 ```
 
+### sha256sum
+
+...
+
 ### shopt
 
 Syntax
@@ -1098,7 +1102,12 @@ sort --random-sort
 
 ### systemctl
 
-...
+```bash
+systemctl is-system-running
+systemctl list-units
+systemctl list-units --failed
+systemctl --failed
+```
 
 ### tail
 
@@ -1174,6 +1183,10 @@ Redirect the output to both stdout and a log file.
 ```bash
 ./setup-configuration.sh | tee configuration.log
 ```
+
+### timeout
+
+...
 
 ### touch
 
@@ -1356,9 +1369,23 @@ cat a_file.txt | wc -l
 
 ### xargs
 
+Run a command on multiple inputs passed separately.  
+Pass methods:
+
+```text
+| - pipe
+< - redirection
+-a/--arg-file - flag
+```
+
+Usage examples:
+
 ```bash
 # Specify a placeholder for an argument with -I
 cat list-of-vars.txt | xargs -I {} echo "prefix" {} "suffix"
+
+# Pass multiple commands to one xargs
+ls -1 directory | xargs -I {} bash -c "cd {}; ./do_something.sh; cd .."
 ```
 
 ### xxd
