@@ -667,7 +667,19 @@ tuntap
 
 ### jq
 
-...
+Lightweight library for working with JSON files.
+
+```bash
+# Sorted-read first level keys from a JSON file. Output list [,,]
+jq 'keys' file.json
+
+# Unsorted-read first level keys from a JSON file. Output list [,,]
+jq 'keys_unsorted' file.json
+
+# Read first level keys from a JSON file. Raw output one per line.
+# -r makes it remove "" around keys names. Second difference is keys vs keys[]
+jq -r 'keys[]' file.json
+```
 
 ### keepassxc
 
